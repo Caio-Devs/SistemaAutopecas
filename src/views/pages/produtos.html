@@ -1,0 +1,1058 @@
+﻿
+<!-- CABEÇALHO DA PÁGINA -->
+
+<div class="page-heading">
+    <div>
+        <h1>Produtos e Serviços</h1>
+        <p>Gerencie o catálogo de produtos e serviços da empresa.</p>
+    </div>
+
+    <div class="d-flex gap-2">
+        <button class="btn btn-outline-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#modalServico">
+            <i class="bi bi-tools me-2"></i>
+            Novo serviço
+        </button>
+
+        <button class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#modalProduto">
+            <i class="bi bi-plus-lg me-2"></i>
+            Novo produto
+        </button>
+    </div>
+</div>
+
+<!-- INDICADORES -->
+
+<div class="row g-4 mb-4">
+
+    <div class="col-12 col-md-6 col-xl-3">
+        <div class="stat-card">
+            <div class="stat-icon blue">
+                <i class="bi bi-box-seam"></i>
+            </div>
+            <span>Total de produtos</span>
+            <h2>128</h2>
+            <small>Produtos cadastrados</small>
+        </div>
+    </div>
+
+    <div class="col-12 col-md-6 col-xl-3">
+        <div class="stat-card">
+            <div class="stat-icon green">
+                <i class="bi bi-check-circle"></i>
+            </div>
+            <span>Produtos ativos</span>
+            <h2>120</h2>
+            <small>Disponíveis no catálogo</small>
+        </div>
+    </div>
+
+    <div class="col-12 col-md-6 col-xl-3">
+        <div class="stat-card">
+            <div class="stat-icon orange">
+                <i class="bi bi-exclamation-triangle"></i>
+            </div>
+            <span>Estoque crítico</span>
+            <h2>8</h2>
+            <small>Necessitam de reposição</small>
+        </div>
+    </div>
+
+    <div class="col-12 col-md-6 col-xl-3">
+        <div class="stat-card">
+            <div class="stat-icon blue">
+                <i class="bi bi-tools"></i>
+            </div>
+            <span>Serviços cadastrados</span>
+            <h2>2</h2>
+            <small>Serviços disponíveis</small>
+        </div>
+    </div>
+
+</div>
+
+<!-- LISTAGEM DE PRODUTOS E SERVIÇOS -->
+
+<div class="content-card">
+
+    <div class="d-flex flex-wrap justify-content-between align-items-center mb-4">
+        <div>
+            <h3>Lista de produtos e serviços</h3>
+            <p class="mb-0">
+                Consulte os itens cadastrados no catálogo.
+            </p>
+        </div>
+
+        <span class="badge text-bg-secondary">
+            Modo demonstrativo
+        </span>
+    </div>
+
+    <!-- PESQUISA E FILTROS -->
+
+    <div class="row g-3 mb-4">
+
+        <div class="col-12 col-lg-3">
+            <label for="pesquisaProduto" class="form-label">
+                Pesquisar
+            </label>
+
+            <div class="input-group">
+                <span class="input-group-text bg-white">
+                    <i class="bi bi-search"></i>
+                </span>
+
+                <input type="search"
+                       id="pesquisaProduto"
+                       class="form-control"
+                       placeholder="Código ou nome">
+            </div>
+        </div>
+
+        <div class="col-12 col-lg-2">
+            <label for="filtroTipo" class="form-label">
+                Tipo de item
+            </label>
+
+            <select class="form-select" id="filtroTipo">
+                <option>Todos</option>
+                <option>Produto</option>
+                <option>Serviço</option>
+            </select>
+        </div>
+
+        <div class="col-12 col-lg-3">
+            <label for="filtroCategoria" class="form-label">
+                Categoria
+            </label>
+
+            <select class="form-select" id="filtroCategoria">
+                <option>Todas as categorias</option>
+                <option>Motor</option>
+                <option>Freios</option>
+                <option>Filtros</option>
+                <option>Elétrica</option>
+                <option>Suspensão</option>
+            </select>
+        </div>
+
+        <div class="col-12 col-lg-2">
+            <label for="filtroStatus" class="form-label">
+                Status
+            </label>
+
+            <select class="form-select" id="filtroStatus">
+                <option>Todos</option>
+                <option>Ativo</option>
+                <option>Inativo</option>
+            </select>
+        </div>
+
+        <div class="col-12 col-lg-2 d-flex align-items-end">
+            <button class="btn btn-outline-secondary w-100"
+                    type="button" disabled>
+                <i class="bi bi-funnel me-1"></i>
+                Filtrar
+            </button>
+        </div>
+
+    </div>
+
+    <!-- TABELA -->
+
+    <div class="table-responsive">
+
+        <table class="table align-middle table-hover">
+
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Nome do item</th>
+                    <th>Tipo</th>
+                    <th>Categoria</th>
+                    <th>Preço de venda</th>
+                    <th>Estoque</th>
+                    <th>Status</th>
+                    <th class="text-center">Ações</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <!-- PRODUTO 01 -->
+
+                <tr>
+                    <td>P001</td>
+                    <td class="fw-semibold">Filtro de óleo</td>
+                    <td>
+                        <span class="badge bg-primary-subtle text-primary">
+                            Produto
+                        </span>
+                    </td>
+                    <td>Filtros</td>
+                    <td class="text-nowrap">R$ 35,90</td>
+                    <td>25</td>
+                    <td>
+                        <span class="badge text-bg-success">Ativo</span>
+                    </td>
+
+                    <td class="text-center text-nowrap">
+                        <button class="btn btn-sm btn-outline-primary"
+                                title="Visualizar"
+                                aria-label="Visualizar filtro de óleo" disabled>
+                            <i class="bi bi-eye"></i>
+                        </button>
+
+                        <button class="btn btn-sm btn-outline-secondary"
+                                title="Editar"
+                                aria-label="Editar filtro de óleo" disabled>
+                            <i class="bi bi-pencil"></i>
+                        </button>
+
+                        <button class="btn btn-sm btn-outline-danger"
+                                title="Inativar"
+                                aria-label="Inativar filtro de óleo" disabled>
+                            <i class="bi bi-slash-circle"></i>
+                        </button>
+                    </td>
+                </tr>
+
+                <!-- PRODUTO 02 -->
+
+                <tr>
+                    <td>P002</td>
+                    <td class="fw-semibold">Pastilha de freio</td>
+                    <td>
+                        <span class="badge bg-primary-subtle text-primary">
+                            Produto
+                        </span>
+                    </td>
+                    <td>Freios</td>
+                    <td class="text-nowrap">R$ 89,90</td>
+                    <td>
+                        <span class="text-danger fw-semibold">3</span>
+                    </td>
+                    <td>
+                        <span class="badge text-bg-success">Ativo</span>
+                    </td>
+
+                    <td class="text-center text-nowrap">
+                        <button class="btn btn-sm btn-outline-primary"
+                                title="Visualizar"
+                                aria-label="Visualizar pastilha de freio" disabled>
+                            <i class="bi bi-eye"></i>
+                        </button>
+
+                        <button class="btn btn-sm btn-outline-secondary"
+                                title="Editar"
+                                aria-label="Editar pastilha de freio" disabled>
+                            <i class="bi bi-pencil"></i>
+                        </button>
+
+                        <button class="btn btn-sm btn-outline-danger"
+                                title="Inativar"
+                                aria-label="Inativar pastilha de freio" disabled>
+                            <i class="bi bi-slash-circle"></i>
+                        </button>
+                    </td>
+                </tr>
+
+                <!-- PRODUTO 03 -->
+
+                <tr>
+                    <td>P003</td>
+                    <td class="fw-semibold">Correia dentada</td>
+                    <td>
+                        <span class="badge bg-primary-subtle text-primary">
+                            Produto
+                        </span>
+                    </td>
+                    <td>Motor</td>
+                    <td class="text-nowrap">R$ 129,90</td>
+                    <td>
+                        <span class="text-danger fw-semibold">2</span>
+                    </td>
+                    <td>
+                        <span class="badge text-bg-success">Ativo</span>
+                    </td>
+
+                    <td class="text-center text-nowrap">
+                        <button class="btn btn-sm btn-outline-primary"
+                                title="Visualizar"
+                                aria-label="Visualizar correia dentada" disabled>
+                            <i class="bi bi-eye"></i>
+                        </button>
+
+                        <button class="btn btn-sm btn-outline-secondary"
+                                title="Editar"
+                                aria-label="Editar correia dentada" disabled>
+                            <i class="bi bi-pencil"></i>
+                        </button>
+
+                        <button class="btn btn-sm btn-outline-danger"
+                                title="Inativar"
+                                aria-label="Inativar correia dentada" disabled>
+                            <i class="bi bi-slash-circle"></i>
+                        </button>
+                    </td>
+                </tr>
+
+                <!-- PRODUTO 04 -->
+
+                <tr>
+                    <td>P004</td>
+                    <td class="fw-semibold">Vela de ignição</td>
+                    <td>
+                        <span class="badge bg-primary-subtle text-primary">
+                            Produto
+                        </span>
+                    </td>
+                    <td>Elétrica</td>
+                    <td class="text-nowrap">R$ 24,90</td>
+                    <td>40</td>
+                    <td>
+                        <span class="badge text-bg-success">Ativo</span>
+                    </td>
+
+                    <td class="text-center text-nowrap">
+                        <button class="btn btn-sm btn-outline-primary"
+                                title="Visualizar"
+                                aria-label="Visualizar vela de ignição" disabled>
+                            <i class="bi bi-eye"></i>
+                        </button>
+
+                        <button class="btn btn-sm btn-outline-secondary"
+                                title="Editar"
+                                aria-label="Editar vela de ignição" disabled>
+                            <i class="bi bi-pencil"></i>
+                        </button>
+
+                        <button class="btn btn-sm btn-outline-danger"
+                                title="Inativar"
+                                aria-label="Inativar vela de ignição" disabled>
+                            <i class="bi bi-slash-circle"></i>
+                        </button>
+                    </td>
+                </tr>
+
+                <!-- PRODUTO 05 -->
+
+                <tr>
+                    <td>P005</td>
+                    <td class="fw-semibold">Filtro de ar</td>
+                    <td>
+                        <span class="badge bg-primary-subtle text-primary">
+                            Produto
+                        </span>
+                    </td>
+                    <td>Filtros</td>
+                    <td class="text-nowrap">R$ 45,90</td>
+                    <td>0</td>
+                    <td>
+                        <span class="badge text-bg-secondary">Inativo</span>
+                    </td>
+
+                    <td class="text-center text-nowrap">
+                        <button class="btn btn-sm btn-outline-primary"
+                                title="Visualizar"
+                                aria-label="Visualizar filtro de ar" disabled>
+                            <i class="bi bi-eye"></i>
+                        </button>
+
+                        <button class="btn btn-sm btn-outline-secondary"
+                                title="Editar"
+                                aria-label="Editar filtro de ar" disabled>
+                            <i class="bi bi-pencil"></i>
+                        </button>
+
+                        <button class="btn btn-sm btn-outline-success"
+                                title="Reativar"
+                                aria-label="Reativar filtro de ar" disabled>
+                            <i class="bi bi-arrow-counterclockwise"></i>
+                        </button>
+                    </td>
+                </tr>
+
+                <!-- SERVIÇO 01 -->
+
+                <tr>
+                    <td>S001</td>
+                    <td class="fw-semibold">Troca de óleo</td>
+                    <td>
+                        <span class="badge bg-info-subtle text-info-emphasis">
+                            Serviço
+                        </span>
+                    </td>
+                    <td>Motor</td>
+                    <td class="text-nowrap">R$ 50,00</td>
+                    <td>
+                        <span class="text-secondary small">
+                            Não se aplica
+                        </span>
+                    </td>
+                    <td>
+                        <span class="badge text-bg-success">Ativo</span>
+                    </td>
+
+                    <td class="text-center text-nowrap">
+                        <button class="btn btn-sm btn-outline-primary"
+                                title="Visualizar"
+                                aria-label="Visualizar troca de óleo" disabled>
+                            <i class="bi bi-eye"></i>
+                        </button>
+
+                        <button class="btn btn-sm btn-outline-secondary"
+                                title="Editar"
+                                aria-label="Editar troca de óleo" disabled>
+                            <i class="bi bi-pencil"></i>
+                        </button>
+
+                        <button class="btn btn-sm btn-outline-danger"
+                                title="Inativar"
+                                aria-label="Inativar troca de óleo" disabled>
+                            <i class="bi bi-slash-circle"></i>
+                        </button>
+                    </td>
+                </tr>
+
+                <!-- SERVIÇO 02 -->
+
+                <tr>
+                    <td>S002</td>
+                    <td class="fw-semibold">
+                        Instalação de pastilhas de freio
+                    </td>
+                    <td>
+                        <span class="badge bg-info-subtle text-info-emphasis">
+                            Serviço
+                        </span>
+                    </td>
+                    <td>Freios</td>
+                    <td class="text-nowrap">R$ 80,00</td>
+                    <td>
+                        <span class="text-secondary small">
+                            Não se aplica
+                        </span>
+                    </td>
+                    <td>
+                        <span class="badge text-bg-success">Ativo</span>
+                    </td>
+
+                    <td class="text-center text-nowrap">
+                        <button class="btn btn-sm btn-outline-primary"
+                                title="Visualizar"
+                                aria-label="Visualizar instalação de pastilhas" disabled>
+                            <i class="bi bi-eye"></i>
+                        </button>
+
+                        <button class="btn btn-sm btn-outline-secondary"
+                                title="Editar"
+                                aria-label="Editar instalação de pastilhas" disabled>
+                            <i class="bi bi-pencil"></i>
+                        </button>
+
+                        <button class="btn btn-sm btn-outline-danger"
+                                title="Inativar"
+                                aria-label="Inativar instalação de pastilhas" disabled>
+                            <i class="bi bi-slash-circle"></i>
+                        </button>
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <!-- PAGINAÇÃO -->
+
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mt-3">
+
+        <small class="text-secondary">
+            Mostrando 5 produtos e 2 serviços demonstrativos
+        </small>
+
+        <nav aria-label="Paginação do catálogo">
+            <ul class="pagination pagination-sm mb-0">
+
+                <li class="page-item disabled">
+                    <span class="page-link">Anterior</span>
+                </li>
+
+                <li class="page-item active">
+                    <span class="page-link">1</span>
+                </li>
+
+                <li class="page-item disabled">
+                    <span class="page-link">2</span>
+                </li>
+
+                <li class="page-item disabled">
+                    <span class="page-link">3</span>
+                </li>
+
+                <li class="page-item disabled">
+                    <span class="page-link">Próximo</span>
+                </li>
+
+            </ul>
+        </nav>
+
+    </div>
+
+</div>
+
+<!-- INFORMAÇÕES SOBRE PRODUTOS E SERVIÇOS -->
+
+<div class="row g-4 mt-1">
+
+    <div class="col-md-6">
+        <div class="content-card h-100">
+
+            <div class="d-flex align-items-center gap-3 mb-3">
+
+                <div class="stat-icon blue mb-0">
+                    <i class="bi bi-box-seam"></i>
+                </div>
+
+                <div>
+                    <h3 class="mb-1">Produtos</h3>
+                    <small class="text-secondary">
+                        Itens físicos comercializados
+                    </small>
+                </div>
+
+            </div>
+
+            <div class="d-flex flex-column gap-3">
+
+                <div>
+                    <i class="bi bi-check-circle text-success me-2"></i>
+                    Controle de estoque atual e mínimo.
+                </div>
+
+                <div>
+                    <i class="bi bi-check-circle text-success me-2"></i>
+                    Registro de entradas e saídas.
+                </div>
+
+                <div>
+                    <i class="bi bi-check-circle text-success me-2"></i>
+                    Baixa de estoque após a venda.
+                </div>
+
+                <div>
+                    <i class="bi bi-check-circle text-success me-2"></i>
+                    Alertas inteligentes de reposição.
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="content-card h-100">
+
+            <div class="d-flex align-items-center gap-3 mb-3">
+
+                <div class="stat-icon green mb-0">
+                    <i class="bi bi-tools"></i>
+                </div>
+
+                <div>
+                    <h3 class="mb-1">Serviços</h3>
+                    <small class="text-secondary">
+                        Atividades prestadas aos clientes
+                    </small>
+                </div>
+
+            </div>
+
+            <div class="d-flex flex-column gap-3">
+
+                <div>
+                    <i class="bi bi-check-circle text-success me-2"></i>
+                    Cadastro com descrição e preço.
+                </div>
+
+                <div>
+                    <i class="bi bi-check-circle text-success me-2"></i>
+                    Inclusão nos itens de uma venda.
+                </div>
+
+                <div>
+                    <i class="bi bi-check-circle text-success me-2"></i>
+                    Participação no faturamento.
+                </div>
+
+                <div>
+                    <i class="bi bi-info-circle text-primary me-2"></i>
+                    Não realiza movimentação de estoque.
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<!-- MODAL DE CADASTRO DE PRODUTO -->
+
+<div class="modal fade"
+     id="modalProduto"
+     tabindex="-1"
+     aria-labelledby="tituloModalProduto"
+     aria-hidden="true">
+
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h5 class="modal-title" id="tituloModalProduto">
+                    <i class="bi bi-box-seam me-2"></i>
+                    Cadastrar produto
+                </h5>
+
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Fechar">
+                </button>
+
+            </div>
+
+            <div class="modal-body">
+
+                <p class="text-secondary mb-3">
+                    Preencha as informações do novo produto.
+                </p>
+
+                <form id="formProduto">
+
+                    <div class="row g-3">
+
+                        <div class="col-md-4">
+
+                            <label for="codigoProduto" class="form-label">
+                                Código *
+                            </label>
+
+                            <input type="text"
+                                   id="codigoProduto"
+                                   class="form-control"
+                                   placeholder="Ex.: P006"
+                                   required>
+
+                        </div>
+
+                        <div class="col-md-8">
+
+                            <label for="nomeProduto" class="form-label">
+                                Nome do produto *
+                            </label>
+
+                            <input type="text"
+                                   id="nomeProduto"
+                                   class="form-control"
+                                   placeholder="Nome da autopeça"
+                                   required>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <label for="categoriaProduto" class="form-label">
+                                Categoria *
+                            </label>
+
+                            <select id="categoriaProduto"
+                                    class="form-select" required>
+
+                                <option value="">Selecione</option>
+                                <option>Motor</option>
+                                <option>Freios</option>
+                                <option>Filtros</option>
+                                <option>Elétrica</option>
+                                <option>Suspensão</option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <label for="fornecedorProduto" class="form-label">
+                                Fornecedor
+                            </label>
+
+                            <select id="fornecedorProduto"
+                                    class="form-select">
+
+                                <option value="">Selecione</option>
+                                <option>Autopeças Brasil</option>
+                                <option>Distribuidora Motor</option>
+                                <option>Central de Peças</option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <label for="precoCusto" class="form-label">
+                                Preço de custo
+                            </label>
+
+                            <div class="input-group">
+
+                                <span class="input-group-text">R$</span>
+
+                                <input type="number"
+                                       id="precoCusto"
+                                       class="form-control"
+                                       min="0"
+                                       step="0.01"
+                                       placeholder="0,00">
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <label for="precoVenda" class="form-label">
+                                Preço de venda *
+                            </label>
+
+                            <div class="input-group">
+
+                                <span class="input-group-text">R$</span>
+
+                                <input type="number"
+                                       id="precoVenda"
+                                       class="form-control"
+                                       min="0"
+                                       step="0.01"
+                                       placeholder="0,00"
+                                       required>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <label for="estoqueInicial" class="form-label">
+                                Estoque inicial
+                            </label>
+
+                            <input type="number"
+                                   id="estoqueInicial"
+                                   class="form-control"
+                                   min="0"
+                                   step="1"
+                                   value="0">
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <label for="estoqueMinimo" class="form-label">
+                                Estoque mínimo *
+                            </label>
+
+                            <input type="number"
+                                   id="estoqueMinimo"
+                                   class="form-control"
+                                   min="0"
+                                   step="1"
+                                   value="0"
+                                   required>
+
+                        </div>
+
+                        <div class="col-12">
+
+                            <label for="descricaoProduto" class="form-label">
+                                Descrição *
+                            </label>
+
+                            <textarea id="descricaoProduto"
+                                      class="form-control"
+                                      rows="3"
+                                      placeholder="Descrição e informações adicionais"
+                                      required></textarea>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <label for="statusProduto" class="form-label">
+                                Status
+                            </label>
+
+                            <select id="statusProduto"
+                                    class="form-select">
+
+                                <option>Ativo</option>
+                                <option>Inativo</option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                </form>
+
+                <div class="alert alert-light border mt-4 mb-0">
+
+                    <i class="bi bi-info-circle me-2"></i>
+
+                    Formulário demonstrativo.
+                    Nenhum dado será salvo nesta versão.
+
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+
+                <button type="button"
+                        class="btn btn-outline-secondary"
+                        data-bs-dismiss="modal">
+
+                    Cancelar
+
+                </button>
+
+                <button type="button"
+                        class="btn btn-primary" disabled>
+
+                    <i class="bi bi-check-lg me-1"></i>
+                    Salvar produto
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- MODAL DE CADASTRO DE SERVIÇO -->
+
+<div class="modal fade"
+     id="modalServico"
+     tabindex="-1"
+     aria-labelledby="tituloModalServico"
+     aria-hidden="true">
+
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h5 class="modal-title" id="tituloModalServico">
+
+                    <i class="bi bi-tools me-2"></i>
+                    Cadastrar serviço
+
+                </h5>
+
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Fechar">
+                </button>
+
+            </div>
+
+            <div class="modal-body">
+
+                <p class="text-secondary mb-3">
+                    Preencha as informações do novo serviço.
+                </p>
+
+                <form id="formServico">
+
+                    <div class="row g-3">
+
+                        <div class="col-md-4">
+
+                            <label for="codigoServico" class="form-label">
+                                Código *
+                            </label>
+
+                            <input type="text"
+                                   id="codigoServico"
+                                   class="form-control"
+                                   placeholder="Ex.: S003"
+                                   required>
+
+                        </div>
+
+                        <div class="col-md-8">
+
+                            <label for="nomeServico" class="form-label">
+                                Nome do serviço *
+                            </label>
+
+                            <input type="text"
+                                   id="nomeServico"
+                                   class="form-control"
+                                   placeholder="Informe o nome do serviço"
+                                   required>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <label for="categoriaServico" class="form-label">
+                                Categoria *
+                            </label>
+
+                            <select id="categoriaServico"
+                                    class="form-select" required>
+
+                                <option value="">Selecione</option>
+                                <option>Motor</option>
+                                <option>Freios</option>
+                                <option>Filtros</option>
+                                <option>Elétrica</option>
+                                <option>Suspensão</option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <label for="precoServico" class="form-label">
+                                Preço do serviço *
+                            </label>
+
+                            <div class="input-group">
+
+                                <span class="input-group-text">R$</span>
+
+                                <input type="number"
+                                       id="precoServico"
+                                       class="form-control"
+                                       min="0"
+                                       step="0.01"
+                                       placeholder="0,00"
+                                       required>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-12">
+
+                            <label for="descricaoServico" class="form-label">
+                                Descrição *
+                            </label>
+
+                            <textarea id="descricaoServico"
+                                      class="form-control"
+                                      rows="4"
+                                      placeholder="Descreva o serviço prestado"
+                                      required></textarea>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <label for="statusServico" class="form-label">
+                                Status
+                            </label>
+
+                            <select id="statusServico"
+                                    class="form-select">
+
+                                <option>Ativo</option>
+                                <option>Inativo</option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                </form>
+
+                <!-- INFORMAÇÃO SOBRE ESTOQUE -->
+
+                <div class="alert alert-primary mt-4">
+
+                    <div class="d-flex align-items-start gap-2">
+
+                        <i class="bi bi-info-circle-fill"></i>
+
+                        <div>
+
+                            <strong>Controle de estoque</strong>
+
+                            <div class="small mt-1">
+                                Serviços não possuem estoque inicial,
+                                estoque mínimo ou movimentações de estoque.
+                                As peças utilizadas deverão ser registradas
+                                separadamente como produtos na venda.
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- MODO DEMONSTRATIVO -->
+
+                <div class="alert alert-light border mb-0">
+
+                    <i class="bi bi-info-circle me-2"></i>
+
+                    Formulário demonstrativo.
+                    Nenhum dado será salvo nesta versão.
+
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+
+                <button type="button"
+                        class="btn btn-outline-secondary"
+                        data-bs-dismiss="modal">
+
+                    Cancelar
+
+                </button>
+
+                <button type="button"
+                        class="btn btn-primary" disabled>
+
+                    <i class="bi bi-check-lg me-1"></i>
+                    Salvar serviço
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

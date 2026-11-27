@@ -1,0 +1,1267 @@
+﻿
+<!-- CABEÇALHO DA PÁGINA -->
+
+<div class="page-heading">
+
+    <div>
+        <h1>Categorias</h1>
+        <p>Organize e gerencie as categorias dos produtos da loja.</p>
+    </div>
+
+    <button type="button"
+            class="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#modalCategoria">
+
+        <i class="bi bi-plus-lg me-2"></i>
+        Nova categoria
+
+    </button>
+
+</div>
+
+<!-- INDICADORES -->
+
+<div class="row g-4 mb-4">
+
+    <div class="col-12 col-md-3">
+
+        <div class="stat-card">
+
+            <div class="stat-icon blue">
+                <i class="bi bi-tags"></i>
+            </div>
+
+            <span>Total de categorias</span>
+            <h2>6</h2>
+            <small>Categorias cadastradas</small>
+
+        </div>
+
+    </div>
+
+    <div class="col-12 col-md-3">
+
+        <div class="stat-card">
+
+            <div class="stat-icon green">
+                <i class="bi bi-check-circle"></i>
+            </div>
+
+            <span>Categorias ativas</span>
+            <h2>5</h2>
+            <small>Disponíveis para cadastro</small>
+
+        </div>
+
+    </div>
+
+    <div class="col-12 col-md-3">
+
+        <div class="stat-card">
+
+            <div class="stat-icon red">
+                <i class="bi bi-x-circle"></i>
+            </div>
+
+            <span>Categorias inativas</span>
+            <h2>1</h2>
+            <small>Categorias desativadas</small>
+
+        </div>
+
+    </div>
+
+    <div class="col-12 col-md-3">
+
+        <div class="stat-card">
+
+            <div class="stat-icon orange">
+                <i class="bi bi-box-seam"></i>
+            </div>
+
+            <span>Produtos vinculados</span>
+            <h2>128</h2>
+            <small>Produtos organizados</small>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- LISTAGEM DE CATEGORIAS -->
+
+<div class="content-card">
+
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
+
+        <div>
+
+            <h3>Categorias cadastradas</h3>
+
+            <p class="mb-0">
+                Consulte e organize as categorias dos produtos.
+            </p>
+
+        </div>
+
+        <span class="badge text-bg-secondary">
+            Modo demonstrativo
+        </span>
+
+    </div>
+
+    <!-- FILTROS -->
+
+    <div class="row g-3 mb-4">
+
+        <div class="col-12 col-lg-7">
+
+            <label for="pesquisaCategoria" class="form-label">
+                Pesquisar categoria
+            </label>
+
+            <div class="input-group">
+
+                <span class="input-group-text bg-white">
+                    <i class="bi bi-search"></i>
+                </span>
+
+                <input type="search"
+                       class="form-control"
+                       id="pesquisaCategoria"
+                       placeholder="Código, nome ou descrição">
+
+            </div>
+
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3">
+
+            <label for="filtroStatusCategoria" class="form-label">
+                Status
+            </label>
+
+            <select class="form-select" id="filtroStatusCategoria">
+
+                <option>Todos</option>
+                <option>Ativo</option>
+                <option>Inativo</option>
+
+            </select>
+
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-2 d-flex align-items-end">
+
+            <button type="button"
+                    class="btn btn-outline-secondary w-100"
+                    disabled>
+
+                <i class="bi bi-funnel me-1"></i>
+                Filtrar
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- TABELA DE CATEGORIAS -->
+
+    <div class="table-responsive">
+
+        <table class="table table-hover align-middle">
+
+            <thead>
+
+                <tr>
+
+                    <th>Código</th>
+                    <th>Categoria</th>
+                    <th>Descrição</th>
+                    <th>Produtos vinculados</th>
+                    <th>Status</th>
+                    <th class="text-center">Ações</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <!-- CATEGORIA 01 -->
+
+                <tr>
+
+                    <td class="fw-semibold">CAT001</td>
+
+                    <td>
+
+                        <div class="d-flex align-items-center gap-3">
+
+                            <span class="bg-primary-subtle text-primary rounded-3 p-2">
+                                <i class="bi bi-gear fs-5"></i>
+                            </span>
+
+                            <strong>Motor</strong>
+
+                        </div>
+
+                    </td>
+
+                    <td>
+                        Componentes e peças para motores.
+                    </td>
+
+                    <td>
+
+                        <span class="badge text-bg-light border">
+                            38 produtos
+                        </span>
+
+                    </td>
+
+                    <td>
+
+                        <span class="badge text-bg-success">
+                            Ativo
+                        </span>
+
+                    </td>
+
+                    <td>
+
+                        <div class="d-flex justify-content-center gap-2">
+
+                            <button type="button"
+                                    class="btn btn-sm btn-outline-primary"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#modalDetalhesCategoria"
+                                    title="Visualizar categoria"
+                                    aria-label="Visualizar categoria Motor">
+
+                                <i class="bi bi-eye"></i>
+
+                            </button>
+
+                            <button type="button"
+                                    class="btn btn-sm btn-outline-secondary"
+                                    title="Editar categoria"
+                                    aria-label="Editar categoria Motor"
+                                    disabled>
+
+                                <i class="bi bi-pencil"></i>
+
+                            </button>
+
+                            <button type="button"
+                                    class="btn btn-sm btn-outline-danger"
+                                    title="Inativar categoria"
+                                    aria-label="Inativar categoria Motor"
+                                    disabled>
+
+                                <i class="bi bi-x-circle"></i>
+
+                            </button>
+
+                        </div>
+
+                    </td>
+
+                </tr>
+
+                <!-- CATEGORIA 02 -->
+
+                <tr>
+
+                    <td class="fw-semibold">CAT002</td>
+
+                    <td>
+
+                        <div class="d-flex align-items-center gap-3">
+
+                            <span class="bg-danger-subtle text-danger rounded-3 p-2">
+                                <i class="bi bi-disc fs-5"></i>
+                            </span>
+
+                            <strong>Freios</strong>
+
+                        </div>
+
+                    </td>
+
+                    <td>
+                        Pastilhas, discos e componentes de frenagem.
+                    </td>
+
+                    <td>
+
+                        <span class="badge text-bg-light border">
+                            26 produtos
+                        </span>
+
+                    </td>
+
+                    <td>
+
+                        <span class="badge text-bg-success">
+                            Ativo
+                        </span>
+
+                    </td>
+
+                    <td>
+
+                        <div class="d-flex justify-content-center gap-2">
+
+                            <button type="button"
+                                    class="btn btn-sm btn-outline-primary"
+                                    title="Visualizar categoria"
+                                    disabled>
+
+                                <i class="bi bi-eye"></i>
+
+                            </button>
+
+                            <button type="button"
+                                    class="btn btn-sm btn-outline-secondary"
+                                    title="Editar categoria"
+                                    disabled>
+
+                                <i class="bi bi-pencil"></i>
+
+                            </button>
+
+                            <button type="button"
+                                    class="btn btn-sm btn-outline-danger"
+                                    title="Inativar categoria"
+                                    disabled>
+
+                                <i class="bi bi-x-circle"></i>
+
+                            </button>
+
+                        </div>
+
+                    </td>
+
+                </tr>
+
+                <!-- CATEGORIA 03 -->
+
+                <tr>
+
+                    <td class="fw-semibold">CAT003</td>
+
+                    <td>
+
+                        <div class="d-flex align-items-center gap-3">
+
+                            <span class="bg-success-subtle text-success rounded-3 p-2">
+                                <i class="bi bi-funnel fs-5"></i>
+                            </span>
+
+                            <strong>Filtros</strong>
+
+                        </div>
+
+                    </td>
+
+                    <td>
+                        Filtros de óleo, ar e combustível.
+                    </td>
+
+                    <td>
+
+                        <span class="badge text-bg-light border">
+                            22 produtos
+                        </span>
+
+                    </td>
+
+                    <td>
+
+                        <span class="badge text-bg-success">
+                            Ativo
+                        </span>
+
+                    </td>
+
+                    <td>
+
+                        <div class="d-flex justify-content-center gap-2">
+
+                            <button type="button"
+                                    class="btn btn-sm btn-outline-primary"
+                                    title="Visualizar categoria"
+                                    disabled>
+
+                                <i class="bi bi-eye"></i>
+
+                            </button>
+
+                            <button type="button"
+                                    class="btn btn-sm btn-outline-secondary"
+                                    title="Editar categoria"
+                                    disabled>
+
+                                <i class="bi bi-pencil"></i>
+
+                            </button>
+
+                            <button type="button"
+                                    class="btn btn-sm btn-outline-danger"
+                                    title="Inativar categoria"
+                                    disabled>
+
+                                <i class="bi bi-x-circle"></i>
+
+                            </button>
+
+                        </div>
+
+                    </td>
+
+                </tr>
+
+                <!-- CATEGORIA 04 -->
+
+                <tr>
+
+                    <td class="fw-semibold">CAT004</td>
+
+                    <td>
+
+                        <div class="d-flex align-items-center gap-3">
+
+                            <span class="bg-warning-subtle text-warning-emphasis rounded-3 p-2">
+                                <i class="bi bi-lightning-charge fs-5"></i>
+                            </span>
+
+                            <strong>Elétrica</strong>
+
+                        </div>
+
+                    </td>
+
+                    <td>
+                        Baterias, velas e componentes elétricos.
+                    </td>
+
+                    <td>
+
+                        <span class="badge text-bg-light border">
+                            24 produtos
+                        </span>
+
+                    </td>
+
+                    <td>
+
+                        <span class="badge text-bg-success">
+                            Ativo
+                        </span>
+
+                    </td>
+
+                    <td>
+
+                        <div class="d-flex justify-content-center gap-2">
+
+                            <button type="button"
+                                    class="btn btn-sm btn-outline-primary"
+                                    title="Visualizar categoria"
+                                    disabled>
+
+                                <i class="bi bi-eye"></i>
+
+                            </button>
+
+                            <button type="button"
+                                    class="btn btn-sm btn-outline-secondary"
+                                    title="Editar categoria"
+                                    disabled>
+
+                                <i class="bi bi-pencil"></i>
+
+                            </button>
+
+                            <button type="button"
+                                    class="btn btn-sm btn-outline-danger"
+                                    title="Inativar categoria"
+                                    disabled>
+
+                                <i class="bi bi-x-circle"></i>
+
+                            </button>
+
+                        </div>
+
+                    </td>
+
+                </tr>
+
+                <!-- CATEGORIA 05 -->
+
+                <tr>
+
+                    <td class="fw-semibold">CAT005</td>
+
+                    <td>
+
+                        <div class="d-flex align-items-center gap-3">
+
+                            <span class="bg-info-subtle text-info-emphasis rounded-3 p-2">
+                                <i class="bi bi-tools fs-5"></i>
+                            </span>
+
+                            <strong>Suspensão</strong>
+
+                        </div>
+
+                    </td>
+
+                    <td>
+                        Amortecedores, molas e componentes de suspensão.
+                    </td>
+
+                    <td>
+
+                        <span class="badge text-bg-light border">
+                            18 produtos
+                        </span>
+
+                    </td>
+
+                    <td>
+
+                        <span class="badge text-bg-success">
+                            Ativo
+                        </span>
+
+                    </td>
+
+                    <td>
+
+                        <div class="d-flex justify-content-center gap-2">
+
+                            <button type="button"
+                                    class="btn btn-sm btn-outline-primary"
+                                    title="Visualizar categoria"
+                                    disabled>
+
+                                <i class="bi bi-eye"></i>
+
+                            </button>
+
+                            <button type="button"
+                                    class="btn btn-sm btn-outline-secondary"
+                                    title="Editar categoria"
+                                    disabled>
+
+                                <i class="bi bi-pencil"></i>
+
+                            </button>
+
+                            <button type="button"
+                                    class="btn btn-sm btn-outline-danger"
+                                    title="Inativar categoria"
+                                    disabled>
+
+                                <i class="bi bi-x-circle"></i>
+
+                            </button>
+
+                        </div>
+
+                    </td>
+
+                </tr>
+
+                <!-- CATEGORIA 06 -->
+
+                <tr>
+
+                    <td class="fw-semibold">CAT006</td>
+
+                    <td>
+
+                        <div class="d-flex align-items-center gap-3">
+
+                            <span class="bg-secondary-subtle text-secondary rounded-3 p-2">
+                                <i class="bi bi-car-front fs-5"></i>
+                            </span>
+
+                            <strong>Acessórios</strong>
+
+                        </div>
+
+                    </td>
+
+                    <td>
+                        Acessórios e itens complementares automotivos.
+                    </td>
+
+                    <td>
+
+                        <span class="badge text-bg-light border">
+                            0 produtos
+                        </span>
+
+                    </td>
+
+                    <td>
+
+                        <span class="badge text-bg-secondary">
+                            Inativo
+                        </span>
+
+                    </td>
+
+                    <td>
+
+                        <div class="d-flex justify-content-center gap-2">
+
+                            <button type="button"
+                                    class="btn btn-sm btn-outline-primary"
+                                    title="Visualizar categoria"
+                                    disabled>
+
+                                <i class="bi bi-eye"></i>
+
+                            </button>
+
+                            <button type="button"
+                                    class="btn btn-sm btn-outline-secondary"
+                                    title="Editar categoria"
+                                    disabled>
+
+                                <i class="bi bi-pencil"></i>
+
+                            </button>
+
+                            <button type="button"
+                                    class="btn btn-sm btn-outline-success"
+                                    title="Reativar categoria"
+                                    disabled>
+
+                                <i class="bi bi-check-circle"></i>
+
+                            </button>
+
+                        </div>
+
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <!-- PAGINAÇÃO -->
+
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mt-3">
+
+        <small class="text-secondary">
+            Mostrando 6 categorias demonstrativas
+        </small>
+
+        <nav aria-label="Paginação de categorias">
+
+            <ul class="pagination pagination-sm mb-0">
+
+                <li class="page-item disabled">
+                    <span class="page-link">Anterior</span>
+                </li>
+
+                <li class="page-item active">
+                    <span class="page-link">1</span>
+                </li>
+
+                <li class="page-item disabled">
+                    <span class="page-link">Próximo</span>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </div>
+
+</div>
+
+<!-- DISTRIBUIÇÃO DE PRODUTOS POR CATEGORIA -->
+
+<div class="content-card mt-4">
+
+    <div class="mb-4">
+
+        <h3>
+
+            <i class="bi bi-bar-chart text-primary me-2"></i>
+            Distribuição de produtos por categoria
+
+        </h3>
+
+        <p class="mb-0">
+            Visualize como os produtos estão organizados na loja.
+        </p>
+
+    </div>
+
+    <!-- MOTOR -->
+
+    <div class="mb-4">
+
+        <div class="d-flex justify-content-between mb-2">
+
+            <strong>Motor</strong>
+
+            <small class="text-secondary">
+                38 produtos — 29,7%
+            </small>
+
+        </div>
+
+        <div class="progress" style="height: 12px;"
+             role="progressbar"
+             aria-label="Motor"
+             aria-valuenow="29.7"
+             aria-valuemin="0"
+             aria-valuemax="100">
+
+            <div class="progress-bar bg-primary"
+                 style="width: 29.7%;">
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- FREIOS -->
+
+    <div class="mb-4">
+
+        <div class="d-flex justify-content-between mb-2">
+
+            <strong>Freios</strong>
+
+            <small class="text-secondary">
+                26 produtos — 20,3%
+            </small>
+
+        </div>
+
+        <div class="progress" style="height: 12px;"
+             role="progressbar"
+             aria-label="Freios"
+             aria-valuenow="20.3"
+             aria-valuemin="0"
+             aria-valuemax="100">
+
+            <div class="progress-bar bg-danger"
+                 style="width: 20.3%;">
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- FILTROS -->
+
+    <div class="mb-4">
+
+        <div class="d-flex justify-content-between mb-2">
+
+            <strong>Filtros</strong>
+
+            <small class="text-secondary">
+                22 produtos — 17,2%
+            </small>
+
+        </div>
+
+        <div class="progress" style="height: 12px;"
+             role="progressbar"
+             aria-label="Filtros"
+             aria-valuenow="17.2"
+             aria-valuemin="0"
+             aria-valuemax="100">
+
+            <div class="progress-bar bg-success"
+                 style="width: 17.2%;">
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ELÉTRICA -->
+
+    <div class="mb-4">
+
+        <div class="d-flex justify-content-between mb-2">
+
+            <strong>Elétrica</strong>
+
+            <small class="text-secondary">
+                24 produtos — 18,8%
+            </small>
+
+        </div>
+
+        <div class="progress" style="height: 12px;"
+             role="progressbar"
+             aria-label="Elétrica"
+             aria-valuenow="18.8"
+             aria-valuemin="0"
+             aria-valuemax="100">
+
+            <div class="progress-bar bg-warning"
+                 style="width: 18.8%;">
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- SUSPENSÃO -->
+
+    <div class="mb-3">
+
+        <div class="d-flex justify-content-between mb-2">
+
+            <strong>Suspensão</strong>
+
+            <small class="text-secondary">
+                18 produtos — 14,1%
+            </small>
+
+        </div>
+
+        <div class="progress" style="height: 12px;"
+             role="progressbar"
+             aria-label="Suspensão"
+             aria-valuenow="14.1"
+             aria-valuemin="0"
+             aria-valuemax="100">
+
+            <div class="progress-bar bg-info"
+                 style="width: 14.1%;">
+            </div>
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    <div class="d-flex justify-content-between align-items-center">
+
+        <span class="text-secondary">
+            Total de produtos cadastrados
+        </span>
+
+        <strong class="fs-5">128 produtos</strong>
+
+    </div>
+
+</div>
+
+<!-- MODAL DE CADASTRO DE CATEGORIA -->
+
+<div class="modal fade"
+     id="modalCategoria"
+     tabindex="-1"
+     aria-labelledby="tituloModalCategoria"
+     aria-hidden="true">
+
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h5 class="modal-title" id="tituloModalCategoria">
+
+                    <i class="bi bi-tags text-primary me-2"></i>
+                    Cadastrar nova categoria
+
+                </h5>
+
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Fechar">
+                </button>
+
+            </div>
+
+            <div class="modal-body">
+
+                <div class="alert alert-light border">
+
+                    <i class="bi bi-info-circle me-2"></i>
+
+                    Modo demonstrativo: nenhuma categoria será cadastrada.
+
+                </div>
+
+                <h5 class="mb-3">
+
+                    <i class="bi bi-card-list me-2"></i>
+                    Informações da categoria
+
+                </h5>
+
+                <div class="row g-3">
+
+                    <div class="col-md-8">
+
+                        <label for="nomeCategoria" class="form-label">
+                            Nome da categoria *
+                        </label>
+
+                        <input type="text"
+                               class="form-control"
+                               id="nomeCategoria"
+                               placeholder="Ex.: Motor"
+                               maxlength="100"
+                               required>
+
+                    </div>
+
+                    <div class="col-md-4">
+
+                        <label for="statusCategoria" class="form-label">
+                            Status
+                        </label>
+
+                        <select class="form-select"
+                                id="statusCategoria">
+
+                            <option>Ativo</option>
+                            <option>Inativo</option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="col-12">
+
+                        <label for="descricaoCategoria" class="form-label">
+                            Descrição
+                        </label>
+
+                        <textarea class="form-control"
+                                  id="descricaoCategoria"
+                                  rows="4"
+                                  placeholder="Descreva os tipos de produtos que pertencem a esta categoria"></textarea>
+
+                    </div>
+
+                </div>
+
+                <hr class="my-4">
+
+                <!-- ORIENTAÇÕES -->
+
+                <div class="alert alert-light border mb-0">
+
+                    <h6>
+
+                        <i class="bi bi-shield-check text-primary me-2"></i>
+                        Orientações de cadastro
+
+                    </h6>
+
+                    <ul class="small mb-0 ps-3">
+
+                        <li>
+                            Utilize nomes claros para identificar as categorias.
+                        </li>
+
+                        <li>
+                            Evite cadastrar categorias duplicadas.
+                        </li>
+
+                        <li>
+                            Categorias inativas não deverão ser utilizadas em novos cadastros de produtos.
+                        </li>
+
+                        <li>
+                            A inativação deverá preservar o histórico dos produtos vinculados.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+
+                <small class="text-secondary me-auto">
+                    * Campos obrigatórios
+                </small>
+
+                <button type="button"
+                        class="btn btn-outline-secondary"
+                        data-bs-dismiss="modal">
+
+                    Cancelar
+
+                </button>
+
+                <button type="button"
+                        class="btn btn-primary"
+                        disabled>
+
+                    <i class="bi bi-check-lg me-1"></i>
+                    Salvar categoria
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- MODAL DE DETALHES DA CATEGORIA -->
+
+<div class="modal fade"
+     id="modalDetalhesCategoria"
+     tabindex="-1"
+     aria-labelledby="tituloDetalhesCategoria"
+     aria-hidden="true">
+
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h5 class="modal-title" id="tituloDetalhesCategoria">
+
+                    <i class="bi bi-tag text-primary me-2"></i>
+                    Detalhes da categoria
+
+                </h5>
+
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Fechar">
+                </button>
+
+            </div>
+
+            <div class="modal-body">
+
+                <div class="d-flex align-items-center gap-3 mb-4">
+
+                    <div class="stat-icon blue">
+                        <i class="bi bi-gear"></i>
+                    </div>
+
+                    <div class="flex-grow-1">
+
+                        <h5 class="mb-1">Motor</h5>
+
+                        <small class="text-secondary">
+                            Código: CAT001
+                        </small>
+
+                    </div>
+
+                    <span class="badge text-bg-success">
+                        Ativo
+                    </span>
+
+                </div>
+
+                <div class="mb-4">
+
+                    <small class="text-secondary d-block mb-1">
+                        Descrição
+                    </small>
+
+                    <p class="mb-0">
+                        Componentes e peças para motores automotivos.
+                    </p>
+
+                </div>
+
+                <div class="row g-3 mb-4">
+
+                    <div class="col-md-4">
+
+                        <div class="border rounded-3 p-3">
+
+                            <small class="text-secondary">
+                                Total de produtos
+                            </small>
+
+                            <h3 class="mt-2 mb-0">38</h3>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4">
+
+                        <div class="border rounded-3 p-3">
+
+                            <small class="text-secondary">
+                                Produtos ativos
+                            </small>
+
+                            <h3 class="text-success mt-2 mb-0">36</h3>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4">
+
+                        <div class="border rounded-3 p-3">
+
+                            <small class="text-secondary">
+                                Produtos inativos
+                            </small>
+
+                            <h3 class="text-secondary mt-2 mb-0">2</h3>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <hr>
+
+                <h5 class="mb-3">
+
+                    <i class="bi bi-box-seam me-2"></i>
+                    Exemplos de produtos vinculados
+
+                </h5>
+
+                <div class="table-responsive">
+
+                    <table class="table align-middle">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Código</th>
+                                <th>Produto</th>
+                                <th>Estoque</th>
+                                <th>Status</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+
+                                <td>P003</td>
+                                <td>Correia dentada</td>
+                                <td>2 unidades</td>
+
+                                <td>
+
+                                    <span class="badge text-bg-success">
+                                        Ativo
+                                    </span>
+
+                                </td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>P006</td>
+                                <td>Junta do motor</td>
+                                <td>15 unidades</td>
+
+                                <td>
+
+                                    <span class="badge text-bg-success">
+                                        Ativo
+                                    </span>
+
+                                </td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>P007</td>
+                                <td>Bomba de óleo</td>
+                                <td>12 unidades</td>
+
+                                <td>
+
+                                    <span class="badge text-bg-success">
+                                        Ativo
+                                    </span>
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+                <div class="alert alert-light border mt-4 mb-0">
+
+                    <i class="bi bi-info-circle me-2"></i>
+
+                    Os dados apresentados são fictícios e destinados
+                    à demonstração da interface.
+
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+
+                <button type="button"
+                        class="btn btn-outline-primary"
+                        disabled>
+
+                    <i class="bi bi-pencil me-1"></i>
+                    Editar categoria
+
+                </button>
+
+                <button type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal">
+
+                    Fechar
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

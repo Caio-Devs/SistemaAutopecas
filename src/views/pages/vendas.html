@@ -1,0 +1,935 @@
+﻿<!-- CABEÇALHO DA PÁGINA -->
+
+<div class="page-heading">
+    <div>
+        <h1>Vendas</h1>
+        <p>Registre e acompanhe as vendas da loja.</p>
+    </div>
+
+    <button class="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#modalNovaVenda">
+        <i class="bi bi-plus-lg me-2"></i>
+        Nova venda
+    </button>
+</div>
+
+<!-- INDICADORES -->
+
+<div class="row g-4 mb-4">
+
+    <div class="col-12 col-sm-6 col-xl-3">
+        <div class="stat-card">
+            <div class="stat-icon blue">
+                <i class="bi bi-cart-check"></i>
+            </div>
+            <span>Vendas hoje</span>
+            <h2>12</h2>
+            <small>Vendas concluídas no dia</small>
+        </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-xl-3">
+        <div class="stat-card">
+            <div class="stat-icon green">
+                <i class="bi bi-currency-dollar"></i>
+            </div>
+            <span>Faturamento hoje</span>
+            <h2>R$ 1.700,00</h2>
+            <small>Receitas do dia</small>
+        </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-xl-3">
+        <div class="stat-card">
+            <div class="stat-icon orange">
+                <i class="bi bi-receipt"></i>
+            </div>
+            <span>Ticket médio hoje</span>
+            <h2>R$ 141,67</h2>
+            <small>Valor médio por venda</small>
+        </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-xl-3">
+        <div class="stat-card">
+            <div class="stat-icon blue">
+                <i class="bi bi-graph-up-arrow"></i>
+            </div>
+            <span>Vendas no período</span>
+            <h2>84</h2>
+            <small>Total de vendas realizadas</small>
+        </div>
+    </div>
+
+</div>
+
+<!-- HISTÓRICO DE VENDAS -->
+
+<div class="content-card">
+
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
+        <div>
+            <h3>Histórico de vendas</h3>
+            <p class="mb-0">
+                Consulte e acompanhe as vendas realizadas.
+            </p>
+        </div>
+
+        <span class="badge text-bg-secondary">
+            Modo demonstrativo
+        </span>
+    </div>
+
+    <!-- FILTROS -->
+
+    <div class="row g-3 mb-4">
+
+        <div class="col-12 col-lg-4">
+            <label for="pesquisaVenda" class="form-label">
+                Pesquisar
+            </label>
+
+            <div class="input-group">
+                <span class="input-group-text bg-white">
+                    <i class="bi bi-search"></i>
+                </span>
+
+                <input type="search"
+                       class="form-control"
+                       id="pesquisaVenda"
+                       placeholder="Número da venda ou cliente">
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-2">
+            <label for="dataInicialVenda" class="form-label">
+                Data inicial
+            </label>
+
+            <input type="date"
+                   class="form-control"
+                   id="dataInicialVenda">
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-2">
+            <label for="dataFinalVenda" class="form-label">
+                Data final
+            </label>
+
+            <input type="date"
+                   class="form-control"
+                   id="dataFinalVenda">
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-2">
+            <label for="filtroStatusVenda" class="form-label">
+                Status
+            </label>
+
+            <select class="form-select" id="filtroStatusVenda">
+                <option>Todos</option>
+                <option>Concluída</option>
+            </select>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-2 d-flex align-items-end">
+            <button class="btn btn-outline-secondary w-100"
+                    type="button" disabled>
+                <i class="bi bi-funnel me-1"></i>
+                Filtrar
+            </button>
+        </div>
+
+    </div>
+
+    <!-- TABELA DE VENDAS -->
+
+    <div class="table-responsive">
+
+        <table class="table align-middle table-hover">
+
+            <thead>
+                <tr>
+                    <th>Venda</th>
+                    <th>Cliente</th>
+                    <th>Data</th>
+                    <th>Unidades</th>
+                    <th>Responsável</th>
+                    <th>Valor total</th>
+                    <th>Status</th>
+                    <th class="text-center">Ações</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td class="fw-semibold">#0084</td>
+                    <td>Consumidor final</td>
+                    <td>26/11/2026</td>
+                    <td>7</td>
+                    <td>Operador</td>
+                    <td class="fw-semibold">R$ 261,30</td>
+
+                    <td>
+                        <span class="badge text-bg-success">
+                            Concluída
+                        </span>
+                    </td>
+
+                    <td class="text-center">
+                        <button class="btn btn-sm btn-outline-primary"
+                                data-bs-toggle="modal"
+                                data-bs-target="#modalDetalhesVenda"
+                                title="Visualizar venda"
+                                aria-label="Visualizar venda 0084">
+                            <i class="bi bi-eye"></i>
+                        </button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="fw-semibold">#0083</td>
+                    <td>Cliente exemplo 01</td>
+                    <td>26/11/2026</td>
+                    <td>1</td>
+                    <td>Administrador</td>
+                    <td class="fw-semibold">R$ 129,90</td>
+
+                    <td>
+                        <span class="badge text-bg-success">
+                            Concluída
+                        </span>
+                    </td>
+
+                    <td class="text-center">
+                        <button class="btn btn-sm btn-outline-primary"
+                                title="Visualizar venda"
+                                disabled>
+                            <i class="bi bi-eye"></i>
+                        </button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="fw-semibold">#0082</td>
+                    <td>Cliente exemplo 02</td>
+                    <td>26/11/2026</td>
+                    <td>2</td>
+                    <td>Operador</td>
+                    <td class="fw-semibold">R$ 179,80</td>
+
+                    <td>
+                        <span class="badge text-bg-success">
+                            Concluída
+                        </span>
+                    </td>
+
+                    <td class="text-center">
+                        <button class="btn btn-sm btn-outline-primary"
+                                title="Visualizar venda"
+                                disabled>
+                            <i class="bi bi-eye"></i>
+                        </button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="fw-semibold">#0081</td>
+                    <td>Consumidor final</td>
+                    <td>25/11/2026</td>
+                    <td>4</td>
+                    <td>Operador</td>
+                    <td class="fw-semibold">R$ 99,60</td>
+
+                    <td>
+                        <span class="badge text-bg-success">
+                            Concluída
+                        </span>
+                    </td>
+
+                    <td class="text-center">
+                        <button class="btn btn-sm btn-outline-primary"
+                                title="Visualizar venda"
+                                disabled>
+                            <i class="bi bi-eye"></i>
+                        </button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="fw-semibold">#0080</td>
+                    <td>Cliente exemplo 03</td>
+                    <td>25/11/2026</td>
+                    <td>3</td>
+                    <td>Administrador</td>
+                    <td class="fw-semibold">R$ 107,70</td>
+
+                    <td>
+                        <span class="badge text-bg-success">
+                            Concluída
+                        </span>
+                    </td>
+
+                    <td class="text-center">
+                        <button class="btn btn-sm btn-outline-primary"
+                                title="Visualizar venda"
+                                disabled>
+                            <i class="bi bi-eye"></i>
+                        </button>
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <!-- PAGINAÇÃO -->
+
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mt-3">
+
+        <small class="text-secondary">
+            Mostrando 5 vendas demonstrativas
+        </small>
+
+        <nav aria-label="Paginação de vendas">
+            <ul class="pagination pagination-sm mb-0">
+
+                <li class="page-item disabled">
+                    <span class="page-link">Anterior</span>
+                </li>
+
+                <li class="page-item active">
+                    <span class="page-link">1</span>
+                </li>
+
+                <li class="page-item disabled">
+                    <span class="page-link">2</span>
+                </li>
+
+                <li class="page-item disabled">
+                    <span class="page-link">3</span>
+                </li>
+
+                <li class="page-item disabled">
+                    <span class="page-link">Próximo</span>
+                </li>
+
+            </ul>
+        </nav>
+
+    </div>
+
+</div>
+
+<!-- MODAL DE NOVA VENDA -->
+
+<div class="modal fade"
+     id="modalNovaVenda"
+     tabindex="-1"
+     aria-labelledby="tituloNovaVenda"
+     aria-hidden="true">
+
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h5 class="modal-title" id="tituloNovaVenda">
+                    <i class="bi bi-cart-plus text-primary me-2"></i>
+                    Registrar nova venda
+                </h5>
+
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Fechar">
+                </button>
+
+            </div>
+
+            <div class="modal-body">
+
+                <div class="alert alert-light border">
+                    <i class="bi bi-info-circle me-2"></i>
+                    Modo demonstrativo: nenhuma venda será registrada.
+                </div>
+
+                <div class="row g-4">
+
+                    <!-- INFORMAÇÕES DA VENDA -->
+
+                    <div class="col-12 col-lg-8">
+
+                        <h5 class="mb-3">Informações da venda</h5>
+
+                        <div class="row g-3 mb-4">
+
+                            <div class="col-md-8">
+
+                                <label for="clienteVenda" class="form-label">
+                                    Cliente
+                                </label>
+
+                                <select class="form-select" id="clienteVenda">
+                                    <option>Consumidor final</option>
+                                    <option>Cliente exemplo 01</option>
+                                    <option>Cliente exemplo 02</option>
+                                    <option>Cliente exemplo 03</option>
+                                </select>
+
+                            </div>
+
+                            <div class="col-md-4">
+
+                                <label for="dataNovaVenda" class="form-label">
+                                    Data da venda
+                                </label>
+
+                                <input type="date"
+                                       class="form-control"
+                                       id="dataNovaVenda">
+
+                            </div>
+
+                        </div>
+
+                        
+<!-- ADICIONAR PRODUTO OU SERVIÇO -->
+
+<h5 class="mb-3">
+    <i class="bi bi-cart-plus me-2"></i>
+    Adicionar produto ou serviço
+</h5>
+
+<div class="row g-3">
+
+    <div class="col-md-4">
+
+        <label for="tipoItemVenda" class="form-label">
+            Tipo de item
+        </label>
+
+        <select class="form-select" id="tipoItemVenda">
+            <option>Produtos e serviços</option>
+            <option>Produto</option>
+            <option>Serviço</option>
+        </select>
+
+    </div>
+
+    <div class="col-md-8">
+
+        <label for="produtoVenda" class="form-label">
+            Produto ou serviço
+        </label>
+
+        <div class="input-group">
+
+            <span class="input-group-text bg-white">
+                <i class="bi bi-search"></i>
+            </span>
+
+            <input type="search"
+                   class="form-control"
+                   id="produtoVenda"
+                   placeholder="Pesquise pelo código ou nome"
+                   list="catalogoVenda">
+
+            <datalist id="catalogoVenda">
+                <option value="P001 - Filtro de óleo">
+                <option value="P002 - Pastilha de freio">
+                <option value="P003 - Correia dentada">
+                <option value="P004 - Vela de ignição">
+                <option value="S001 - Troca de óleo">
+                <option value="S002 - Instalação de pastilhas de freio">
+            </datalist>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-4">
+
+        <label for="quantidadeVenda" class="form-label">
+            Quantidade
+        </label>
+
+        <input type="number"
+               class="form-control"
+               id="quantidadeVenda"
+               min="1"
+               step="1"
+               value="1">
+
+    </div>
+
+    <div class="col-md-4">
+
+        <label for="precoProdutoVenda" class="form-label">
+            Preço unitário
+        </label>
+
+        <div class="input-group">
+
+            <span class="input-group-text">R$</span>
+
+            <input type="text"
+                   class="form-control"
+                   id="precoProdutoVenda"
+                   value="0,00"
+                   readonly>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-4 d-flex align-items-end">
+
+        <button class="btn btn-primary w-100"
+                type="button" disabled>
+
+            <i class="bi bi-plus-lg me-1"></i>
+            Adicionar
+
+        </button>
+
+    </div>
+
+</div>
+
+<div class="alert alert-light border mt-3">
+
+    <i class="bi bi-boxes me-2"></i>
+
+    Estoque disponível:
+    <strong>Selecione um produto</strong>
+
+    <small class="d-block text-secondary mt-2">
+        A disponibilidade de estoque se aplica
+        exclusivamente aos produtos físicos.
+    </small>
+
+</div>
+
+<div class="alert alert-primary">
+
+    <div class="d-flex align-items-start gap-2">
+
+        <i class="bi bi-info-circle-fill"></i>
+
+        <div>
+            <strong>Produtos e serviços</strong>
+
+            <div class="small mt-1">
+                Produtos realizam baixa de estoque.
+                Serviços compõem o valor da venda,
+                mas não movimentam o estoque.
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+                        <!-- CARRINHO DE COMPRAS -->
+
+                        <div class="d-flex justify-content-between align-items-center mt-4 mb-3">
+
+                            <h5 class="mb-0">
+                                <i class="bi bi-cart3 me-2"></i>
+                                Itens da venda
+                            </h5>
+
+                            <span class="badge text-bg-primary">
+                                3 produtos e 1 serviço
+                            </span>
+
+                        </div>
+
+                        <div class="table-responsive">
+
+                            <table class="table align-middle">
+
+                                <thead>
+                                    <tr>
+                                        <th>Item</th>
+                                        <th>Tipo</th>
+                                        <th>Qtd.</th>
+                                        <th>Unitário</th>
+                                        <th>Subtotal</th>
+                                        <th>Ação</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+
+                                    <tr>
+
+                                        <td>
+                                            <strong>Filtro de óleo</strong>
+                                            <small class="d-block text-secondary">
+                                                P001
+                                            </small>
+                                        </td>
+
+                                        <td><span class="badge bg-primary-subtle text-primary">Produto</span></td>
+                                        <td>2</td>
+                                        <td>R$ 35,90</td>
+                                        <td>R$ 71,80</td>
+
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-danger"
+                                                    title="Remover produto"
+                                                    disabled>
+                                                <i class="bi bi-trash"></i>
+                                            </button>
+                                        </td>
+
+                                    </tr>
+
+                                    <tr>
+
+                                        <td>
+                                            <strong>Pastilha de freio</strong>
+                                            <small class="d-block text-secondary">
+                                                P002
+                                            </small>
+                                        </td>
+
+                                        <td><span class="badge bg-primary-subtle text-primary">Produto</span></td>
+                                        <td>1</td>
+                                        <td>R$ 89,90</td>
+                                        <td>R$ 89,90</td>
+
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-danger"
+                                                    title="Remover produto"
+                                                    disabled>
+                                                <i class="bi bi-trash"></i>
+                                            </button>
+                                        </td>
+
+                                    </tr>
+
+                                    <tr>
+
+                                        <td>
+                                            <strong>Vela de ignição</strong>
+                                            <small class="d-block text-secondary">
+                                                P004
+                                            </small>
+                                        </td>
+
+                                        <td><span class="badge bg-primary-subtle text-primary">Produto</span></td>
+                                        <td>4</td>
+                                        <td>R$ 24,90</td>
+                                        <td>R$ 99,60</td>
+
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-danger"
+                                                    title="Remover produto"
+                                                    disabled>
+                                                <i class="bi bi-trash"></i>
+                                            </button>
+                                        </td>
+
+                                    </tr>
+
+                                    <tr>
+                                        <td><strong>Troca de óleo</strong><small class="d-block text-secondary">S001</small></td>
+                                        <td><span class="badge bg-info-subtle text-info-emphasis">Serviço</span></td>
+                                        <td>1</td><td>R$ 50,00</td><td>R$ 50,00</td>
+                                        <td><button class="btn btn-sm btn-outline-danger" title="Remover serviço" disabled><i class="bi bi-trash"></i></button></td>
+                                    </tr>
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+                    </div>
+
+                    <!-- RESUMO FINANCEIRO -->
+
+                    <div class="col-12 col-lg-4">
+
+                        <div class="border rounded-4 p-4 bg-light">
+
+                            <h5 class="mb-4">
+                                <i class="bi bi-receipt me-2"></i>
+                                Resumo da venda
+                            </h5>
+
+                            <div class="d-flex justify-content-between mb-3">
+                                <span class="text-secondary">
+                                    Produtos diferentes
+                                </span>
+                                <strong>3</strong>
+                            </div>
+
+                            <div class="d-flex justify-content-between mb-3">
+                                <span class="text-secondary">
+                                    Unidades de produtos
+                                </span>
+                                <strong>7</strong>
+                            </div>
+
+                            <div class="d-flex justify-content-between mb-3">
+                                <span class="text-secondary">
+                                    Subtotal de produtos
+                                </span>
+                                <strong>R$ 261,30</strong>
+                            </div>
+
+                            <div class="d-flex justify-content-between mb-3">
+                                <span class="text-secondary">Serviços</span><strong>1</strong>
+                            </div>
+                            <div class="d-flex justify-content-between mb-3">
+                                <span class="text-secondary">Subtotal de serviços</span><strong>R$ 50,00</strong>
+                            </div>
+
+                            <hr>
+
+                            <span class="text-secondary">
+                                Valor total da venda
+                            </span>
+
+                            <h2 class="text-success fw-bold mt-2 mb-4">
+                                R$ 311,30
+                            </h2>
+
+                            <div class="mb-3">
+
+                                <label for="observacaoVenda" class="form-label">
+                                    Observações
+                                </label>
+
+                                <textarea class="form-control"
+                                          id="observacaoVenda"
+                                          rows="3"
+                                          placeholder="Informações adicionais"></textarea>
+
+                            </div>
+
+                            <button class="btn btn-success btn-lg w-100"
+                                    type="button" disabled>
+
+                                <i class="bi bi-check-circle me-2"></i>
+                                Finalizar venda
+
+                            </button>
+
+                            <button class="btn btn-outline-secondary w-100 mt-2"
+                                    type="button"
+                                    data-bs-dismiss="modal">
+
+                                Cancelar venda
+
+                            </button>
+
+                            <div class="alert alert-warning mt-4 mb-0">
+
+                                <small>
+                                    <i class="bi bi-exclamation-triangle me-1"></i>
+                                    O estoque dos produtos deverá ser verificado antes
+                                    da conclusão da venda. Serviços não movimentam estoque.
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+
+                <small class="text-secondary me-auto">
+                    Gestor Ágil — Registro de vendas
+                </small>
+
+                <button type="button"
+                        class="btn btn-outline-secondary"
+                        data-bs-dismiss="modal">
+                    Fechar
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- MODAL DE DETALHES DA VENDA -->
+
+<div class="modal fade"
+     id="modalDetalhesVenda"
+     tabindex="-1"
+     aria-labelledby="tituloDetalhesVenda"
+     aria-hidden="true">
+
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h5 class="modal-title" id="tituloDetalhesVenda">
+                    <i class="bi bi-receipt me-2"></i>
+                    Detalhes da venda #0084
+                </h5>
+
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Fechar">
+                </button>
+
+            </div>
+
+            <div class="modal-body">
+
+                <div class="d-flex justify-content-between align-items-center mb-4">
+
+                    <div>
+                        <h5 class="mb-1">Venda #0084</h5>
+                        <small class="text-secondary">
+                            Registro demonstrativo
+                        </small>
+                    </div>
+
+                    <span class="badge text-bg-success">
+                        Concluída
+                    </span>
+
+                </div>
+
+                <div class="row g-3 mb-4">
+
+                    <div class="col-md-6">
+                        <small class="text-secondary d-block">
+                            Cliente
+                        </small>
+                        <strong>Consumidor final</strong>
+                    </div>
+
+                    <div class="col-md-6">
+                        <small class="text-secondary d-block">
+                            Data da venda
+                        </small>
+                        <strong>26/11/2026</strong>
+                    </div>
+
+                    <div class="col-md-6">
+                        <small class="text-secondary d-block">
+                            Responsável
+                        </small>
+                        <strong>Operador</strong>
+                    </div>
+
+                    <div class="col-md-6">
+                        <small class="text-secondary d-block">
+                            Total de unidades
+                        </small>
+                        <strong>7 unidades</strong>
+                    </div>
+
+                </div>
+
+                <h5 class="mb-3">Produtos vendidos</h5>
+
+                <div class="table-responsive">
+
+                    <table class="table align-middle">
+
+                        <thead>
+                            <tr>
+                                <th>Produto</th>
+                                <th>Qtd.</th>
+                                <th>Preço unitário</th>
+                                <th>Subtotal</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td>Filtro de óleo</td>
+                                <td>2</td>
+                                <td>R$ 35,90</td>
+                                <td>R$ 71,80</td>
+                            </tr>
+
+                            <tr>
+                                <td>Pastilha de freio</td>
+                                <td>1</td>
+                                <td>R$ 89,90</td>
+                                <td>R$ 89,90</td>
+                            </tr>
+
+                            <tr>
+                                <td>Vela de ignição</td>
+                                <td>4</td>
+                                <td>R$ 24,90</td>
+                                <td>R$ 99,60</td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+                <div class="bg-light border rounded-3 p-3 mt-3">
+
+                    <div class="d-flex justify-content-between align-items-center">
+
+                        <strong>Valor total</strong>
+
+                        <h4 class="text-success mb-0">
+                            R$ 261,30
+                        </h4>
+
+                    </div>
+
+                </div>
+
+                <div class="alert alert-light border mt-4 mb-0">
+                    <i class="bi bi-info-circle me-2"></i>
+                    Os dados apresentados são fictícios e destinados
+                    à demonstração da interface.
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+
+                <button class="btn btn-outline-primary"
+                        type="button" disabled>
+                    <i class="bi bi-printer me-1"></i>
+                    Imprimir comprovante
+                </button>
+
+                <button class="btn btn-secondary"
+                        type="button"
+                        data-bs-dismiss="modal">
+                    Fechar
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
