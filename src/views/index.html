@@ -1,0 +1,189 @@
+﻿
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gestor Ágil | Gestão de Autopeças</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Ícones -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="../public/css/style.css">
+</head>
+
+<body>
+
+    <div class="app-container">
+
+        <!-- MENU LATERAL -->
+        <aside class="sidebar" id="sidebar">
+
+            <div class="brand">
+                <div class="brand-icon">
+                    <i class="bi bi-gear-wide-connected"></i>
+                </div>
+
+                <div class="brand-text">
+                    <h2>Gestor Ágil</h2>
+                    <span>Gestão de Autopeças</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-menu" aria-label="Menu principal">
+
+                <div class="menu-title">PRINCIPAL</div>
+
+                <button class="menu-item active" data-page="dashboard">
+                    <i class="bi bi-grid-1x2"></i>
+                    <span>Dashboard</span>
+                </button>
+
+                <button class="menu-item" data-page="produtos">
+                    <i class="bi bi-box-seam"></i>
+                    <span>Produtos e Serviços</span>
+                </button>
+
+                <button class="menu-item" data-page="estoque">
+                    <i class="bi bi-boxes"></i>
+                    <span>Estoque</span>
+                </button>
+
+                <button class="menu-item" data-page="vendas">
+                    <i class="bi bi-cart3"></i>
+                    <span>Vendas</span>
+                </button>
+
+                <div class="menu-title">CADASTROS</div>
+
+                <button class="menu-item" data-page="clientes">
+                    <i class="bi bi-people"></i>
+                    <span>Clientes</span>
+                </button>
+
+                <button class="menu-item" data-page="fornecedores">
+                    <i class="bi bi-truck"></i>
+                    <span>Fornecedores</span>
+                </button>
+
+                <button class="menu-item" data-page="categorias">
+                    <i class="bi bi-tags"></i>
+                    <span>Categorias</span>
+                </button>
+
+                <button class="menu-item" data-page="funcionarios">
+                    <i class="bi bi-person-badge"></i>
+                    <span>Funcionários</span>
+                </button>
+
+                <div class="menu-title">GERENCIAMENTO</div>
+
+                <button class="menu-item" data-page="despesas">
+                    <i class="bi bi-wallet2"></i>
+                    <span>Despesas</span>
+                </button>
+
+                <button class="menu-item" data-page="relatorios">
+                    <i class="bi bi-bar-chart-line"></i>
+                    <span>Relatórios</span>
+                </button>
+
+                <button class="menu-item" data-page="alertas">
+                    <i class="bi bi-bell"></i>
+                    <span>Alertas inteligentes</span>
+                </button>
+
+                <button class="menu-item" data-page="abc">
+                    <i class="bi bi-pie-chart"></i>
+                    <span>Classificação ABC</span>
+                </button>
+
+                <div class="menu-title">SISTEMA</div>
+
+                <button class="menu-item" data-page="configuracoes">
+                    <i class="bi bi-gear"></i>
+                    <span>Configurações</span>
+                </button>
+
+            </nav>
+
+            <div class="sidebar-footer">
+                <button class="menu-item logout" disabled>
+                    <i class="bi bi-box-arrow-right"></i>
+                    <span>Sair do sistema</span>
+                </button>
+
+                <small>Gestor Ágil • Versão 1.0</small>
+            </div>
+
+        </aside>
+
+        <!-- ÁREA PRINCIPAL -->
+        <main class="main-content" id="mainContent">
+
+            <!-- CABEÇALHO -->
+            <header class="topbar">
+
+                <div class="topbar-left">
+                    <button class="icon-button" id="toggleSidebar"
+                            aria-label="Alternar menu lateral">
+                        <i class="bi bi-list"></i>
+                    </button>
+
+                    <div class="breadcrumb-text">
+                        <span>Início</span>
+                        <i class="bi bi-chevron-right"></i>
+                        <strong id="breadcrumbPage">Dashboard</strong>
+                    </div>
+                </div>
+
+                <div class="topbar-right">
+
+                    <button class="icon-button" aria-label="Notificações" disabled>
+                        <i class="bi bi-bell"></i>
+                    </button>
+
+                    <div class="user-profile">
+
+                        <div class="avatar">
+                            <i class="bi bi-person"></i>
+                        </div>
+
+                        <div class="user-info">
+                            <strong>Administrador</strong>
+                            <span>Perfil demonstrativo</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+            <!-- CONTEÚDO -->
+            <div class="page-content" id="pageContent"></div>
+
+            <footer class="main-footer">
+                Gestor Ágil © 2026 — Sistema de Gestão de Autopeças
+            </footer>
+
+        </main>
+
+    </div>
+
+    <!-- Bibliotecas -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+
+    <!-- JavaScript personalizado -->
+    <script src="../public/js/layout.js"></script>
+
+</body>
+</html>
+

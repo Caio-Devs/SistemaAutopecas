@@ -1,0 +1,935 @@
+﻿
+<!-- CABEÇALHO -->
+
+<div class="page-heading">
+
+    <div>
+        <h1>Estoque</h1>
+        <p>Controle as mercadorias e movimentações de estoque.</p>
+    </div>
+
+    <div class="d-flex flex-wrap gap-2">
+
+        <button class="btn btn-success"
+                data-bs-toggle="modal"
+                data-bs-target="#modalEntradaEstoque">
+
+            <i class="bi bi-box-arrow-in-down me-2"></i>
+            Registrar entrada
+
+        </button>
+
+        <button class="btn btn-danger"
+                data-bs-toggle="modal"
+                data-bs-target="#modalSaidaEstoque">
+
+            <i class="bi bi-box-arrow-up me-2"></i>
+            Registrar saída
+
+        </button>
+
+    </div>
+
+</div>
+
+<!-- INDICADORES -->
+
+<div class="row g-4 mb-4">
+
+    <div class="col-12 col-sm-6 col-xl-3">
+        <div class="stat-card">
+
+            <div class="stat-icon blue">
+                <i class="bi bi-boxes"></i>
+            </div>
+
+            <span>Unidades em estoque</span>
+            <h2>1.248</h2>
+            <small>Total de unidades armazenadas</small>
+
+        </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-xl-3">
+        <div class="stat-card">
+
+            <div class="stat-icon green">
+                <i class="bi bi-arrow-down-circle"></i>
+            </div>
+
+            <span>Entradas no mês</span>
+            <h2>320</h2>
+            <small>Unidades recebidas</small>
+
+        </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-xl-3">
+        <div class="stat-card">
+
+            <div class="stat-icon red">
+                <i class="bi bi-arrow-up-circle"></i>
+            </div>
+
+            <span>Saídas no mês</span>
+            <h2>186</h2>
+            <small>Unidades retiradas</small>
+
+        </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-xl-3">
+        <div class="stat-card">
+
+            <div class="stat-icon orange">
+                <i class="bi bi-exclamation-triangle"></i>
+            </div>
+
+            <span>Estoque crítico</span>
+            <h2>8</h2>
+            <small>Produtos para reposição</small>
+
+        </div>
+    </div>
+
+</div>
+
+<!-- POSIÇÃO DE ESTOQUE -->
+
+<div class="content-card mb-4">
+
+    <div class="d-flex flex-wrap justify-content-between align-items-center mb-4">
+
+        <div>
+            <h3>Posição de estoque</h3>
+            <p class="mb-0">
+                Acompanhe as quantidades disponíveis de cada produto.
+            </p>
+        </div>
+
+        <span class="badge text-bg-secondary">
+            Modo demonstrativo
+        </span>
+
+    </div>
+
+    <!-- FILTROS -->
+
+    <div class="row g-3 mb-4">
+
+        <div class="col-12 col-lg-5">
+
+            <label for="pesquisaEstoque" class="form-label">
+                Pesquisar
+            </label>
+
+            <div class="input-group">
+
+                <span class="input-group-text bg-white">
+                    <i class="bi bi-search"></i>
+                </span>
+
+                <input type="search"
+                       class="form-control"
+                       id="pesquisaEstoque"
+                       placeholder="Código ou nome do produto">
+
+            </div>
+
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3">
+
+            <label for="categoriaEstoque" class="form-label">
+                Categoria
+            </label>
+
+            <select class="form-select" id="categoriaEstoque">
+
+                <option>Todas as categorias</option>
+                <option>Motor</option>
+                <option>Freios</option>
+                <option>Filtros</option>
+                <option>Elétrica</option>
+                <option>Suspensão</option>
+
+            </select>
+
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-2">
+
+            <label for="situacaoEstoque" class="form-label">
+                Situação
+            </label>
+
+            <select class="form-select" id="situacaoEstoque">
+
+                <option>Todas</option>
+                <option>Normal</option>
+                <option>Crítico</option>
+                <option>Sem estoque</option>
+
+            </select>
+
+        </div>
+
+        <div class="col-12 col-lg-2 d-flex align-items-end">
+
+            <button class="btn btn-outline-secondary w-100"
+                    type="button" disabled>
+
+                <i class="bi bi-funnel me-1"></i>
+                Filtrar
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- TABELA DE ESTOQUE -->
+
+    <div class="table-responsive">
+
+        <table class="table align-middle table-hover">
+
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Produto</th>
+                    <th>Categoria</th>
+                    <th>Estoque atual</th>
+                    <th>Estoque mínimo</th>
+                    <th>Situação</th>
+                    <th class="text-center">Ações</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+
+                    <td>P001</td>
+                    <td class="fw-semibold">Filtro de óleo</td>
+                    <td>Filtros</td>
+                    <td>25</td>
+                    <td>10</td>
+
+                    <td>
+                        <span class="badge text-bg-success">
+                            Normal
+                        </span>
+                    </td>
+
+                    <td class="text-center">
+
+                        <button class="btn btn-sm btn-outline-primary"
+                                title="Consultar movimentações"
+                                aria-label="Consultar movimentações do filtro de óleo"
+                                disabled>
+
+                            <i class="bi bi-clock-history"></i>
+
+                        </button>
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>P002</td>
+                    <td class="fw-semibold">Pastilha de freio</td>
+                    <td>Freios</td>
+                    <td class="text-danger fw-semibold">3</td>
+                    <td>10</td>
+
+                    <td>
+                        <span class="badge text-bg-danger">
+                            Crítico
+                        </span>
+                    </td>
+
+                    <td class="text-center">
+
+                        <button class="btn btn-sm btn-outline-primary"
+                                title="Consultar movimentações"
+                                aria-label="Consultar movimentações da pastilha de freio"
+                                disabled>
+
+                            <i class="bi bi-clock-history"></i>
+
+                        </button>
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>P003</td>
+                    <td class="fw-semibold">Correia dentada</td>
+                    <td>Motor</td>
+                    <td class="text-danger fw-semibold">2</td>
+                    <td>8</td>
+
+                    <td>
+                        <span class="badge text-bg-danger">
+                            Crítico
+                        </span>
+                    </td>
+
+                    <td class="text-center">
+
+                        <button class="btn btn-sm btn-outline-primary"
+                                title="Consultar movimentações"
+                                aria-label="Consultar movimentações da correia dentada"
+                                disabled>
+
+                            <i class="bi bi-clock-history"></i>
+
+                        </button>
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>P004</td>
+                    <td class="fw-semibold">Vela de ignição</td>
+                    <td>Elétrica</td>
+                    <td>40</td>
+                    <td>15</td>
+
+                    <td>
+                        <span class="badge text-bg-success">
+                            Normal
+                        </span>
+                    </td>
+
+                    <td class="text-center">
+
+                        <button class="btn btn-sm btn-outline-primary"
+                                title="Consultar movimentações"
+                                aria-label="Consultar movimentações da vela de ignição"
+                                disabled>
+
+                            <i class="bi bi-clock-history"></i>
+
+                        </button>
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>P005</td>
+                    <td class="fw-semibold">Filtro de ar</td>
+                    <td>Filtros</td>
+                    <td class="text-danger fw-semibold">0</td>
+                    <td>5</td>
+
+                    <td>
+                        <span class="badge text-bg-secondary">
+                            Sem estoque
+                        </span>
+                    </td>
+
+                    <td class="text-center">
+
+                        <button class="btn btn-sm btn-outline-primary"
+                                title="Consultar movimentações"
+                                aria-label="Consultar movimentações do filtro de ar"
+                                disabled>
+
+                            <i class="bi bi-clock-history"></i>
+
+                        </button>
+
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <!-- PAGINAÇÃO -->
+
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mt-3">
+
+        <small class="text-secondary">
+            Mostrando 5 produtos demonstrativos
+        </small>
+
+        <nav aria-label="Paginação do estoque">
+
+            <ul class="pagination pagination-sm mb-0">
+
+                <li class="page-item disabled">
+                    <span class="page-link">Anterior</span>
+                </li>
+
+                <li class="page-item active">
+                    <span class="page-link">1</span>
+                </li>
+
+                <li class="page-item disabled">
+                    <span class="page-link">2</span>
+                </li>
+
+                <li class="page-item disabled">
+                    <span class="page-link">Próximo</span>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </div>
+
+</div>
+
+<!-- HISTÓRICO DE MOVIMENTAÇÕES -->
+
+<div class="content-card">
+
+    <div class="d-flex flex-wrap justify-content-between align-items-center mb-4">
+
+        <div>
+
+            <h3>
+                <i class="bi bi-clock-history me-2"></i>
+                Histórico de movimentações
+            </h3>
+
+            <p class="mb-0">
+                Consulte as entradas e saídas de mercadorias.
+            </p>
+
+        </div>
+
+        <button class="btn btn-outline-primary btn-sm"
+                type="button" disabled>
+
+            <i class="bi bi-download me-1"></i>
+            Exportar
+
+        </button>
+
+    </div>
+
+    <!-- FILTROS DO HISTÓRICO -->
+
+    <div class="row g-3 mb-4">
+
+        <div class="col-12 col-md-3">
+
+            <label for="movimentacaoInicio" class="form-label">
+                Data inicial
+            </label>
+
+            <input type="date"
+                   class="form-control"
+                   id="movimentacaoInicio">
+
+        </div>
+
+        <div class="col-12 col-md-3">
+
+            <label for="movimentacaoFim" class="form-label">
+                Data final
+            </label>
+
+            <input type="date"
+                   class="form-control"
+                   id="movimentacaoFim">
+
+        </div>
+
+        <div class="col-12 col-md-3">
+
+            <label for="tipoMovimentacao" class="form-label">
+                Tipo de movimentação
+            </label>
+
+            <select class="form-select" id="tipoMovimentacao">
+
+                <option>Todas</option>
+                <option>Entrada</option>
+                <option>Saída</option>
+
+            </select>
+
+        </div>
+
+        <div class="col-12 col-md-3 d-flex align-items-end">
+
+            <button class="btn btn-outline-secondary w-100"
+                    type="button" disabled>
+
+                <i class="bi bi-funnel me-1"></i>
+                Filtrar histórico
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- TABELA DE MOVIMENTAÇÕES -->
+
+    <div class="table-responsive">
+
+        <table class="table align-middle table-hover">
+
+            <thead>
+
+                <tr>
+                    <th>Data</th>
+                    <th>Produto</th>
+                    <th>Tipo</th>
+                    <th>Quantidade</th>
+                    <th>Motivo</th>
+                    <th>Responsável</th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr>
+
+                    <td>26/11/2026</td>
+                    <td class="fw-semibold">Filtro de óleo</td>
+
+                    <td>
+                        <span class="badge text-bg-success">
+                            Entrada
+                        </span>
+                    </td>
+
+                    <td class="text-success fw-semibold">+20</td>
+                    <td>Compra de mercadoria</td>
+                    <td>Administrador</td>
+
+                </tr>
+
+                <tr>
+
+                    <td>26/11/2026</td>
+                    <td class="fw-semibold">Pastilha de freio</td>
+
+                    <td>
+                        <span class="badge text-bg-danger">
+                            Saída
+                        </span>
+                    </td>
+
+                    <td class="text-danger fw-semibold">-5</td>
+                    <td>Venda realizada</td>
+                    <td>Operador</td>
+
+                </tr>
+
+                <tr>
+
+                    <td>25/11/2026</td>
+                    <td class="fw-semibold">Vela de ignição</td>
+
+                    <td>
+                        <span class="badge text-bg-success">
+                            Entrada
+                        </span>
+                    </td>
+
+                    <td class="text-success fw-semibold">+30</td>
+                    <td>Reposição de estoque</td>
+                    <td>Administrador</td>
+
+                </tr>
+
+                <tr>
+
+                    <td>25/11/2026</td>
+                    <td class="fw-semibold">Correia dentada</td>
+
+                    <td>
+                        <span class="badge text-bg-danger">
+                            Saída
+                        </span>
+                    </td>
+
+                    <td class="text-danger fw-semibold">-2</td>
+                    <td>Venda realizada</td>
+                    <td>Operador</td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+<!-- MODAL DE ENTRADA -->
+
+<div class="modal fade"
+     id="modalEntradaEstoque"
+     tabindex="-1"
+     aria-labelledby="tituloEntradaEstoque"
+     aria-hidden="true">
+
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h5 class="modal-title" id="tituloEntradaEstoque">
+
+                    <i class="bi bi-arrow-down-circle text-success me-2"></i>
+                    Registrar entrada de estoque
+
+                </h5>
+
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Fechar">
+                </button>
+
+            </div>
+
+            <div class="modal-body">
+
+                <p class="text-secondary">
+                    Informe os dados da mercadoria recebida.
+                </p>
+
+                <form id="formEntradaEstoque">
+
+                    <div class="row g-3">
+
+                        <div class="col-12">
+
+                            <label for="produtoEntrada" class="form-label">
+                                Produto *
+                            </label>
+
+                            <select class="form-select"
+                                    id="produtoEntrada" required>
+
+                                <option value="">Selecione o produto</option>
+                                <option>P001 - Filtro de óleo</option>
+                                <option>P002 - Pastilha de freio</option>
+                                <option>P003 - Correia dentada</option>
+                                <option>P004 - Vela de ignição</option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <label for="quantidadeEntrada" class="form-label">
+                                Quantidade *
+                            </label>
+
+                            <input type="number"
+                                   class="form-control"
+                                   id="quantidadeEntrada"
+                                   min="1"
+                                   step="1"
+                                   placeholder="0"
+                                   required>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <label for="dataEntrada" class="form-label">
+                                Data da entrada *
+                            </label>
+
+                            <input type="date"
+                                   class="form-control"
+                                   id="dataEntrada"
+                                   required>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <label for="fornecedorEntrada" class="form-label">
+                                Fornecedor
+                            </label>
+
+                            <select class="form-select" id="fornecedorEntrada">
+
+                                <option value="">Selecione</option>
+                                <option>Autopeças Brasil</option>
+                                <option>Distribuidora Motor</option>
+                                <option>Central de Peças</option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <label for="motivoEntrada" class="form-label">
+                                Motivo *
+                            </label>
+
+                            <select class="form-select"
+                                    id="motivoEntrada" required>
+
+                                <option value="">Selecione</option>
+                                <option>Compra de mercadoria</option>
+                                <option>Reposição de estoque</option>
+                                <option>Devolução</option>
+                                <option>Ajuste de estoque</option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="col-12">
+
+                            <label for="observacaoEntrada" class="form-label">
+                                Observações
+                            </label>
+
+                            <textarea class="form-control"
+                                      id="observacaoEntrada"
+                                      rows="3"
+                                      placeholder="Informações adicionais"></textarea>
+
+                        </div>
+
+                    </div>
+
+                </form>
+
+                <div class="alert alert-light border mt-4 mb-0">
+
+                    <i class="bi bi-info-circle me-2"></i>
+
+                    Formulário demonstrativo.
+                    Nenhuma movimentação será registrada nesta versão.
+
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+
+                <button type="button"
+                        class="btn btn-outline-secondary"
+                        data-bs-dismiss="modal">
+
+                    Cancelar
+
+                </button>
+
+                <button type="button"
+                        class="btn btn-success" disabled>
+
+                    <i class="bi bi-check-lg me-1"></i>
+                    Confirmar entrada
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- MODAL DE SAÍDA -->
+
+<div class="modal fade"
+     id="modalSaidaEstoque"
+     tabindex="-1"
+     aria-labelledby="tituloSaidaEstoque"
+     aria-hidden="true">
+
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h5 class="modal-title" id="tituloSaidaEstoque">
+
+                    <i class="bi bi-arrow-up-circle text-danger me-2"></i>
+                    Registrar saída de estoque
+
+                </h5>
+
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Fechar">
+                </button>
+
+            </div>
+
+            <div class="modal-body">
+
+                <p class="text-secondary">
+                    Informe os dados da mercadoria retirada.
+                </p>
+
+                <form id="formSaidaEstoque">
+
+                    <div class="row g-3">
+
+                        <div class="col-12">
+
+                            <label for="produtoSaida" class="form-label">
+                                Produto *
+                            </label>
+
+                            <select class="form-select"
+                                    id="produtoSaida" required>
+
+                                <option value="">Selecione o produto</option>
+                                <option>P001 - Filtro de óleo</option>
+                                <option>P002 - Pastilha de freio</option>
+                                <option>P003 - Correia dentada</option>
+                                <option>P004 - Vela de ignição</option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="col-12">
+
+                            <div class="alert alert-light border mb-0">
+
+                                <i class="bi bi-box-seam me-2"></i>
+
+                                Estoque disponível:
+                                <strong>Selecione um produto</strong>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <label for="quantidadeSaida" class="form-label">
+                                Quantidade *
+                            </label>
+
+                            <input type="number"
+                                   class="form-control"
+                                   id="quantidadeSaida"
+                                   min="1"
+                                   step="1"
+                                   placeholder="0"
+                                   required>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <label for="dataSaida" class="form-label">
+                                Data da saída *
+                            </label>
+
+                            <input type="date"
+                                   class="form-control"
+                                   id="dataSaida"
+                                   required>
+
+                        </div>
+
+                        <div class="col-12">
+
+                            <label for="motivoSaida" class="form-label">
+                                Motivo *
+                            </label>
+
+                            <select class="form-select"
+                                    id="motivoSaida" required>
+
+                                <option value="">Selecione</option>
+                                <option>Produto danificado</option>
+                                <option>Perda de mercadoria</option>
+                                <option>Devolução ao fornecedor</option>
+                                <option>Ajuste de estoque</option>
+                                <option>Outros</option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="col-12">
+
+                            <label for="observacaoSaida" class="form-label">
+                                Observações
+                            </label>
+
+                            <textarea class="form-control"
+                                      id="observacaoSaida"
+                                      rows="3"
+                                      placeholder="Informe o motivo detalhado da saída"></textarea>
+
+                        </div>
+
+                    </div>
+
+                </form>
+
+                <div class="alert alert-warning mt-4 mb-0">
+
+                    <i class="bi bi-exclamation-triangle me-2"></i>
+
+                    Na versão funcional, não será permitido registrar
+                    uma saída superior ao estoque disponível.
+
+                </div>
+
+                <small class="text-secondary d-block mt-3">
+                    Formulário demonstrativo. Nenhum dado será salvo.
+                </small>
+
+            </div>
+
+            <div class="modal-footer">
+
+                <button type="button"
+                        class="btn btn-outline-secondary"
+                        data-bs-dismiss="modal">
+
+                    Cancelar
+
+                </button>
+
+                <button type="button"
+                        class="btn btn-danger" disabled>
+
+                    <i class="bi bi-check-lg me-1"></i>
+                    Confirmar saída
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

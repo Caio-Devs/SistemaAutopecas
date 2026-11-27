@@ -1,0 +1,1298 @@
+﻿
+<!-- CABEÇALHO DA PÁGINA -->
+
+<div class="page-heading">
+
+    <div>
+        <h1>Alertas inteligentes</h1>
+        <p>Monitore o estoque e identifique necessidades de reposição.</p>
+    </div>
+
+    <button type="button"
+            class="btn btn-outline-primary"
+            disabled>
+
+        <i class="bi bi-arrow-clockwise me-2"></i>
+        Atualizar alertas
+
+    </button>
+
+</div>
+
+<!-- INDICADORES -->
+
+<div class="row g-4 mb-4">
+
+    <div class="col-12 col-md-6 col-xl-3">
+
+        <div class="stat-card">
+
+            <div class="stat-icon blue">
+                <i class="bi bi-bell"></i>
+            </div>
+
+            <span>Alertas ativos</span>
+            <h2>8</h2>
+            <small>Produtos que precisam de reposição</small>
+
+        </div>
+
+    </div>
+
+    <div class="col-12 col-md-6 col-xl-3">
+
+        <div class="stat-card">
+
+            <div class="stat-icon orange">
+                <i class="bi bi-exclamation-triangle"></i>
+            </div>
+
+            <span>Estoque baixo</span>
+            <h2>6</h2>
+            <small>Produtos no limite ou abaixo dele</small>
+
+        </div>
+
+    </div>
+
+    <div class="col-12 col-md-6 col-xl-3">
+
+        <div class="stat-card">
+
+            <div class="stat-icon red">
+                <i class="bi bi-box-seam"></i>
+            </div>
+
+            <span>Sem estoque</span>
+            <h2>2</h2>
+            <small>Produtos ativos indisponíveis</small>
+
+        </div>
+
+    </div>
+
+    <div class="col-12 col-md-6 col-xl-3">
+
+        <div class="stat-card">
+
+            <div class="stat-icon green">
+                <i class="bi bi-check-circle"></i>
+            </div>
+
+            <span>Estoque normal</span>
+            <h2>112</h2>
+            <small>Produtos ativos acima do mínimo</small>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- AVISO DE REPOSIÇÃO -->
+
+<div class="alert alert-warning d-flex align-items-center gap-3 mb-4">
+
+    <i class="bi bi-exclamation-triangle-fill fs-2"></i>
+
+    <div>
+
+        <h5 class="mb-1">
+            Atenção: produtos precisam de reposição
+        </h5>
+
+        <p class="mb-0">
+
+            Foram identificados 8 produtos ativos com estoque
+            igual ou inferior ao mínimo cadastrado.
+            Destes, 2 estão completamente sem estoque.
+
+        </p>
+
+    </div>
+
+</div>
+
+<!-- LISTAGEM DE ALERTAS -->
+
+<div class="content-card mb-4">
+
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
+
+        <div>
+
+            <h3>
+
+                <i class="bi bi-bell text-primary me-2"></i>
+                Alertas de reposição
+
+            </h3>
+
+            <p class="mb-0">
+                Acompanhe os produtos que necessitam de reposição.
+            </p>
+
+        </div>
+
+        <span class="badge text-bg-secondary">
+            Modo demonstrativo
+        </span>
+
+    </div>
+
+    <!-- FILTROS -->
+
+    <div class="row g-3 mb-4">
+
+        <div class="col-12 col-lg-4">
+
+            <label for="pesquisaAlerta" class="form-label">
+                Pesquisar produto
+            </label>
+
+            <div class="input-group">
+
+                <span class="input-group-text bg-white">
+                    <i class="bi bi-search"></i>
+                </span>
+
+                <input type="search"
+                       class="form-control"
+                       id="pesquisaAlerta"
+                       placeholder="Código ou nome do produto">
+
+            </div>
+
+        </div>
+
+        <div class="col-12 col-md-4 col-lg-3">
+
+            <label for="categoriaAlerta" class="form-label">
+                Categoria
+            </label>
+
+            <select class="form-select" id="categoriaAlerta">
+
+                <option>Todas</option>
+                <option>Motor</option>
+                <option>Freios</option>
+                <option>Filtros</option>
+                <option>Elétrica</option>
+                <option>Suspensão</option>
+
+            </select>
+
+        </div>
+
+        <div class="col-12 col-md-4 col-lg-3">
+
+            <label for="situacaoAlerta" class="form-label">
+                Situação
+            </label>
+
+            <select class="form-select" id="situacaoAlerta">
+
+                <option>Todas</option>
+                <option>Sem estoque</option>
+                <option>Estoque baixo</option>
+
+            </select>
+
+        </div>
+
+        <div class="col-12 col-md-4 col-lg-2 d-flex align-items-end">
+
+            <button type="button"
+                    class="btn btn-outline-secondary w-100"
+                    disabled>
+
+                <i class="bi bi-funnel me-1"></i>
+                Filtrar
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- TABELA DE ALERTAS -->
+
+    <div class="table-responsive">
+
+        <table class="table table-hover align-middle">
+
+            <thead>
+
+                <tr>
+
+                    <th>Código</th>
+                    <th>Produto</th>
+                    <th>Categoria</th>
+                    <th>Estoque atual</th>
+                    <th>Estoque mínimo</th>
+                    <th>Reposição sugerida</th>
+                    <th>Situação</th>
+                    <th class="text-center">Ações</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <!-- ALERTA 01 -->
+
+                <tr>
+
+                    <td class="fw-semibold">P002</td>
+                    <td class="fw-semibold">Pastilha de freio</td>
+                    <td>Freios</td>
+
+                    <td class="text-danger fw-bold">3</td>
+                    <td>10</td>
+                    <td class="text-primary fw-semibold">8 unidades</td>
+
+                    <td>
+
+                        <span class="badge text-bg-warning">
+                            Estoque baixo
+                        </span>
+
+                    </td>
+
+                    <td>
+
+                        <div class="d-flex justify-content-center gap-2">
+
+                            <button type="button"
+                                    class="btn btn-sm btn-outline-primary"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#modalDetalhesAlerta"
+                                    title="Visualizar análise"
+                                    aria-label="Visualizar análise da pastilha de freio">
+
+                                <i class="bi bi-eye"></i>
+
+                            </button>
+
+                            <button type="button"
+                                    class="btn btn-sm btn-outline-success"
+                                    title="Registrar reposição"
+                                    disabled>
+
+                                <i class="bi bi-box-arrow-in-down"></i>
+
+                            </button>
+
+                        </div>
+
+                    </td>
+
+                </tr>
+
+                <!-- ALERTA 02 -->
+
+                <tr>
+
+                    <td class="fw-semibold">P003</td>
+                    <td class="fw-semibold">Correia dentada</td>
+                    <td>Motor</td>
+
+                    <td class="text-danger fw-bold">2</td>
+                    <td>8</td>
+                    <td class="text-primary fw-semibold">7 unidades</td>
+
+                    <td>
+
+                        <span class="badge text-bg-warning">
+                            Estoque baixo
+                        </span>
+
+                    </td>
+
+                    <td>
+
+                        <div class="d-flex justify-content-center gap-2">
+
+                            <button class="btn btn-sm btn-outline-primary"
+                                    type="button"
+                                    title="Visualizar análise"
+                                    disabled>
+
+                                <i class="bi bi-eye"></i>
+
+                            </button>
+
+                            <button class="btn btn-sm btn-outline-success"
+                                    type="button"
+                                    title="Registrar reposição"
+                                    disabled>
+
+                                <i class="bi bi-box-arrow-in-down"></i>
+
+                            </button>
+
+                        </div>
+
+                    </td>
+
+                </tr>
+
+                <!-- ALERTA 03 -->
+
+                <tr>
+
+                    <td class="fw-semibold">P008</td>
+                    <td class="fw-semibold">Disco de freio</td>
+                    <td>Freios</td>
+
+                    <td class="text-danger fw-bold">0</td>
+                    <td>5</td>
+                    <td class="text-primary fw-semibold">6 unidades</td>
+
+                    <td>
+
+                        <span class="badge text-bg-danger">
+                            Sem estoque
+                        </span>
+
+                    </td>
+
+                    <td>
+
+                        <div class="d-flex justify-content-center gap-2">
+
+                            <button class="btn btn-sm btn-outline-primary"
+                                    type="button"
+                                    title="Visualizar análise"
+                                    disabled>
+
+                                <i class="bi bi-eye"></i>
+
+                            </button>
+
+                            <button class="btn btn-sm btn-outline-success"
+                                    type="button"
+                                    title="Registrar reposição"
+                                    disabled>
+
+                                <i class="bi bi-box-arrow-in-down"></i>
+
+                            </button>
+
+                        </div>
+
+                    </td>
+
+                </tr>
+
+                <!-- ALERTA 04 -->
+
+                <tr>
+
+                    <td class="fw-semibold">P009</td>
+                    <td class="fw-semibold">Amortecedor</td>
+                    <td>Suspensão</td>
+
+                    <td class="text-danger fw-bold">0</td>
+                    <td>4</td>
+                    <td class="text-primary fw-semibold">5 unidades</td>
+
+                    <td>
+
+                        <span class="badge text-bg-danger">
+                            Sem estoque
+                        </span>
+
+                    </td>
+
+                    <td>
+
+                        <div class="d-flex justify-content-center gap-2">
+
+                            <button class="btn btn-sm btn-outline-primary"
+                                    type="button"
+                                    title="Visualizar análise"
+                                    disabled>
+
+                                <i class="bi bi-eye"></i>
+
+                            </button>
+
+                            <button class="btn btn-sm btn-outline-success"
+                                    type="button"
+                                    title="Registrar reposição"
+                                    disabled>
+
+                                <i class="bi bi-box-arrow-in-down"></i>
+
+                            </button>
+
+                        </div>
+
+                    </td>
+
+                </tr>
+
+                <!-- ALERTA 05 -->
+
+                <tr>
+
+                    <td class="fw-semibold">P010</td>
+                    <td class="fw-semibold">Bomba de combustível</td>
+                    <td>Motor</td>
+
+                    <td class="text-danger fw-bold">5</td>
+                    <td>10</td>
+                    <td class="text-primary fw-semibold">6 unidades</td>
+
+                    <td>
+
+                        <span class="badge text-bg-warning">
+                            Estoque baixo
+                        </span>
+
+                    </td>
+
+                    <td>
+
+                        <div class="d-flex justify-content-center gap-2">
+
+                            <button class="btn btn-sm btn-outline-primary"
+                                    type="button"
+                                    title="Visualizar análise"
+                                    disabled>
+
+                                <i class="bi bi-eye"></i>
+
+                            </button>
+
+                            <button class="btn btn-sm btn-outline-success"
+                                    type="button"
+                                    title="Registrar reposição"
+                                    disabled>
+
+                                <i class="bi bi-box-arrow-in-down"></i>
+
+                            </button>
+
+                        </div>
+
+                    </td>
+
+                </tr>
+
+                <!-- ALERTA 06 -->
+
+                <tr>
+
+                    <td class="fw-semibold">P011</td>
+                    <td class="fw-semibold">Rolamento</td>
+                    <td>Suspensão</td>
+
+                    <td class="text-danger fw-bold">4</td>
+                    <td>8</td>
+                    <td class="text-primary fw-semibold">5 unidades</td>
+
+                    <td>
+
+                        <span class="badge text-bg-warning">
+                            Estoque baixo
+                        </span>
+
+                    </td>
+
+                    <td>
+
+                        <div class="d-flex justify-content-center gap-2">
+
+                            <button class="btn btn-sm btn-outline-primary"
+                                    type="button"
+                                    title="Visualizar análise"
+                                    disabled>
+
+                                <i class="bi bi-eye"></i>
+
+                            </button>
+
+                            <button class="btn btn-sm btn-outline-success"
+                                    type="button"
+                                    title="Registrar reposição"
+                                    disabled>
+
+                                <i class="bi bi-box-arrow-in-down"></i>
+
+                            </button>
+
+                        </div>
+
+                    </td>
+
+                </tr>
+
+                <!-- ALERTA 07 -->
+
+                <tr>
+
+                    <td class="fw-semibold">P012</td>
+                    <td class="fw-semibold">Filtro de combustível</td>
+                    <td>Filtros</td>
+
+                    <td class="text-danger fw-bold">6</td>
+                    <td>10</td>
+                    <td class="text-primary fw-semibold">5 unidades</td>
+
+                    <td>
+
+                        <span class="badge text-bg-warning">
+                            Estoque baixo
+                        </span>
+
+                    </td>
+
+                    <td>
+
+                        <div class="d-flex justify-content-center gap-2">
+
+                            <button class="btn btn-sm btn-outline-primary"
+                                    type="button"
+                                    title="Visualizar análise"
+                                    disabled>
+
+                                <i class="bi bi-eye"></i>
+
+                            </button>
+
+                            <button class="btn btn-sm btn-outline-success"
+                                    type="button"
+                                    title="Registrar reposição"
+                                    disabled>
+
+                                <i class="bi bi-box-arrow-in-down"></i>
+
+                            </button>
+
+                        </div>
+
+                    </td>
+
+                </tr>
+
+                <!-- ALERTA 08 -->
+
+                <tr>
+
+                    <td class="fw-semibold">P013</td>
+                    <td class="fw-semibold">Cabo de vela</td>
+                    <td>Elétrica</td>
+
+                    <td class="text-danger fw-bold">2</td>
+                    <td>5</td>
+                    <td class="text-primary fw-semibold">4 unidades</td>
+
+                    <td>
+
+                        <span class="badge text-bg-warning">
+                            Estoque baixo
+                        </span>
+
+                    </td>
+
+                    <td>
+
+                        <div class="d-flex justify-content-center gap-2">
+
+                            <button class="btn btn-sm btn-outline-primary"
+                                    type="button"
+                                    title="Visualizar análise"
+                                    disabled>
+
+                                <i class="bi bi-eye"></i>
+
+                            </button>
+
+                            <button class="btn btn-sm btn-outline-success"
+                                    type="button"
+                                    title="Registrar reposição"
+                                    disabled>
+
+                                <i class="bi bi-box-arrow-in-down"></i>
+
+                            </button>
+
+                        </div>
+
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+            <tfoot>
+
+                <tr class="table-light">
+
+                    <td colspan="5" class="fw-bold">
+                        Total de reposição sugerida
+                    </td>
+
+                    <td class="text-primary fw-bold">
+                        46 unidades
+                    </td>
+
+                    <td colspan="2"></td>
+
+                </tr>
+
+            </tfoot>
+
+        </table>
+
+    </div>
+
+    <small class="text-secondary">
+
+        Mostrando 8 alertas demonstrativos de produtos ativos.
+
+    </small>
+
+</div>
+
+<!-- DISTRIBUIÇÃO E RECOMENDAÇÕES -->
+
+<div class="row g-4 mb-4">
+
+    <!-- DISTRIBUIÇÃO DOS ALERTAS -->
+
+    <div class="col-12 col-xl-6">
+
+        <div class="content-card h-100">
+
+            <h3>
+
+                <i class="bi bi-pie-chart text-primary me-2"></i>
+                Distribuição dos alertas
+
+            </h3>
+
+            <p class="text-secondary mb-4">
+                Classificação dos produtos que precisam de reposição.
+            </p>
+
+            <div class="mb-4">
+
+                <div class="d-flex justify-content-between mb-2">
+
+                    <strong>Estoque baixo</strong>
+
+                    <span class="text-secondary">
+                        6 produtos — 75%
+                    </span>
+
+                </div>
+
+                <div class="progress"
+                     style="height: 14px;"
+                     role="progressbar"
+                     aria-label="Estoque baixo"
+                     aria-valuenow="75"
+                     aria-valuemin="0"
+                     aria-valuemax="100">
+
+                    <div class="progress-bar bg-warning"
+                         style="width: 75%;">
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="mb-4">
+
+                <div class="d-flex justify-content-between mb-2">
+
+                    <strong>Sem estoque</strong>
+
+                    <span class="text-secondary">
+                        2 produtos — 25%
+                    </span>
+
+                </div>
+
+                <div class="progress"
+                     style="height: 14px;"
+                     role="progressbar"
+                     aria-label="Sem estoque"
+                     aria-valuenow="25"
+                     aria-valuemin="0"
+                     aria-valuemax="100">
+
+                    <div class="progress-bar bg-danger"
+                         style="width: 25%;">
+                    </div>
+
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div class="d-flex justify-content-between">
+
+                <span class="text-secondary">
+                    Total de alertas ativos
+                </span>
+
+                <strong class="fs-5">8</strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- RECOMENDAÇÕES -->
+
+    <div class="col-12 col-xl-6">
+
+        <div class="content-card h-100">
+
+            <h3>
+
+                <i class="bi bi-lightbulb text-primary me-2"></i>
+                Recomendações
+
+            </h3>
+
+            <p class="text-secondary mb-4">
+                Orientações baseadas na situação demonstrativa do estoque.
+            </p>
+
+            <div class="border rounded-3 p-3 mb-3">
+
+                <div class="d-flex align-items-start gap-3">
+
+                    <i class="bi bi-exclamation-circle-fill text-danger fs-4"></i>
+
+                    <div>
+
+                        <strong>Priorizar produtos sem estoque</strong>
+
+                        <small class="d-block text-secondary mt-1">
+
+                            Disco de freio e amortecedor estão
+                            indisponíveis para venda.
+
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="border rounded-3 p-3 mb-3">
+
+                <div class="d-flex align-items-start gap-3">
+
+                    <i class="bi bi-box-seam text-warning fs-4"></i>
+
+                    <div>
+
+                        <strong>Planejar a reposição</strong>
+
+                        <small class="d-block text-secondary mt-1">
+
+                            A reposição mínima sugerida é de
+                            46 unidades distribuídas entre 8 produtos.
+
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="border rounded-3 p-3">
+
+                <div class="d-flex align-items-start gap-3">
+
+                    <i class="bi bi-arrow-repeat text-primary fs-4"></i>
+
+                    <div>
+
+                        <strong>Monitorar as movimentações</strong>
+
+                        <small class="d-block text-secondary mt-1">
+
+                            Os alertas deverão ser reavaliados após
+                            entradas, saídas e vendas de produtos.
+
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- EXPLICAÇÃO DA FUNCIONALIDADE INTELIGENTE -->
+
+<div class="content-card">
+
+    <div class="mb-4">
+
+        <h3>
+
+            <i class="bi bi-cpu text-primary me-2"></i>
+            Como funciona a análise inteligente
+
+        </h3>
+
+        <p class="mb-0">
+
+            Entenda os dados utilizados, a regra de decisão
+            e os resultados esperados da análise de estoque.
+
+        </p>
+
+    </div>
+
+    <div class="row g-4">
+
+        <!-- ENTRADA -->
+
+        <div class="col-12 col-lg-4">
+
+            <div class="border rounded-4 p-4 h-100">
+
+                <div class="stat-icon blue mb-3">
+                    <i class="bi bi-database"></i>
+                </div>
+
+                <h5>1. Dados de entrada</h5>
+
+                <p class="text-secondary">
+                    Informações utilizadas para analisar cada produto.
+                </p>
+
+                <ul class="mb-0 ps-3">
+
+                    <li class="mb-2">Código do produto</li>
+                    <li class="mb-2">Estoque atual</li>
+                    <li class="mb-2">Estoque mínimo</li>
+                    <li>Status do produto</li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+        <!-- PROCESSAMENTO -->
+
+        <div class="col-12 col-lg-4">
+
+            <div class="border rounded-4 p-4 h-100">
+
+                <div class="stat-icon orange mb-3">
+                    <i class="bi bi-cpu"></i>
+                </div>
+
+                <h5>2. Regra de decisão</h5>
+
+                <p class="text-secondary">
+
+                    O sistema deverá comparar o estoque atual
+                    com o estoque mínimo dos produtos ativos.
+
+                </p>
+
+                <div class="bg-light border rounded-3 p-3 text-center">
+
+                    <strong>
+                        Estoque atual &le; Estoque mínimo
+                    </strong>
+
+                </div>
+
+                <small class="text-secondary d-block mt-3">
+
+                    Quando a condição for verdadeira,
+                    deverá ser gerado um alerta.
+
+                </small>
+
+            </div>
+
+        </div>
+
+        <!-- RESULTADO -->
+
+        <div class="col-12 col-lg-4">
+
+            <div class="border rounded-4 p-4 h-100">
+
+                <div class="stat-icon green mb-3">
+                    <i class="bi bi-check-circle"></i>
+                </div>
+
+                <h5>3. Resultado da análise</h5>
+
+                <p class="text-secondary">
+
+                    A situação do produto deverá ser apresentada
+                    de acordo com a regra estabelecida.
+
+                </p>
+
+                <div class="d-flex flex-column gap-3">
+
+                    <div>
+
+                        <i class="bi bi-x-circle-fill text-danger me-2"></i>
+                        Sem estoque
+
+                    </div>
+
+                    <div>
+
+                        <i class="bi bi-exclamation-triangle-fill text-warning me-2"></i>
+                        Estoque baixo
+
+                    </div>
+
+                    <div>
+
+                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                        Estoque normal
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- FÓRMULA DE REPOSIÇÃO -->
+
+    <div class="border rounded-4 p-4 mt-4">
+
+        <h5>
+
+            <i class="bi bi-calculator text-primary me-2"></i>
+            Cálculo da reposição sugerida
+
+        </h5>
+
+        <p class="text-secondary">
+
+            Para produtos com alerta ativo, a quantidade sugerida
+            representa o mínimo necessário para superar
+            o limite de estoque cadastrado.
+
+        </p>
+
+        <div class="bg-light border rounded-3 p-3 text-center mb-3">
+
+            <strong>
+
+                Reposição = Estoque mínimo - Estoque atual + 1
+
+            </strong>
+
+        </div>
+
+        <small class="text-secondary">
+
+            Esta é uma proposta de regra complementar.
+            A quantidade ideal de compra também pode depender
+            da demanda e do prazo de entrega do fornecedor.
+
+        </small>
+
+    </div>
+
+    <!-- JUSTIFICATIVA -->
+
+    <div class="alert alert-light border mt-4 mb-0">
+
+        <h6>
+
+            <i class="bi bi-info-circle text-primary me-2"></i>
+            Justificativa da funcionalidade inteligente
+
+        </h6>
+
+        <p class="mb-0">
+
+            A análise de estoque auxilia na identificação antecipada
+            de produtos que necessitam de reposição, reduzindo
+            o risco de indisponibilidade e contribuindo para
+            a tomada de decisões do administrador.
+
+            A funcionalidade utiliza regras determinísticas,
+            não sendo necessário utilizar inteligência artificial
+            generativa ou aprendizado de máquina.
+
+        </p>
+
+    </div>
+
+</div>
+
+<!-- MODAL DE DETALHES DO ALERTA -->
+
+<div class="modal fade"
+     id="modalDetalhesAlerta"
+     tabindex="-1"
+     aria-labelledby="tituloDetalhesAlerta"
+     aria-hidden="true">
+
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h5 class="modal-title" id="tituloDetalhesAlerta">
+
+                    <i class="bi bi-cpu text-primary me-2"></i>
+                    Análise inteligente de estoque
+
+                </h5>
+
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Fechar">
+                </button>
+
+            </div>
+
+            <div class="modal-body">
+
+                <div class="d-flex align-items-center gap-3 mb-4">
+
+                    <div class="stat-icon orange">
+                        <i class="bi bi-exclamation-triangle"></i>
+                    </div>
+
+                    <div class="flex-grow-1">
+
+                        <h5 class="mb-1">Pastilha de freio</h5>
+
+                        <small class="text-secondary">
+                            Código: P002 | Categoria: Freios
+                        </small>
+
+                    </div>
+
+                    <span class="badge text-bg-warning">
+                        Estoque baixo
+                    </span>
+
+                </div>
+
+                <!-- DADOS DA ANÁLISE -->
+
+                <div class="row g-3 mb-4">
+
+                    <div class="col-md-4">
+
+                        <div class="border rounded-3 p-3">
+
+                            <small class="text-secondary">
+                                Estoque atual
+                            </small>
+
+                            <h2 class="text-danger mb-0 mt-2">3</h2>
+
+                            <small>unidades</small>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4">
+
+                        <div class="border rounded-3 p-3">
+
+                            <small class="text-secondary">
+                                Estoque mínimo
+                            </small>
+
+                            <h2 class="mb-0 mt-2">10</h2>
+
+                            <small>unidades</small>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4">
+
+                        <div class="border rounded-3 p-3">
+
+                            <small class="text-secondary">
+                                Reposição sugerida
+                            </small>
+
+                            <h2 class="text-primary mb-0 mt-2">8</h2>
+
+                            <small>unidades</small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- NÍVEL DE ESTOQUE -->
+
+                <h5 class="mb-3">Nível atual do estoque</h5>
+
+                <div class="d-flex justify-content-between mb-2">
+
+                    <small>Estoque atual: 3 unidades</small>
+
+                    <small>Estoque mínimo: 10 unidades</small>
+
+                </div>
+
+                <div class="progress mb-4"
+                     style="height: 22px;"
+                     role="progressbar"
+                     aria-label="Estoque atual em relação ao mínimo"
+                     aria-valuenow="30"
+                     aria-valuemin="0"
+                     aria-valuemax="100">
+
+                    <div class="progress-bar bg-danger"
+                         style="width: 30%;">
+
+                        30%
+
+                    </div>
+
+                </div>
+
+                <!-- EXPLICAÇÃO DA REGRA -->
+
+                <h5 class="mb-3">
+
+                    <i class="bi bi-calculator me-2"></i>
+                    Explicação da análise
+
+                </h5>
+
+                <div class="border rounded-3 p-3 mb-3">
+
+                    <small class="text-secondary d-block mb-2">
+                        Regra de decisão
+                    </small>
+
+                    <strong>
+                        3 &le; 10 = Verdadeiro
+                    </strong>
+
+                    <p class="mb-0 mt-2 text-secondary">
+
+                        O estoque atual está abaixo do estoque mínimo.
+                        Portanto, o produto necessita de reposição.
+
+                    </p>
+
+                </div>
+
+                <div class="border rounded-3 p-3 mb-3">
+
+                    <small class="text-secondary d-block mb-2">
+                        Cálculo da reposição
+                    </small>
+
+                    <strong>
+                        10 - 3 + 1 = 8 unidades
+                    </strong>
+
+                    <p class="mb-0 mt-2 text-secondary">
+
+                        São necessárias pelo menos 8 unidades
+                        adicionais para superar o limite de alerta.
+
+                    </p>
+
+                </div>
+
+                <!-- RESULTADO ESPERADO -->
+
+                <div class="bg-success-subtle rounded-3 p-4">
+
+                    <h6 class="text-success">
+
+                        <i class="bi bi-check-circle me-2"></i>
+                        Resultado esperado após reposição
+
+                    </h6>
+
+                    <h2 class="text-success mb-2">
+                        11 unidades
+                    </h2>
+
+                    <p class="text-success mb-0">
+
+                        Com 11 unidades em estoque, o produto
+                        ficará acima do mínimo cadastrado
+                        e o alerta deverá ser encerrado.
+
+                    </p>
+
+                </div>
+
+                <div class="alert alert-light border mt-4 mb-0">
+
+                    <i class="bi bi-info-circle me-2"></i>
+
+                    Esta análise é demonstrativa. Nenhuma
+                    movimentação de estoque será realizada.
+
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+
+                <button type="button"
+                        class="btn btn-success"
+                        disabled>
+
+                    <i class="bi bi-box-arrow-in-down me-2"></i>
+                    Registrar reposição
+
+                </button>
+
+                <button type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal">
+
+                    Fechar
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

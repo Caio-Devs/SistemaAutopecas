@@ -1,0 +1,1297 @@
+﻿
+<!-- CABEÇALHO DA PÁGINA -->
+
+<div class="page-heading">
+
+    <div>
+        <h1>Fornecedores</h1>
+        <p>Cadastre e gerencie os fornecedores da loja.</p>
+    </div>
+
+    <button type="button"
+            class="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#modalFornecedor">
+
+        <i class="bi bi-plus-lg me-2"></i>
+        Novo fornecedor
+
+    </button>
+
+</div>
+
+<!-- INDICADORES -->
+
+<div class="row g-4 mb-4">
+
+    <div class="col-12 col-md-4">
+
+        <div class="stat-card">
+
+            <div class="stat-icon blue">
+                <i class="bi bi-truck"></i>
+            </div>
+
+            <span>Total de fornecedores</span>
+            <h2>24</h2>
+            <small>Fornecedores cadastrados</small>
+
+        </div>
+
+    </div>
+
+    <div class="col-12 col-md-4">
+
+        <div class="stat-card">
+
+            <div class="stat-icon green">
+                <i class="bi bi-check-circle"></i>
+            </div>
+
+            <span>Fornecedores ativos</span>
+            <h2>21</h2>
+            <small>Disponíveis para novas compras</small>
+
+        </div>
+
+    </div>
+
+    <div class="col-12 col-md-4">
+
+        <div class="stat-card">
+
+            <div class="stat-icon red">
+                <i class="bi bi-x-circle"></i>
+            </div>
+
+            <span>Fornecedores inativos</span>
+            <h2>3</h2>
+            <small>Cadastros desativados</small>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- LISTAGEM DE FORNECEDORES -->
+
+<div class="content-card">
+
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
+
+        <div>
+
+            <h3>Fornecedores cadastrados</h3>
+
+            <p class="mb-0">
+                Consulte e gerencie seus fornecedores.
+            </p>
+
+        </div>
+
+        <span class="badge text-bg-secondary">
+            Modo demonstrativo
+        </span>
+
+    </div>
+
+    <!-- FILTROS -->
+
+    <div class="row g-3 mb-4">
+
+        <div class="col-12 col-lg-5">
+
+            <label for="pesquisaFornecedor" class="form-label">
+                Pesquisar fornecedor
+            </label>
+
+            <div class="input-group">
+
+                <span class="input-group-text bg-white">
+                    <i class="bi bi-search"></i>
+                </span>
+
+                <input type="search"
+                       class="form-control"
+                       id="pesquisaFornecedor"
+                       placeholder="Nome, CNPJ ou telefone">
+
+            </div>
+
+        </div>
+
+        <div class="col-12 col-md-4 col-lg-3">
+
+            <label for="filtroCategoriaFornecedor" class="form-label">
+                Categoria de produtos
+            </label>
+
+            <select class="form-select"
+                    id="filtroCategoriaFornecedor">
+
+                <option>Todas</option>
+                <option>Motor</option>
+                <option>Freios</option>
+                <option>Filtros</option>
+                <option>Elétrica</option>
+                <option>Suspensão</option>
+                <option>Diversas</option>
+
+            </select>
+
+        </div>
+
+        <div class="col-12 col-md-4 col-lg-2">
+
+            <label for="filtroStatusFornecedor" class="form-label">
+                Status
+            </label>
+
+            <select class="form-select"
+                    id="filtroStatusFornecedor">
+
+                <option>Todos</option>
+                <option>Ativo</option>
+                <option>Inativo</option>
+
+            </select>
+
+        </div>
+
+        <div class="col-12 col-md-4 col-lg-2 d-flex align-items-end">
+
+            <button type="button"
+                    class="btn btn-outline-secondary w-100"
+                    disabled>
+
+                <i class="bi bi-funnel me-1"></i>
+                Filtrar
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- TABELA DE FORNECEDORES -->
+
+    <div class="table-responsive">
+
+        <table class="table table-hover align-middle">
+
+            <thead>
+
+                <tr>
+
+                    <th>Código</th>
+                    <th>Fornecedor</th>
+                    <th>CNPJ</th>
+                    <th>Telefone</th>
+                    <th>Categoria</th>
+                    <th>Status</th>
+                    <th class="text-center">Ações</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <!-- FORNECEDOR 01 -->
+
+                <tr>
+
+                    <td class="fw-semibold">F001</td>
+
+                    <td>
+
+                        <strong>Autopeças Brasil</strong>
+
+                        <small class="d-block text-secondary">
+                            brasil@example.com
+                        </small>
+
+                    </td>
+
+                    <td>**.***.***/****-01</td>
+                    <td>(62) 3XXX-0001</td>
+                    <td>Diversas</td>
+
+                    <td>
+
+                        <span class="badge text-bg-success">
+                            Ativo
+                        </span>
+
+                    </td>
+
+                    <td>
+
+                        <div class="d-flex justify-content-center gap-2">
+
+                            <button type="button"
+                                    class="btn btn-sm btn-outline-primary"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#modalDetalhesFornecedor"
+                                    title="Visualizar fornecedor"
+                                    aria-label="Visualizar fornecedor F001">
+
+                                <i class="bi bi-eye"></i>
+
+                            </button>
+
+                            <button type="button"
+                                    class="btn btn-sm btn-outline-secondary"
+                                    title="Editar fornecedor"
+                                    aria-label="Editar fornecedor F001"
+                                    disabled>
+
+                                <i class="bi bi-pencil"></i>
+
+                            </button>
+
+                            <button type="button"
+                                    class="btn btn-sm btn-outline-danger"
+                                    title="Inativar fornecedor"
+                                    aria-label="Inativar fornecedor F001"
+                                    disabled>
+
+                                <i class="bi bi-x-circle"></i>
+
+                            </button>
+
+                        </div>
+
+                    </td>
+
+                </tr>
+
+                <!-- FORNECEDOR 02 -->
+
+                <tr>
+
+                    <td class="fw-semibold">F002</td>
+
+                    <td>
+
+                        <strong>Distribuidora Motor</strong>
+
+                        <small class="d-block text-secondary">
+                            motor@example.com
+                        </small>
+
+                    </td>
+
+                    <td>**.***.***/****-02</td>
+                    <td>(62) 3XXX-0002</td>
+                    <td>Motor</td>
+
+                    <td>
+
+                        <span class="badge text-bg-success">
+                            Ativo
+                        </span>
+
+                    </td>
+
+                    <td>
+
+                        <div class="d-flex justify-content-center gap-2">
+
+                            <button class="btn btn-sm btn-outline-primary"
+                                    title="Visualizar fornecedor"
+                                    disabled>
+
+                                <i class="bi bi-eye"></i>
+
+                            </button>
+
+                            <button class="btn btn-sm btn-outline-secondary"
+                                    title="Editar fornecedor"
+                                    disabled>
+
+                                <i class="bi bi-pencil"></i>
+
+                            </button>
+
+                            <button class="btn btn-sm btn-outline-danger"
+                                    title="Inativar fornecedor"
+                                    disabled>
+
+                                <i class="bi bi-x-circle"></i>
+
+                            </button>
+
+                        </div>
+
+                    </td>
+
+                </tr>
+
+                <!-- FORNECEDOR 03 -->
+
+                <tr>
+
+                    <td class="fw-semibold">F003</td>
+
+                    <td>
+
+                        <strong>Central de Peças</strong>
+
+                        <small class="d-block text-secondary">
+                            central@example.com
+                        </small>
+
+                    </td>
+
+                    <td>**.***.***/****-03</td>
+                    <td>(62) 3XXX-0003</td>
+                    <td>Freios</td>
+
+                    <td>
+
+                        <span class="badge text-bg-success">
+                            Ativo
+                        </span>
+
+                    </td>
+
+                    <td>
+
+                        <div class="d-flex justify-content-center gap-2">
+
+                            <button class="btn btn-sm btn-outline-primary"
+                                    title="Visualizar fornecedor"
+                                    disabled>
+
+                                <i class="bi bi-eye"></i>
+
+                            </button>
+
+                            <button class="btn btn-sm btn-outline-secondary"
+                                    title="Editar fornecedor"
+                                    disabled>
+
+                                <i class="bi bi-pencil"></i>
+
+                            </button>
+
+                            <button class="btn btn-sm btn-outline-danger"
+                                    title="Inativar fornecedor"
+                                    disabled>
+
+                                <i class="bi bi-x-circle"></i>
+
+                            </button>
+
+                        </div>
+
+                    </td>
+
+                </tr>
+
+                <!-- FORNECEDOR 04 -->
+
+                <tr>
+
+                    <td class="fw-semibold">F004</td>
+
+                    <td>
+
+                        <strong>Auto Elétrica Exemplo</strong>
+
+                        <small class="d-block text-secondary">
+                            eletrica@example.com
+                        </small>
+
+                    </td>
+
+                    <td>**.***.***/****-04</td>
+                    <td>(62) 3XXX-0004</td>
+                    <td>Elétrica</td>
+
+                    <td>
+
+                        <span class="badge text-bg-success">
+                            Ativo
+                        </span>
+
+                    </td>
+
+                    <td>
+
+                        <div class="d-flex justify-content-center gap-2">
+
+                            <button class="btn btn-sm btn-outline-primary"
+                                    title="Visualizar fornecedor"
+                                    disabled>
+
+                                <i class="bi bi-eye"></i>
+
+                            </button>
+
+                            <button class="btn btn-sm btn-outline-secondary"
+                                    title="Editar fornecedor"
+                                    disabled>
+
+                                <i class="bi bi-pencil"></i>
+
+                            </button>
+
+                            <button class="btn btn-sm btn-outline-danger"
+                                    title="Inativar fornecedor"
+                                    disabled>
+
+                                <i class="bi bi-x-circle"></i>
+
+                            </button>
+
+                        </div>
+
+                    </td>
+
+                </tr>
+
+                <!-- FORNECEDOR 05 -->
+
+                <tr>
+
+                    <td class="fw-semibold">F005</td>
+
+                    <td>
+
+                        <strong>Distribuidora Exemplo</strong>
+
+                        <small class="d-block text-secondary">
+                            distribuidora@example.com
+                        </small>
+
+                    </td>
+
+                    <td>**.***.***/****-05</td>
+                    <td>(62) 3XXX-0005</td>
+                    <td>Suspensão</td>
+
+                    <td>
+
+                        <span class="badge text-bg-secondary">
+                            Inativo
+                        </span>
+
+                    </td>
+
+                    <td>
+
+                        <div class="d-flex justify-content-center gap-2">
+
+                            <button class="btn btn-sm btn-outline-primary"
+                                    title="Visualizar fornecedor"
+                                    disabled>
+
+                                <i class="bi bi-eye"></i>
+
+                            </button>
+
+                            <button class="btn btn-sm btn-outline-secondary"
+                                    title="Editar fornecedor"
+                                    disabled>
+
+                                <i class="bi bi-pencil"></i>
+
+                            </button>
+
+                            <button class="btn btn-sm btn-outline-success"
+                                    title="Reativar fornecedor"
+                                    disabled>
+
+                                <i class="bi bi-check-circle"></i>
+
+                            </button>
+
+                        </div>
+
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <!-- PAGINAÇÃO -->
+
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mt-3">
+
+        <small class="text-secondary">
+            Mostrando 5 fornecedores demonstrativos
+        </small>
+
+        <nav aria-label="Paginação de fornecedores">
+
+            <ul class="pagination pagination-sm mb-0">
+
+                <li class="page-item disabled">
+                    <span class="page-link">Anterior</span>
+                </li>
+
+                <li class="page-item active">
+                    <span class="page-link">1</span>
+                </li>
+
+                <li class="page-item disabled">
+                    <span class="page-link">2</span>
+                </li>
+
+                <li class="page-item disabled">
+                    <span class="page-link">3</span>
+                </li>
+
+                <li class="page-item disabled">
+                    <span class="page-link">Próximo</span>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </div>
+
+</div>
+
+<!-- MODAL DE CADASTRO DE FORNECEDOR -->
+
+<div class="modal fade"
+     id="modalFornecedor"
+     tabindex="-1"
+     aria-labelledby="tituloModalFornecedor"
+     aria-hidden="true">
+
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h5 class="modal-title" id="tituloModalFornecedor">
+
+                    <i class="bi bi-truck text-primary me-2"></i>
+                    Cadastrar novo fornecedor
+
+                </h5>
+
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Fechar">
+
+                </button>
+
+            </div>
+
+            <div class="modal-body">
+
+                <div class="alert alert-light border">
+
+                    <i class="bi bi-info-circle me-2"></i>
+
+                    Modo demonstrativo: nenhum fornecedor será cadastrado.
+
+                </div>
+
+                <!-- DADOS COMERCIAIS -->
+
+                <h5 class="mb-3">
+
+                    <i class="bi bi-building me-2"></i>
+                    Dados comerciais
+
+                </h5>
+
+                <div class="row g-3">
+
+                    <div class="col-md-6">
+
+                        <label for="razaoSocialFornecedor" class="form-label">
+                            Razão social *
+                        </label>
+
+                        <input type="text"
+                               class="form-control"
+                               id="razaoSocialFornecedor"
+                               placeholder="Informe a razão social"
+                               required>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <label for="nomeFantasiaFornecedor" class="form-label">
+                            Nome fantasia
+                        </label>
+
+                        <input type="text"
+                               class="form-control"
+                               id="nomeFantasiaFornecedor"
+                               placeholder="Informe o nome fantasia">
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <label for="cnpjFornecedor" class="form-label">
+                            CNPJ *
+                        </label>
+
+                        <input type="text"
+                               class="form-control"
+                               id="cnpjFornecedor"
+                               placeholder="00.000.000/0000-00"
+                               required>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <label for="inscricaoEstadualFornecedor" class="form-label">
+                            Inscrição estadual
+                        </label>
+
+                        <input type="text"
+                               class="form-control"
+                               id="inscricaoEstadualFornecedor"
+                               placeholder="Informe a inscrição estadual">
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <label for="categoriaFornecedor" class="form-label">
+                            Categoria principal de produtos
+                        </label>
+
+                        <select class="form-select"
+                                id="categoriaFornecedor">
+
+                            <option value="">Selecione uma categoria</option>
+                            <option>Motor</option>
+                            <option>Freios</option>
+                            <option>Filtros</option>
+                            <option>Elétrica</option>
+                            <option>Suspensão</option>
+                            <option>Diversas</option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <label for="statusFornecedor" class="form-label">
+                            Status do cadastro
+                        </label>
+
+                        <select class="form-select"
+                                id="statusFornecedor">
+
+                            <option>Ativo</option>
+                            <option>Inativo</option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+                <hr class="my-4">
+
+                <!-- CONTATO -->
+
+                <h5 class="mb-3">
+
+                    <i class="bi bi-telephone me-2"></i>
+                    Informações de contato
+
+                </h5>
+
+                <div class="row g-3">
+
+                    <div class="col-12">
+
+                        <label for="responsavelFornecedor" class="form-label">
+                            Responsável pelo contato
+                        </label>
+
+                        <input type="text"
+                               class="form-control"
+                               id="responsavelFornecedor"
+                               placeholder="Nome do representante comercial">
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <label for="telefoneFornecedor" class="form-label">
+                            Telefone
+                        </label>
+
+                        <input type="tel"
+                               class="form-control"
+                               id="telefoneFornecedor"
+                               placeholder="(00) 0000-0000">
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <label for="whatsappFornecedor" class="form-label">
+                            WhatsApp
+                        </label>
+
+                        <input type="tel"
+                               class="form-control"
+                               id="whatsappFornecedor"
+                               placeholder="(00) 00000-0000">
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <label for="emailFornecedor" class="form-label">
+                            E-mail
+                        </label>
+
+                        <input type="email"
+                               class="form-control"
+                               id="emailFornecedor"
+                               placeholder="fornecedor@example.com">
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <label for="siteFornecedor" class="form-label">
+                            Site
+                        </label>
+
+                        <input type="url"
+                               class="form-control"
+                               id="siteFornecedor"
+                               placeholder="https://">
+
+                    </div>
+
+                </div>
+
+                <hr class="my-4">
+
+                <!-- ENDEREÇO -->
+
+                <h5 class="mb-3">
+
+                    <i class="bi bi-geo-alt me-2"></i>
+                    Endereço
+
+                </h5>
+
+                <div class="row g-3">
+
+                    <div class="col-md-4">
+
+                        <label for="cepFornecedor" class="form-label">
+                            CEP
+                        </label>
+
+                        <input type="text"
+                               class="form-control"
+                               id="cepFornecedor"
+                               placeholder="00000-000">
+
+                    </div>
+
+                    <div class="col-md-8">
+
+                        <label for="ruaFornecedor" class="form-label">
+                            Rua / Avenida
+                        </label>
+
+                        <input type="text"
+                               class="form-control"
+                               id="ruaFornecedor"
+                               placeholder="Informe o endereço">
+
+                    </div>
+
+                    <div class="col-md-4">
+
+                        <label for="numeroFornecedor" class="form-label">
+                            Número
+                        </label>
+
+                        <input type="text"
+                               class="form-control"
+                               id="numeroFornecedor"
+                               placeholder="Número">
+
+                    </div>
+
+                    <div class="col-md-8">
+
+                        <label for="bairroFornecedor" class="form-label">
+                            Bairro
+                        </label>
+
+                        <input type="text"
+                               class="form-control"
+                               id="bairroFornecedor"
+                               placeholder="Informe o bairro">
+
+                    </div>
+
+                    <div class="col-md-8">
+
+                        <label for="cidadeFornecedor" class="form-label">
+                            Cidade
+                        </label>
+
+                        <input type="text"
+                               class="form-control"
+                               id="cidadeFornecedor"
+                               placeholder="Informe a cidade">
+
+                    </div>
+
+                    <div class="col-md-4">
+
+                        <label for="estadoFornecedor" class="form-label">
+                            Estado
+                        </label>
+
+                        <select class="form-select"
+                                id="estadoFornecedor">
+
+                            <option value="">Selecione</option>
+                            <option>AC</option>
+                            <option>AL</option>
+                            <option>AP</option>
+                            <option>AM</option>
+                            <option>BA</option>
+                            <option>CE</option>
+                            <option>DF</option>
+                            <option>ES</option>
+                            <option>GO</option>
+                            <option>MA</option>
+                            <option>MT</option>
+                            <option>MS</option>
+                            <option>MG</option>
+                            <option>PA</option>
+                            <option>PB</option>
+                            <option>PR</option>
+                            <option>PE</option>
+                            <option>PI</option>
+                            <option>RJ</option>
+                            <option>RN</option>
+                            <option>RS</option>
+                            <option>RO</option>
+                            <option>RR</option>
+                            <option>SC</option>
+                            <option>SP</option>
+                            <option>SE</option>
+                            <option>TO</option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="col-12">
+
+                        <label for="complementoFornecedor" class="form-label">
+                            Complemento
+                        </label>
+
+                        <input type="text"
+                               class="form-control"
+                               id="complementoFornecedor"
+                               placeholder="Complemento do endereço">
+
+                    </div>
+
+                </div>
+
+                <hr class="my-4">
+
+                <!-- CONDIÇÕES COMERCIAIS -->
+
+                <h5 class="mb-3">
+
+                    <i class="bi bi-clipboard-check me-2"></i>
+                    Condições comerciais
+
+                </h5>
+
+                <div class="row g-3">
+
+                    <div class="col-md-6">
+
+                        <label for="prazoEntregaFornecedor" class="form-label">
+                            Prazo médio de entrega (dias)
+                        </label>
+
+                        <input type="number"
+                               class="form-control"
+                               id="prazoEntregaFornecedor"
+                               min="0"
+                               step="1"
+                               placeholder="Ex.: 3">
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <label for="pagamentoFornecedor" class="form-label">
+                            Condição de pagamento
+                        </label>
+
+                        <select class="form-select"
+                                id="pagamentoFornecedor">
+
+                            <option value="">Selecione</option>
+                            <option>À vista</option>
+                            <option>15 dias</option>
+                            <option>30 dias</option>
+                            <option>45 dias</option>
+                            <option>60 dias</option>
+                            <option>A combinar</option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="col-12">
+
+                        <label for="observacaoFornecedor" class="form-label">
+                            Observações
+                        </label>
+
+                        <textarea class="form-control"
+                                  id="observacaoFornecedor"
+                                  rows="3"
+                                  placeholder="Informações adicionais sobre o fornecedor"></textarea>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+
+                <small class="text-secondary me-auto">
+                    * Campos obrigatórios
+                </small>
+
+                <button type="button"
+                        class="btn btn-outline-secondary"
+                        data-bs-dismiss="modal">
+
+                    Cancelar
+
+                </button>
+
+                <button type="button"
+                        class="btn btn-primary"
+                        disabled>
+
+                    <i class="bi bi-check-lg me-1"></i>
+                    Salvar fornecedor
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- MODAL DE DETALHES DO FORNECEDOR -->
+
+<div class="modal fade"
+     id="modalDetalhesFornecedor"
+     tabindex="-1"
+     aria-labelledby="tituloDetalhesFornecedor"
+     aria-hidden="true">
+
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h5 class="modal-title" id="tituloDetalhesFornecedor">
+
+                    <i class="bi bi-building text-primary me-2"></i>
+                    Detalhes do fornecedor
+
+                </h5>
+
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Fechar">
+
+                </button>
+
+            </div>
+
+            <div class="modal-body">
+
+                <div class="d-flex align-items-center gap-3 mb-4">
+
+                    <div class="stat-icon blue">
+
+                        <i class="bi bi-truck"></i>
+
+                    </div>
+
+                    <div class="flex-grow-1">
+
+                        <h5 class="mb-1">Autopeças Brasil</h5>
+
+                        <small class="text-secondary">
+                            Código: F001
+                        </small>
+
+                    </div>
+
+                    <span class="badge text-bg-success">
+                        Ativo
+                    </span>
+
+                </div>
+
+                <!-- INFORMAÇÕES DO FORNECEDOR -->
+
+                <div class="row g-4 mb-4">
+
+                    <div class="col-md-6">
+
+                        <small class="text-secondary d-block">
+                            Razão social
+                        </small>
+
+                        <strong>Autopeças Brasil Exemplo Ltda.</strong>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <small class="text-secondary d-block">
+                            CNPJ
+                        </small>
+
+                        <strong>**.***.***/****-01</strong>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <small class="text-secondary d-block">
+                            Responsável pelo contato
+                        </small>
+
+                        <strong>Representante comercial</strong>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <small class="text-secondary d-block">
+                            Telefone
+                        </small>
+
+                        <strong>(62) 3XXX-0001</strong>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <small class="text-secondary d-block">
+                            E-mail
+                        </small>
+
+                        <strong>brasil@example.com</strong>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <small class="text-secondary d-block">
+                            Cidade
+                        </small>
+
+                        <strong>Goiânia - GO</strong>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <small class="text-secondary d-block">
+                            Prazo médio de entrega
+                        </small>
+
+                        <strong>3 dias</strong>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <small class="text-secondary d-block">
+                            Condição de pagamento
+                        </small>
+
+                        <strong>30 dias</strong>
+
+                    </div>
+
+                </div>
+
+                <hr>
+
+                <!-- RESUMO DO FORNECEDOR -->
+
+                <h5 class="mb-3">
+
+                    <i class="bi bi-box-seam me-2"></i>
+                    Resumo de fornecimento
+
+                </h5>
+
+                <div class="row g-3">
+
+                    <div class="col-md-6">
+
+                        <div class="border rounded-3 p-3">
+
+                            <small class="text-secondary">
+                                Produtos vinculados
+                            </small>
+
+                            <h3 class="mt-2 mb-0">18</h3>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <div class="border rounded-3 p-3">
+
+                            <small class="text-secondary">
+                                Última entrada de estoque
+                            </small>
+
+                            <h5 class="mt-2 mb-0">
+                                26/11/2026
+                            </h5>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- PRODUTOS VINCULADOS -->
+
+                <h5 class="mt-4 mb-3">
+                    Exemplos de produtos fornecidos
+                </h5>
+
+                <div class="table-responsive">
+
+                    <table class="table align-middle">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Código</th>
+                                <th>Produto</th>
+                                <th>Categoria</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+
+                                <td>P001</td>
+                                <td>Filtro de óleo</td>
+                                <td>Filtros</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>P004</td>
+                                <td>Vela de ignição</td>
+                                <td>Elétrica</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>P005</td>
+                                <td>Filtro de ar</td>
+                                <td>Filtros</td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+                <div class="alert alert-light border mt-4 mb-0">
+
+                    <i class="bi bi-info-circle me-2"></i>
+
+                    Os dados apresentados são fictícios e destinados
+                    à demonstração da interface.
+
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+
+                <button type="button"
+                        class="btn btn-outline-primary"
+                        disabled>
+
+                    <i class="bi bi-pencil me-1"></i>
+                    Editar fornecedor
+
+                </button>
+
+                <button type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal">
+
+                    Fechar
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
