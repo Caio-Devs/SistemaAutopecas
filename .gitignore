@@ -10,3 +10,6 @@
 /dataSources.local.xml
 .idea/
 /target
+# Node.js
+node_modules/
+.env
