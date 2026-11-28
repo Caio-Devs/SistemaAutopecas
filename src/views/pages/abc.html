@@ -1,0 +1,1783 @@
+﻿
+<!-- CABEÇALHO DA PÁGINA -->
+
+<div class="page-heading">
+
+    <div>
+        <h1>Classificação ABC</h1>
+        <p>Identifique os produtos mais relevantes para o faturamento da loja.</p>
+    </div>
+
+    <button type="button"
+            class="btn btn-primary"
+            disabled>
+
+        <i class="bi bi-arrow-repeat me-2"></i>
+        Recalcular classificação
+
+    </button>
+
+</div>
+
+<!-- INDICADORES -->
+
+<div class="row g-4 mb-4">
+
+    <div class="col-12 col-md-6 col-xl-3">
+
+        <div class="stat-card">
+
+            <div class="stat-icon blue">
+                <i class="bi bi-cash-stack"></i>
+            </div>
+
+            <span>Faturamento analisado</span>
+            <h2>R$ 12.450,00</h2>
+            <small>Novembro de 2026</small>
+
+        </div>
+
+    </div>
+
+    <div class="col-12 col-md-6 col-xl-3">
+
+        <div class="stat-card">
+
+            <div class="stat-icon green">
+                <strong>A</strong>
+            </div>
+
+            <span>Classe A</span>
+            <h2>80%</h2>
+            <small>Participação de referência</small>
+
+        </div>
+
+    </div>
+
+    <div class="col-12 col-md-6 col-xl-3">
+
+        <div class="stat-card">
+
+            <div class="stat-icon orange">
+                <strong>B</strong>
+            </div>
+
+            <span>Classe B</span>
+            <h2>15%</h2>
+            <small>Participação de referência</small>
+
+        </div>
+
+    </div>
+
+    <div class="col-12 col-md-6 col-xl-3">
+
+        <div class="stat-card">
+
+            <div class="stat-icon blue">
+                <strong>C</strong>
+            </div>
+
+            <span>Classe C</span>
+            <h2>5%</h2>
+            <small>Participação de referência</small>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- AVISO INTELIGENTE -->
+
+<div class="alert alert-warning d-flex align-items-center gap-3 mb-4">
+
+    <i class="bi bi-exclamation-triangle-fill fs-2"></i>
+
+    <div>
+
+        <h5 class="mb-1">
+            Atenção aos produtos de alta prioridade
+        </h5>
+
+        <p class="mb-0">
+
+            A Pastilha de freio e a Correia dentada pertencem
+            à Classe A no cenário demonstrativo e apresentam
+            estoque abaixo do mínimo cadastrado.
+
+        </p>
+
+    </div>
+
+</div>
+
+<!-- DISTRIBUIÇÃO ABC -->
+
+<div class="row g-4 mb-4">
+
+    <div class="col-12 col-xl-7">
+
+        <div class="content-card h-100">
+
+            <h3>
+
+                <i class="bi bi-bar-chart text-primary me-2"></i>
+                Distribuição de referência ABC
+
+            </h3>
+
+            <p class="text-secondary mb-4">
+
+                Limites de referência utilizados para
+                classificar a importância financeira dos produtos.
+
+            </p>
+
+            <!-- CLASSE A -->
+
+            <div class="mb-4">
+
+                <div class="d-flex justify-content-between mb-2">
+
+                    <strong>Classe A — Alta prioridade</strong>
+                    <strong class="text-success">80%</strong>
+
+                </div>
+
+                <div class="progress"
+                     style="height: 22px;"
+                     role="progressbar"
+                     aria-label="Referência Classe A"
+                     aria-valuenow="80"
+                     aria-valuemin="0"
+                     aria-valuemax="100">
+
+                    <div class="progress-bar bg-success"
+                         style="width: 80%;">
+
+                        80%
+
+                    </div>
+
+                </div>
+
+                <small class="text-secondary d-block mt-2">
+
+                    Produtos de maior relevância para o faturamento.
+
+                </small>
+
+            </div>
+
+            <!-- CLASSE B -->
+
+            <div class="mb-4">
+
+                <div class="d-flex justify-content-between mb-2">
+
+                    <strong>Classe B — Média prioridade</strong>
+                    <strong class="text-warning-emphasis">15%</strong>
+
+                </div>
+
+                <div class="progress"
+                     style="height: 22px;"
+                     role="progressbar"
+                     aria-label="Referência Classe B"
+                     aria-valuenow="15"
+                     aria-valuemin="0"
+                     aria-valuemax="100">
+
+                    <div class="progress-bar bg-warning"
+                         style="width: 15%;">
+
+                        15%
+
+                    </div>
+
+                </div>
+
+                <small class="text-secondary d-block mt-2">
+
+                    Produtos de relevância financeira intermediária.
+
+                </small>
+
+            </div>
+
+            <!-- CLASSE C -->
+
+            <div class="mb-4">
+
+                <div class="d-flex justify-content-between mb-2">
+
+                    <strong>Classe C — Baixa prioridade</strong>
+                    <strong class="text-secondary">5%</strong>
+
+                </div>
+
+                <div class="progress"
+                     style="height: 22px;"
+                     role="progressbar"
+                     aria-label="Referência Classe C"
+                     aria-valuenow="5"
+                     aria-valuemin="0"
+                     aria-valuemax="100">
+
+                    <div class="progress-bar bg-secondary"
+                         style="width: 5%;">
+                    </div>
+
+                </div>
+
+                <small class="text-secondary d-block mt-2">
+
+                    Produtos com menor participação no faturamento.
+
+                </small>
+
+            </div>
+
+            <hr>
+
+            <div class="progress"
+                 style="height: 32px;">
+
+                <div class="progress-bar bg-success"
+                     style="width: 80%;">
+
+                    A — 80%
+
+                </div>
+
+                <div class="progress-bar bg-warning text-dark"
+                     style="width: 15%;">
+
+                    B — 15%
+
+                </div>
+
+                <div class="progress-bar bg-secondary"
+                     style="width: 5%;">
+
+                    C
+
+                </div>
+
+            </div>
+
+            <small class="text-secondary d-block mt-3">
+
+                Os percentuais são referências de classificação.
+                A distribuição real poderá variar conforme
+                o faturamento individual dos produtos.
+
+            </small>
+
+        </div>
+
+    </div>
+
+    <!-- CRITÉRIOS DE CLASSIFICAÇÃO -->
+
+    <div class="col-12 col-xl-5">
+
+        <div class="content-card h-100">
+
+            <h3>
+
+                <i class="bi bi-diagram-3 text-primary me-2"></i>
+                Critérios de classificação
+
+            </h3>
+
+            <p class="text-secondary mb-4">
+
+                Entenda o significado de cada classe.
+
+            </p>
+
+            <div class="border rounded-3 p-3 mb-3">
+
+                <div class="d-flex align-items-center gap-3">
+
+                    <div class="stat-icon green">
+                        <strong>A</strong>
+                    </div>
+
+                    <div>
+
+                        <strong>Alta prioridade</strong>
+
+                        <small class="d-block text-secondary">
+
+                            Percentual acumulado até 80%.
+
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="border rounded-3 p-3 mb-3">
+
+                <div class="d-flex align-items-center gap-3">
+
+                    <div class="stat-icon orange">
+                        <strong>B</strong>
+                    </div>
+
+                    <div>
+
+                        <strong>Média prioridade</strong>
+
+                        <small class="d-block text-secondary">
+
+                            Acima de 80% até 95%.
+
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="border rounded-3 p-3 mb-3">
+
+                <div class="d-flex align-items-center gap-3">
+
+                    <div class="stat-icon blue">
+                        <strong>C</strong>
+                    </div>
+
+                    <div>
+
+                        <strong>Baixa prioridade</strong>
+
+                        <small class="d-block text-secondary">
+
+                            Acima de 95% até 100%.
+
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="alert alert-light border mb-0">
+
+                <i class="bi bi-info-circle me-2"></i>
+
+                A classificação considera o faturamento dos produtos
+                vendidos no período analisado.
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- CLASSIFICAÇÃO DOS PRODUTOS -->
+
+<div class="content-card mb-4">
+
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
+
+        <div>
+
+            <h3>
+
+                <i class="bi bi-list-ol text-primary me-2"></i>
+                Classificação dos produtos
+
+            </h3>
+
+            <p class="mb-0">
+
+                Produtos organizados por faturamento,
+                do maior para o menor.
+
+            </p>
+
+        </div>
+
+        <span class="badge text-bg-secondary">
+            Modo demonstrativo
+        </span>
+
+    </div>
+
+    <!-- FILTROS -->
+
+    <div class="row g-3 mb-4">
+
+        <div class="col-12 col-lg-4">
+
+            <label for="pesquisaABC" class="form-label">
+                Pesquisar produto
+            </label>
+
+            <div class="input-group">
+
+                <span class="input-group-text bg-white">
+                    <i class="bi bi-search"></i>
+                </span>
+
+                <input type="search"
+                       class="form-control"
+                       id="pesquisaABC"
+                       placeholder="Código ou nome do produto">
+
+            </div>
+
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3">
+
+            <label for="categoriaABC" class="form-label">
+                Categoria
+            </label>
+
+            <select class="form-select" id="categoriaABC">
+
+                <option>Todas</option>
+                <option>Motor</option>
+                <option>Freios</option>
+                <option>Filtros</option>
+                <option>Elétrica</option>
+                <option>Suspensão</option>
+
+            </select>
+
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3">
+
+            <label for="classeABC" class="form-label">
+                Classificação
+            </label>
+
+            <select class="form-select" id="classeABC">
+
+                <option>Todas as classes</option>
+                <option>Classe A</option>
+                <option>Classe B</option>
+                <option>Classe C</option>
+
+            </select>
+
+        </div>
+
+        <div class="col-12 col-lg-2 d-flex align-items-end">
+
+            <button type="button"
+                    class="btn btn-outline-secondary w-100"
+                    disabled>
+
+                <i class="bi bi-funnel me-1"></i>
+                Filtrar
+
+            </button>
+
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3">
+
+            <label for="dataInicialABC" class="form-label">
+                Data inicial
+            </label>
+
+            <input type="date"
+                   class="form-control"
+                   id="dataInicialABC"
+                   value="2026-11-01">
+
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3">
+
+            <label for="dataFinalABC" class="form-label">
+                Data final
+            </label>
+
+            <input type="date"
+                   class="form-control"
+                   id="dataFinalABC"
+                   value="2026-11-30">
+
+        </div>
+
+        <div class="col-12 col-lg-3 d-flex align-items-end">
+
+            <button type="button"
+                    class="btn btn-outline-secondary w-100"
+                    disabled>
+
+                <i class="bi bi-arrow-counterclockwise me-1"></i>
+                Limpar filtros
+
+            </button>
+
+        </div>
+
+        <div class="col-12 col-lg-3 d-flex align-items-end">
+
+            <button type="button"
+                    class="btn btn-outline-success w-100"
+                    disabled>
+
+                <i class="bi bi-file-earmark-excel me-1"></i>
+                Exportar relatório
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- TABELA ABC -->
+
+    <div class="table-responsive">
+
+        <table class="table table-hover align-middle">
+
+            <thead>
+
+                <tr>
+
+                    <th>Posição</th>
+                    <th>Código</th>
+                    <th>Produto</th>
+                    <th>Qtd. vendida</th>
+                    <th>Faturamento</th>
+                    <th>Participação</th>
+                    <th>Acumulado</th>
+                    <th>Classe</th>
+                    <th>Estoque</th>
+                    <th>Ações</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr>
+
+                    <td>1º</td>
+                    <td>P002</td>
+                    <td class="fw-semibold">Pastilha de freio</td>
+                    <td>28</td>
+                    <td class="fw-semibold">R$ 2.517,20</td>
+                    <td>20,22%</td>
+                    <td>20,22%</td>
+
+                    <td>
+                        <span class="badge text-bg-success">
+                            Classe A
+                        </span>
+                    </td>
+
+                    <td>
+                        <span class="badge text-bg-danger">
+                            Crítico
+                        </span>
+                    </td>
+
+                    <td>
+
+                        <button type="button"
+                                class="btn btn-sm btn-outline-primary"
+                                data-bs-toggle="modal"
+                                data-bs-target="#modalDetalhesABC"
+                                title="Visualizar análise"
+                                aria-label="Visualizar análise da Pastilha de freio">
+
+                            <i class="bi bi-eye"></i>
+
+                        </button>
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>2º</td>
+                    <td>P001</td>
+                    <td class="fw-semibold">Filtro de óleo</td>
+                    <td>48</td>
+                    <td class="fw-semibold">R$ 1.723,20</td>
+                    <td>13,84%</td>
+                    <td>34,06%</td>
+
+                    <td>
+                        <span class="badge text-bg-success">
+                            Classe A
+                        </span>
+                    </td>
+
+                    <td>
+                        <span class="badge text-bg-success">
+                            Normal
+                        </span>
+                    </td>
+
+                    <td>
+
+                        <button type="button"
+                                class="btn btn-sm btn-outline-primary"
+                                title="Visualizar análise"
+                                disabled>
+
+                            <i class="bi bi-eye"></i>
+
+                        </button>
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>3º</td>
+                    <td>P003</td>
+                    <td class="fw-semibold">Correia dentada</td>
+                    <td>12</td>
+                    <td class="fw-semibold">R$ 1.558,80</td>
+                    <td>12,52%</td>
+                    <td>46,58%</td>
+
+                    <td>
+                        <span class="badge text-bg-success">
+                            Classe A
+                        </span>
+                    </td>
+
+                    <td>
+                        <span class="badge text-bg-danger">
+                            Crítico
+                        </span>
+                    </td>
+
+                    <td>
+
+                        <button type="button"
+                                class="btn btn-sm btn-outline-primary"
+                                title="Visualizar análise"
+                                disabled>
+
+                            <i class="bi bi-eye"></i>
+
+                        </button>
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>4º</td>
+                    <td>P004</td>
+                    <td class="fw-semibold">Vela de ignição</td>
+                    <td>36</td>
+                    <td class="fw-semibold">R$ 896,40</td>
+                    <td>7,20%</td>
+                    <td>53,78%</td>
+
+                    <td>
+                        <span class="badge text-bg-success">
+                            Classe A
+                        </span>
+                    </td>
+
+                    <td>
+                        <span class="badge text-bg-success">
+                            Normal
+                        </span>
+                    </td>
+
+                    <td>
+
+                        <button type="button"
+                                class="btn btn-sm btn-outline-primary"
+                                title="Visualizar análise"
+                                disabled>
+
+                            <i class="bi bi-eye"></i>
+
+                        </button>
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>5º</td>
+                    <td>P005</td>
+                    <td class="fw-semibold">Filtro de ar</td>
+                    <td>19</td>
+                    <td class="fw-semibold">R$ 872,10</td>
+                    <td>7,00%</td>
+                    <td>60,78%</td>
+
+                    <td>
+                        <span class="badge text-bg-success">
+                            Classe A
+                        </span>
+                    </td>
+
+                    <td>
+                        <span class="badge text-bg-secondary">
+                            Inativo
+                        </span>
+                    </td>
+
+                    <td>
+
+                        <button type="button"
+                                class="btn btn-sm btn-outline-primary"
+                                title="Visualizar análise"
+                                disabled>
+
+                            <i class="bi bi-eye"></i>
+
+                        </button>
+
+                    </td>
+
+                </tr>
+
+                <!-- EXEMPLOS COMPLEMENTARES -->
+
+                <tr>
+
+                    <td>6º</td>
+                    <td>P008</td>
+                    <td class="fw-semibold">Disco de freio</td>
+                    <td>4</td>
+                    <td class="fw-semibold">R$ 840,00</td>
+                    <td>6,75%</td>
+                    <td>67,53%</td>
+
+                    <td>
+                        <span class="badge text-bg-success">
+                            Classe A
+                        </span>
+                    </td>
+
+                    <td>
+                        <span class="badge text-bg-danger">
+                            Sem estoque
+                        </span>
+                    </td>
+
+                    <td>
+
+                        <button type="button"
+                                class="btn btn-sm btn-outline-primary"
+                                title="Visualizar análise"
+                                disabled>
+
+                            <i class="bi bi-eye"></i>
+
+                        </button>
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>7º</td>
+                    <td>P009</td>
+                    <td class="fw-semibold">Amortecedor</td>
+                    <td>3</td>
+                    <td class="fw-semibold">R$ 750,00</td>
+                    <td>6,02%</td>
+                    <td>73,55%</td>
+
+                    <td>
+                        <span class="badge text-bg-success">
+                            Classe A
+                        </span>
+                    </td>
+
+                    <td>
+                        <span class="badge text-bg-danger">
+                            Sem estoque
+                        </span>
+                    </td>
+
+                    <td>
+
+                        <button type="button"
+                                class="btn btn-sm btn-outline-primary"
+                                title="Visualizar análise"
+                                disabled>
+
+                            <i class="bi bi-eye"></i>
+
+                        </button>
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>8º</td>
+                    <td>P010</td>
+                    <td class="fw-semibold">Bomba de combustível</td>
+                    <td>3</td>
+                    <td class="fw-semibold">R$ 690,00</td>
+                    <td>5,54%</td>
+                    <td>79,09%</td>
+
+                    <td>
+                        <span class="badge text-bg-success">
+                            Classe A
+                        </span>
+                    </td>
+
+                    <td>
+                        <span class="badge text-bg-danger">
+                            Crítico
+                        </span>
+                    </td>
+
+                    <td>
+
+                        <button type="button"
+                                class="btn btn-sm btn-outline-primary"
+                                title="Visualizar análise"
+                                disabled>
+
+                            <i class="bi bi-eye"></i>
+
+                        </button>
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>9º</td>
+                    <td>P007</td>
+                    <td class="fw-semibold">Bomba de óleo</td>
+                    <td>4</td>
+                    <td class="fw-semibold">R$ 620,00</td>
+                    <td>4,98%</td>
+                    <td>84,07%</td>
+
+                    <td>
+                        <span class="badge text-bg-warning">
+                            Classe B
+                        </span>
+                    </td>
+
+                    <td>
+                        <span class="badge text-bg-success">
+                            Normal
+                        </span>
+                    </td>
+
+                    <td>
+
+                        <button type="button"
+                                class="btn btn-sm btn-outline-primary"
+                                title="Visualizar análise"
+                                disabled>
+
+                            <i class="bi bi-eye"></i>
+
+                        </button>
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>10º</td>
+                    <td>P011</td>
+                    <td class="fw-semibold">Rolamento</td>
+                    <td>8</td>
+                    <td class="fw-semibold">R$ 600,00</td>
+                    <td>4,82%</td>
+                    <td>88,89%</td>
+
+                    <td>
+                        <span class="badge text-bg-warning">
+                            Classe B
+                        </span>
+                    </td>
+
+                    <td>
+                        <span class="badge text-bg-danger">
+                            Crítico
+                        </span>
+                    </td>
+
+                    <td>
+
+                        <button type="button"
+                                class="btn btn-sm btn-outline-primary"
+                                title="Visualizar análise"
+                                disabled>
+
+                            <i class="bi bi-eye"></i>
+
+                        </button>
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>11º</td>
+                    <td>P012</td>
+                    <td class="fw-semibold">Filtro de combustível</td>
+                    <td>10</td>
+                    <td class="fw-semibold">R$ 550,00</td>
+                    <td>4,42%</td>
+                    <td>93,31%</td>
+
+                    <td>
+                        <span class="badge text-bg-warning">
+                            Classe B
+                        </span>
+                    </td>
+
+                    <td>
+                        <span class="badge text-bg-danger">
+                            Crítico
+                        </span>
+                    </td>
+
+                    <td>
+
+                        <button type="button"
+                                class="btn btn-sm btn-outline-primary"
+                                title="Visualizar análise"
+                                disabled>
+
+                            <i class="bi bi-eye"></i>
+
+                        </button>
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>12º</td>
+                    <td>P013</td>
+                    <td class="fw-semibold">Cabo de vela</td>
+                    <td>8</td>
+                    <td class="fw-semibold">R$ 440,00</td>
+                    <td>3,53%</td>
+                    <td>96,84%</td>
+
+                    <td>
+                        <span class="badge text-bg-secondary">
+                            Classe C
+                        </span>
+                    </td>
+
+                    <td>
+                        <span class="badge text-bg-danger">
+                            Crítico
+                        </span>
+                    </td>
+
+                    <td>
+
+                        <button type="button"
+                                class="btn btn-sm btn-outline-primary"
+                                title="Visualizar análise"
+                                disabled>
+
+                            <i class="bi bi-eye"></i>
+
+                        </button>
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>13º</td>
+                    <td>P006</td>
+                    <td class="fw-semibold">Junta do motor</td>
+                    <td>5</td>
+                    <td class="fw-semibold">R$ 392,30</td>
+                    <td>3,15%</td>
+                    <td>100,00%</td>
+
+                    <td>
+                        <span class="badge text-bg-secondary">
+                            Classe C
+                        </span>
+                    </td>
+
+                    <td>
+                        <span class="badge text-bg-success">
+                            Normal
+                        </span>
+                    </td>
+
+                    <td>
+
+                        <button type="button"
+                                class="btn btn-sm btn-outline-primary"
+                                title="Visualizar análise"
+                                disabled>
+
+                            <i class="bi bi-eye"></i>
+
+                        </button>
+
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+            <tfoot>
+
+                <tr class="table-light">
+
+                    <td colspan="4" class="fw-bold">
+                        Faturamento total analisado
+                    </td>
+
+                    <td class="text-success fw-bold">
+                        R$ 12.450,00
+                    </td>
+
+                    <td class="fw-bold">100%</td>
+                    <td class="fw-bold">100%</td>
+
+                    <td colspan="3"></td>
+
+                </tr>
+
+            </tfoot>
+
+        </table>
+
+    </div>
+
+    <div class="alert alert-light border mt-3 mb-0">
+
+        <i class="bi bi-info-circle me-2"></i>
+
+        Os registros são fictícios. Os percentuais acumulados
+        consideram o faturamento total antes do arredondamento.
+        Produtos inativos podem permanecer na análise histórica,
+        mas não devem gerar recomendações de novas compras.
+
+    </div>
+
+</div>
+
+<!-- RECOMENDAÇÕES INTELIGENTES -->
+
+<div class="content-card mb-4">
+
+    <div class="mb-4">
+
+        <h3>
+
+            <i class="bi bi-lightbulb text-primary me-2"></i>
+            Recomendações inteligentes
+
+        </h3>
+
+        <p class="mb-0">
+
+            Orientações para melhorar a gestão de compras e estoque.
+
+        </p>
+
+    </div>
+
+    <div class="row g-4">
+
+        <!-- RECOMENDAÇÃO CLASSE A -->
+
+        <div class="col-12 col-lg-4">
+
+            <div class="border rounded-4 p-4 h-100">
+
+                <div class="stat-icon green mb-3">
+                    <strong>A</strong>
+                </div>
+
+                <h5>Priorizar reposições</h5>
+
+                <p class="text-secondary">
+
+                    Produtos com maior relevância financeira
+                    devem receber acompanhamento prioritário.
+
+                </p>
+
+                <ul class="small ps-3 mb-0">
+
+                    <li class="mb-2">
+                        Monitorar o estoque frequentemente.
+                    </li>
+
+                    <li class="mb-2">
+                        Priorizar produtos ativos com estoque crítico.
+                    </li>
+
+                    <li>
+                        Evitar indisponibilidade dos itens mais relevantes.
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+        <!-- RECOMENDAÇÃO CLASSE B -->
+
+        <div class="col-12 col-lg-4">
+
+            <div class="border rounded-4 p-4 h-100">
+
+                <div class="stat-icon orange mb-3">
+                    <strong>B</strong>
+                </div>
+
+                <h5>Manter acompanhamento</h5>
+
+                <p class="text-secondary">
+
+                    Produtos de relevância intermediária
+                    devem possuir controle regular de estoque.
+
+                </p>
+
+                <ul class="small ps-3 mb-0">
+
+                    <li class="mb-2">
+                        Acompanhar o histórico de vendas.
+                    </li>
+
+                    <li class="mb-2">
+                        Planejar reposições periódicas.
+                    </li>
+
+                    <li>
+                        Avaliar mudanças na demanda.
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+        <!-- RECOMENDAÇÃO CLASSE C -->
+
+        <div class="col-12 col-lg-4">
+
+            <div class="border rounded-4 p-4 h-100">
+
+                <div class="stat-icon blue mb-3">
+                    <strong>C</strong>
+                </div>
+
+                <h5>Avaliar novas compras</h5>
+
+                <p class="text-secondary">
+
+                    Produtos com menor participação financeira
+                    devem ser avaliados conforme sua demanda.
+
+                </p>
+
+                <ul class="small ps-3 mb-0">
+
+                    <li class="mb-2">
+                        Evitar compras excessivas.
+                    </li>
+
+                    <li class="mb-2">
+                        Analisar a necessidade de reposição.
+                    </li>
+
+                    <li>
+                        Considerar a importância comercial do produto.
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- EXPLICAÇÃO DA FUNCIONALIDADE INTELIGENTE -->
+
+<div class="content-card">
+
+    <div class="mb-4">
+
+        <h3>
+
+            <i class="bi bi-cpu text-primary me-2"></i>
+            Como funciona a Classificação ABC
+
+        </h3>
+
+        <p class="mb-0">
+
+            Entenda os dados de entrada, o processamento
+            e os resultados esperados da funcionalidade.
+
+        </p>
+
+    </div>
+
+    <div class="row g-4">
+
+        <!-- ENTRADA -->
+
+        <div class="col-12 col-lg-4">
+
+            <div class="border rounded-4 p-4 h-100">
+
+                <div class="stat-icon blue mb-3">
+                    <i class="bi bi-database"></i>
+                </div>
+
+                <h5>1. Dados de entrada</h5>
+
+                <p class="text-secondary">
+
+                    Informações provenientes das vendas
+                    concluídas no período selecionado.
+
+                </p>
+
+                <ul class="small ps-3 mb-0">
+
+                    <li class="mb-2">Produto vendido</li>
+                    <li class="mb-2">Quantidade vendida</li>
+                    <li class="mb-2">Preço registrado na venda</li>
+                    <li class="mb-2">Faturamento por produto</li>
+                    <li>Período de análise</li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+        <!-- PROCESSAMENTO -->
+
+        <div class="col-12 col-lg-4">
+
+            <div class="border rounded-4 p-4 h-100">
+
+                <div class="stat-icon orange mb-3">
+                    <i class="bi bi-cpu"></i>
+                </div>
+
+                <h5>2. Processamento</h5>
+
+                <p class="text-secondary">
+
+                    O algoritmo deverá calcular e organizar
+                    a participação financeira dos produtos.
+
+                </p>
+
+                <ol class="small ps-3 mb-0">
+
+                    <li class="mb-2">
+                        Calcular o faturamento de cada produto.
+                    </li>
+
+                    <li class="mb-2">
+                        Calcular o faturamento total.
+                    </li>
+
+                    <li class="mb-2">
+                        Ordenar os produtos do maior para o menor.
+                    </li>
+
+                    <li class="mb-2">
+                        Calcular o percentual individual.
+                    </li>
+
+                    <li>
+                        Calcular o percentual acumulado.
+                    </li>
+
+                </ol>
+
+            </div>
+
+        </div>
+
+        <!-- RESULTADO -->
+
+        <div class="col-12 col-lg-4">
+
+            <div class="border rounded-4 p-4 h-100">
+
+                <div class="stat-icon green mb-3">
+                    <i class="bi bi-check-circle"></i>
+                </div>
+
+                <h5>3. Resultado</h5>
+
+                <p class="text-secondary">
+
+                    Cada produto deverá receber uma
+                    classificação conforme sua posição acumulada.
+
+                </p>
+
+                <div class="d-flex flex-column gap-3">
+
+                    <div>
+
+                        <span class="badge text-bg-success me-2">
+                            A
+                        </span>
+
+                        Alta prioridade
+
+                    </div>
+
+                    <div>
+
+                        <span class="badge text-bg-warning me-2">
+                            B
+                        </span>
+
+                        Média prioridade
+
+                    </div>
+
+                    <div>
+
+                        <span class="badge text-bg-secondary me-2">
+                            C
+                        </span>
+
+                        Baixa prioridade
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- FÓRMULAS -->
+
+    <div class="border rounded-4 p-4 mt-4">
+
+        <h5>
+
+            <i class="bi bi-calculator text-primary me-2"></i>
+            Fórmulas utilizadas
+
+        </h5>
+
+        <div class="mt-4 mb-3">
+
+            <small class="text-secondary">
+                Faturamento individual
+            </small>
+
+            <div class="bg-light border rounded-3 p-3 mt-2">
+
+                <strong>
+
+                    Faturamento = Soma dos subtotais
+                    das vendas do produto
+
+                </strong>
+
+            </div>
+
+        </div>
+
+        <div class="mb-3">
+
+            <small class="text-secondary">
+                Percentual de participação
+            </small>
+
+            <div class="bg-light border rounded-3 p-3 mt-2">
+
+                <strong>
+
+                    Participação = (Faturamento individual /
+                    Faturamento total) × 100
+
+                </strong>
+
+            </div>
+
+        </div>
+
+        <div>
+
+            <small class="text-secondary">
+                Percentual acumulado
+            </small>
+
+            <div class="bg-light border rounded-3 p-3 mt-2">
+
+                <strong>
+
+                    Acumulado = Percentual acumulado anterior
+                    + Participação atual
+
+                </strong>
+
+            </div>
+
+        </div>
+
+        <small class="text-secondary d-block mt-3">
+
+            Caso não existam vendas ou o faturamento total seja zero,
+            o sistema deverá informar que não há dados suficientes
+            para realizar a classificação.
+
+        </small>
+
+    </div>
+
+    <!-- JUSTIFICATIVA -->
+
+    <div class="alert alert-light border mt-4 mb-0">
+
+        <h6>
+
+            <i class="bi bi-info-circle text-primary me-2"></i>
+            Justificativa da funcionalidade inteligente
+
+        </h6>
+
+        <p class="mb-0">
+
+            A Classificação ABC permite identificar os produtos
+            de maior relevância financeira, auxiliando o administrador
+            na definição de prioridades de reposição e no planejamento
+            das compras.
+
+            A análise utiliza dados mensuráveis e regras determinísticas,
+            proporcionando resultados explicáveis para a tomada
+            de decisões.
+
+        </p>
+
+    </div>
+
+</div>
+
+<!-- MODAL DE DETALHES DA CLASSIFICAÇÃO -->
+
+<div class="modal fade"
+     id="modalDetalhesABC"
+     tabindex="-1"
+     aria-labelledby="tituloDetalhesABC"
+     aria-hidden="true">
+
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h5 class="modal-title" id="tituloDetalhesABC">
+
+                    <i class="bi bi-bar-chart text-primary me-2"></i>
+                    Detalhes da Classificação ABC
+
+                </h5>
+
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Fechar">
+                </button>
+
+            </div>
+
+            <div class="modal-body">
+
+                <div class="d-flex align-items-center gap-3 mb-4">
+
+                    <div class="stat-icon green">
+                        <strong>A</strong>
+                    </div>
+
+                    <div class="flex-grow-1">
+
+                        <h5 class="mb-1">Pastilha de freio</h5>
+
+                        <small class="text-secondary">
+
+                            Código: P002 | Categoria: Freios
+
+                        </small>
+
+                    </div>
+
+                    <span class="badge text-bg-success">
+                        Classe A
+                    </span>
+
+                </div>
+
+                <!-- INDICADORES DO PRODUTO -->
+
+                <div class="row g-3 mb-4">
+
+                    <div class="col-md-4">
+
+                        <div class="border rounded-3 p-3">
+
+                            <small class="text-secondary">
+                                Quantidade vendida
+                            </small>
+
+                            <h3 class="mt-2 mb-0">28</h3>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4">
+
+                        <div class="border rounded-3 p-3">
+
+                            <small class="text-secondary">
+                                Faturamento
+                            </small>
+
+                            <h4 class="text-success mt-2 mb-0">
+                                R$ 2.517,20
+                            </h4>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4">
+
+                        <div class="border rounded-3 p-3">
+
+                            <small class="text-secondary">
+                                Participação
+                            </small>
+
+                            <h3 class="text-primary mt-2 mb-0">
+                                20,22%
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- EXPLICAÇÃO DO CÁLCULO -->
+
+                <h5 class="mb-3">
+
+                    <i class="bi bi-calculator me-2"></i>
+                    Explicação da classificação
+
+                </h5>
+
+                <div class="border rounded-3 p-3 mb-3">
+
+                    <small class="text-secondary d-block mb-2">
+                        1. Faturamento do produto
+                    </small>
+
+                    <strong>
+                        28 × R$ 89,90 = R$ 2.517,20
+                    </strong>
+
+                    <p class="text-secondary mb-0 mt-2">
+
+                        Neste exemplo, todas as unidades foram
+                        vendidas pelo mesmo preço.
+
+                    </p>
+
+                </div>
+
+                <div class="border rounded-3 p-3 mb-3">
+
+                    <small class="text-secondary d-block mb-2">
+                        2. Participação no faturamento
+                    </small>
+
+                    <strong>
+
+                        (2.517,20 / 12.450,00) × 100 = 20,22%
+
+                    </strong>
+
+                </div>
+
+                <div class="border rounded-3 p-3 mb-3">
+
+                    <small class="text-secondary d-block mb-2">
+                        3. Percentual acumulado
+                    </small>
+
+                    <strong>
+
+                        0% + 20,22% = 20,22%
+
+                    </strong>
+
+                    <p class="text-secondary mb-0 mt-2">
+
+                        O produto ocupa a primeira posição
+                        no ranking por faturamento.
+
+                    </p>
+
+                </div>
+
+                <div class="bg-success-subtle rounded-3 p-4 mb-4">
+
+                    <h5 class="text-success">
+
+                        <i class="bi bi-check-circle me-2"></i>
+                        Resultado: Classe A
+
+                    </h5>
+
+                    <p class="text-success mb-0">
+
+                        O percentual acumulado está dentro do limite
+                        de 80%, classificando o produto como
+                        de alta prioridade financeira.
+
+                    </p>
+
+                </div>
+
+                <!-- INTEGRAÇÃO COM ALERTAS -->
+
+                <div class="alert alert-warning mb-0">
+
+                    <h6>
+
+                        <i class="bi bi-exclamation-triangle me-2"></i>
+                        Recomendação de reposição
+
+                    </h6>
+
+                    <div class="row g-3 mt-1">
+
+                        <div class="col-4">
+
+                            <small>Estoque atual</small>
+                            <h4 class="mb-0">3</h4>
+
+                        </div>
+
+                        <div class="col-4">
+
+                            <small>Estoque mínimo</small>
+                            <h4 class="mb-0">10</h4>
+
+                        </div>
+
+                        <div class="col-4">
+
+                            <small>Reposição sugerida</small>
+                            <h4 class="mb-0">8</h4>
+
+                        </div>
+
+                    </div>
+
+                    <hr>
+
+                    <p class="mb-0">
+
+                        Este produto possui alta relevância financeira
+                        e estoque crítico. Recomenda-se priorizar
+                        sua reposição.
+
+                    </p>
+
+                </div>
+
+                <small class="text-secondary d-block mt-3">
+
+                    Análise demonstrativa. Nenhuma classificação
+                    ou movimentação será realizada automaticamente.
+
+                </small>
+
+            </div>
+
+            <div class="modal-footer">
+
+                <button type="button"
+                        class="btn btn-outline-primary"
+                        disabled>
+
+                    <i class="bi bi-box-seam me-2"></i>
+                    Consultar estoque
+
+                </button>
+
+                <button type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal">
+
+                    Fechar
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

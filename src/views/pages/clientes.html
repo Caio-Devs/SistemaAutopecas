@@ -1,0 +1,1095 @@
+﻿
+<!-- CABEÇALHO DA PÁGINA -->
+
+<div class="page-heading">
+
+    <div>
+        <h1>Clientes</h1>
+        <p>Cadastre e gerencie os clientes da loja.</p>
+    </div>
+
+    <button type="button"
+            class="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#modalCliente">
+
+        <i class="bi bi-person-plus me-2"></i>
+        Novo cliente
+
+    </button>
+
+</div>
+
+<!-- INDICADORES -->
+
+<div class="row g-4 mb-4">
+
+    <div class="col-12 col-md-4">
+
+        <div class="stat-card">
+
+            <div class="stat-icon blue">
+                <i class="bi bi-people"></i>
+            </div>
+
+            <span>Total de clientes</span>
+            <h2>156</h2>
+            <small>Clientes cadastrados</small>
+
+        </div>
+
+    </div>
+
+    <div class="col-12 col-md-4">
+
+        <div class="stat-card">
+
+            <div class="stat-icon green">
+                <i class="bi bi-person-check"></i>
+            </div>
+
+            <span>Clientes ativos</span>
+            <h2>148</h2>
+            <small>Disponíveis para novas vendas</small>
+
+        </div>
+
+    </div>
+
+    <div class="col-12 col-md-4">
+
+        <div class="stat-card">
+
+            <div class="stat-icon red">
+                <i class="bi bi-person-dash"></i>
+            </div>
+
+            <span>Clientes inativos</span>
+            <h2>8</h2>
+            <small>Cadastros desativados</small>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- LISTAGEM DE CLIENTES -->
+
+<div class="content-card">
+
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
+
+        <div>
+
+            <h3>Clientes cadastrados</h3>
+
+            <p class="mb-0">
+                Consulte e gerencie os dados dos clientes.
+            </p>
+
+        </div>
+
+        <span class="badge text-bg-secondary">
+            Modo demonstrativo
+        </span>
+
+    </div>
+
+    <!-- FILTROS -->
+
+    <div class="row g-3 mb-4">
+
+        <div class="col-12 col-lg-5">
+
+            <label for="pesquisaCliente" class="form-label">
+                Pesquisar cliente
+            </label>
+
+            <div class="input-group">
+
+                <span class="input-group-text bg-white">
+                    <i class="bi bi-search"></i>
+                </span>
+
+                <input type="search"
+                       class="form-control"
+                       id="pesquisaCliente"
+                       placeholder="Nome, CPF, CNPJ ou telefone">
+
+            </div>
+
+        </div>
+
+        <div class="col-12 col-md-4 col-lg-3">
+
+            <label for="filtroTipoCliente" class="form-label">
+                Tipo de pessoa
+            </label>
+
+            <select class="form-select" id="filtroTipoCliente">
+
+                <option>Todos</option>
+                <option>Pessoa física</option>
+                <option>Pessoa jurídica</option>
+
+            </select>
+
+        </div>
+
+        <div class="col-12 col-md-4 col-lg-2">
+
+            <label for="filtroStatusCliente" class="form-label">
+                Status
+            </label>
+
+            <select class="form-select" id="filtroStatusCliente">
+
+                <option>Todos</option>
+                <option>Ativo</option>
+                <option>Inativo</option>
+
+            </select>
+
+        </div>
+
+        <div class="col-12 col-md-4 col-lg-2 d-flex align-items-end">
+
+            <button type="button"
+                    class="btn btn-outline-secondary w-100"
+                    disabled>
+
+                <i class="bi bi-funnel me-1"></i>
+                Filtrar
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- TABELA DE CLIENTES -->
+
+    <div class="table-responsive">
+
+        <table class="table table-hover align-middle">
+
+            <thead>
+
+                <tr>
+
+                    <th>Código</th>
+                    <th>Nome / Razão social</th>
+                    <th>CPF / CNPJ</th>
+                    <th>Telefone</th>
+                    <th>Tipo</th>
+                    <th>Status</th>
+                    <th class="text-center">Ações</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <!-- CLIENTE 01 -->
+
+                <tr>
+
+                    <td class="fw-semibold">C001</td>
+
+                    <td>
+
+                        <strong>Carlos Almeida</strong>
+
+                        <small class="d-block text-secondary">
+                            carlos@example.com
+                        </small>
+
+                    </td>
+
+                    <td>***.***.***-01</td>
+                    <td>(62) 9XXXX-0001</td>
+                    <td>Pessoa física</td>
+
+                    <td>
+
+                        <span class="badge text-bg-success">
+                            Ativo
+                        </span>
+
+                    </td>
+
+                    <td>
+
+                        <div class="d-flex justify-content-center gap-2">
+
+                            <button type="button"
+                                    class="btn btn-sm btn-outline-primary"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#modalDetalhesCliente"
+                                    title="Visualizar cliente"
+                                    aria-label="Visualizar cliente">
+
+                                <i class="bi bi-eye"></i>
+
+                            </button>
+
+                            <button type="button"
+                                    class="btn btn-sm btn-outline-secondary"
+                                    title="Editar cliente"
+                                    aria-label="Editar cliente"
+                                    disabled>
+
+                                <i class="bi bi-pencil"></i>
+
+                            </button>
+
+                            <button type="button"
+                                    class="btn btn-sm btn-outline-danger"
+                                    title="Inativar cliente"
+                                    aria-label="Inativar cliente"
+                                    disabled>
+
+                                <i class="bi bi-person-dash"></i>
+
+                            </button>
+
+                        </div>
+
+                    </td>
+
+                </tr>
+
+                <!-- CLIENTE 02 -->
+
+                <tr>
+
+                    <td class="fw-semibold">C002</td>
+
+                    <td>
+
+                        <strong>Mariana Oliveira</strong>
+
+                        <small class="d-block text-secondary">
+                            mariana@example.com
+                        </small>
+
+                    </td>
+
+                    <td>***.***.***-02</td>
+                    <td>(62) 9XXXX-0002</td>
+                    <td>Pessoa física</td>
+
+                    <td>
+
+                        <span class="badge text-bg-success">
+                            Ativo
+                        </span>
+
+                    </td>
+
+                    <td>
+
+                        <div class="d-flex justify-content-center gap-2">
+
+                            <button class="btn btn-sm btn-outline-primary"
+                                    title="Visualizar cliente" disabled>
+
+                                <i class="bi bi-eye"></i>
+
+                            </button>
+
+                            <button class="btn btn-sm btn-outline-secondary"
+                                    title="Editar cliente" disabled>
+
+                                <i class="bi bi-pencil"></i>
+
+                            </button>
+
+                            <button class="btn btn-sm btn-outline-danger"
+                                    title="Inativar cliente" disabled>
+
+                                <i class="bi bi-person-dash"></i>
+
+                            </button>
+
+                        </div>
+
+                    </td>
+
+                </tr>
+
+                <!-- CLIENTE 03 -->
+
+                <tr>
+
+                    <td class="fw-semibold">C003</td>
+
+                    <td>
+
+                        <strong>Oficina Exemplo</strong>
+
+                        <small class="d-block text-secondary">
+                            oficina@example.com
+                        </small>
+
+                    </td>
+
+                    <td>**.***.***/****-03</td>
+                    <td>(62) 3XXX-0003</td>
+                    <td>Pessoa jurídica</td>
+
+                    <td>
+
+                        <span class="badge text-bg-success">
+                            Ativo
+                        </span>
+
+                    </td>
+
+                    <td>
+
+                        <div class="d-flex justify-content-center gap-2">
+
+                            <button class="btn btn-sm btn-outline-primary"
+                                    title="Visualizar cliente" disabled>
+
+                                <i class="bi bi-eye"></i>
+
+                            </button>
+
+                            <button class="btn btn-sm btn-outline-secondary"
+                                    title="Editar cliente" disabled>
+
+                                <i class="bi bi-pencil"></i>
+
+                            </button>
+
+                            <button class="btn btn-sm btn-outline-danger"
+                                    title="Inativar cliente" disabled>
+
+                                <i class="bi bi-person-dash"></i>
+
+                            </button>
+
+                        </div>
+
+                    </td>
+
+                </tr>
+
+                <!-- CLIENTE 04 -->
+
+                <tr>
+
+                    <td class="fw-semibold">C004</td>
+
+                    <td>
+
+                        <strong>Rafael Santos</strong>
+
+                        <small class="d-block text-secondary">
+                            rafael@example.com
+                        </small>
+
+                    </td>
+
+                    <td>***.***.***-04</td>
+                    <td>(62) 9XXXX-0004</td>
+                    <td>Pessoa física</td>
+
+                    <td>
+
+                        <span class="badge text-bg-success">
+                            Ativo
+                        </span>
+
+                    </td>
+
+                    <td>
+
+                        <div class="d-flex justify-content-center gap-2">
+
+                            <button class="btn btn-sm btn-outline-primary"
+                                    title="Visualizar cliente" disabled>
+
+                                <i class="bi bi-eye"></i>
+
+                            </button>
+
+                            <button class="btn btn-sm btn-outline-secondary"
+                                    title="Editar cliente" disabled>
+
+                                <i class="bi bi-pencil"></i>
+
+                            </button>
+
+                            <button class="btn btn-sm btn-outline-danger"
+                                    title="Inativar cliente" disabled>
+
+                                <i class="bi bi-person-dash"></i>
+
+                            </button>
+
+                        </div>
+
+                    </td>
+
+                </tr>
+
+                <!-- CLIENTE 05 -->
+
+                <tr>
+
+                    <td class="fw-semibold">C005</td>
+
+                    <td>
+
+                        <strong>Fernanda Costa</strong>
+
+                        <small class="d-block text-secondary">
+                            fernanda@example.com
+                        </small>
+
+                    </td>
+
+                    <td>***.***.***-05</td>
+                    <td>(62) 9XXXX-0005</td>
+                    <td>Pessoa física</td>
+
+                    <td>
+
+                        <span class="badge text-bg-secondary">
+                            Inativo
+                        </span>
+
+                    </td>
+
+                    <td>
+
+                        <div class="d-flex justify-content-center gap-2">
+
+                            <button class="btn btn-sm btn-outline-primary"
+                                    title="Visualizar cliente" disabled>
+
+                                <i class="bi bi-eye"></i>
+
+                            </button>
+
+                            <button class="btn btn-sm btn-outline-secondary"
+                                    title="Editar cliente" disabled>
+
+                                <i class="bi bi-pencil"></i>
+
+                            </button>
+
+                            <button class="btn btn-sm btn-outline-success"
+                                    title="Reativar cliente" disabled>
+
+                                <i class="bi bi-person-check"></i>
+
+                            </button>
+
+                        </div>
+
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <!-- PAGINAÇÃO -->
+
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mt-3">
+
+        <small class="text-secondary">
+            Mostrando 5 clientes demonstrativos
+        </small>
+
+        <nav aria-label="Paginação de clientes">
+
+            <ul class="pagination pagination-sm mb-0">
+
+                <li class="page-item disabled">
+                    <span class="page-link">Anterior</span>
+                </li>
+
+                <li class="page-item active">
+                    <span class="page-link">1</span>
+                </li>
+
+                <li class="page-item disabled">
+                    <span class="page-link">2</span>
+                </li>
+
+                <li class="page-item disabled">
+                    <span class="page-link">3</span>
+                </li>
+
+                <li class="page-item disabled">
+                    <span class="page-link">Próximo</span>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </div>
+
+</div>
+
+<!-- MODAL DE CADASTRO DE CLIENTE -->
+
+<div class="modal fade"
+     id="modalCliente"
+     tabindex="-1"
+     aria-labelledby="tituloModalCliente"
+     aria-hidden="true">
+
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h5 class="modal-title" id="tituloModalCliente">
+
+                    <i class="bi bi-person-plus text-primary me-2"></i>
+                    Cadastrar novo cliente
+
+                </h5>
+
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Fechar">
+
+                </button>
+
+            </div>
+
+            <div class="modal-body">
+
+                <div class="alert alert-light border">
+
+                    <i class="bi bi-info-circle me-2"></i>
+
+                    Modo demonstrativo: nenhum dado será armazenado.
+
+                </div>
+
+                <!-- DADOS PESSOAIS -->
+
+                <h5 class="mb-3">
+
+                    <i class="bi bi-person me-2"></i>
+                    Dados do cliente
+
+                </h5>
+
+                <div class="row g-3">
+
+                    <div class="col-md-6">
+
+                        <label for="tipoCliente" class="form-label">
+                            Tipo de pessoa *
+                        </label>
+
+                        <select class="form-select" id="tipoCliente">
+
+                            <option>Pessoa física</option>
+                            <option>Pessoa jurídica</option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <label for="documentoCliente" class="form-label">
+                            CPF / CNPJ
+                        </label>
+
+                        <input type="text"
+                               class="form-control"
+                               id="documentoCliente"
+                               placeholder="Informe o documento">
+
+                    </div>
+
+                    <div class="col-12">
+
+                        <label for="nomeCliente" class="form-label">
+                            Nome completo / Razão social *
+                        </label>
+
+                        <input type="text"
+                               class="form-control"
+                               id="nomeCliente"
+                               placeholder="Informe o nome do cliente"
+                               required>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <label for="telefoneCliente" class="form-label">
+                            Telefone
+                        </label>
+
+                        <input type="tel"
+                               class="form-control"
+                               id="telefoneCliente"
+                               placeholder="(00) 00000-0000">
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <label for="emailCliente" class="form-label">
+                            E-mail
+                        </label>
+
+                        <input type="email"
+                               class="form-control"
+                               id="emailCliente"
+                               placeholder="cliente@example.com">
+
+                    </div>
+
+                </div>
+
+                <hr class="my-4">
+
+                <!-- ENDEREÇO -->
+
+                <h5 class="mb-3">
+
+                    <i class="bi bi-geo-alt me-2"></i>
+                    Endereço
+
+                </h5>
+
+                <div class="row g-3">
+
+                    <div class="col-md-4">
+
+                        <label for="cepCliente" class="form-label">
+                            CEP
+                        </label>
+
+                        <input type="text"
+                               class="form-control"
+                               id="cepCliente"
+                               placeholder="00000-000">
+
+                    </div>
+
+                    <div class="col-md-8">
+
+                        <label for="ruaCliente" class="form-label">
+                            Rua / Avenida
+                        </label>
+
+                        <input type="text"
+                               class="form-control"
+                               id="ruaCliente"
+                               placeholder="Informe o endereço">
+
+                    </div>
+
+                    <div class="col-md-4">
+
+                        <label for="numeroCliente" class="form-label">
+                            Número
+                        </label>
+
+                        <input type="text"
+                               class="form-control"
+                               id="numeroCliente"
+                               placeholder="Número">
+
+                    </div>
+
+                    <div class="col-md-8">
+
+                        <label for="bairroCliente" class="form-label">
+                            Bairro
+                        </label>
+
+                        <input type="text"
+                               class="form-control"
+                               id="bairroCliente"
+                               placeholder="Informe o bairro">
+
+                    </div>
+
+                    <div class="col-md-8">
+
+                        <label for="cidadeCliente" class="form-label">
+                            Cidade
+                        </label>
+
+                        <input type="text"
+                               class="form-control"
+                               id="cidadeCliente"
+                               placeholder="Informe a cidade">
+
+                    </div>
+
+                    <div class="col-md-4">
+
+                        <label for="estadoCliente" class="form-label">
+                            Estado
+                        </label>
+
+                        <select class="form-select" id="estadoCliente">
+
+                            <option value="">Selecione</option>
+                            <option>AC</option>
+                            <option>AL</option>
+                            <option>AP</option>
+                            <option>AM</option>
+                            <option>BA</option>
+                            <option>CE</option>
+                            <option>DF</option>
+                            <option>ES</option>
+                            <option>GO</option>
+                            <option>MA</option>
+                            <option>MT</option>
+                            <option>MS</option>
+                            <option>MG</option>
+                            <option>PA</option>
+                            <option>PB</option>
+                            <option>PR</option>
+                            <option>PE</option>
+                            <option>PI</option>
+                            <option>RJ</option>
+                            <option>RN</option>
+                            <option>RS</option>
+                            <option>RO</option>
+                            <option>RR</option>
+                            <option>SC</option>
+                            <option>SP</option>
+                            <option>SE</option>
+                            <option>TO</option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="col-12">
+
+                        <label for="complementoCliente" class="form-label">
+                            Complemento
+                        </label>
+
+                        <input type="text"
+                               class="form-control"
+                               id="complementoCliente"
+                               placeholder="Complemento do endereço">
+
+                    </div>
+
+                </div>
+
+                <hr class="my-4">
+
+                <!-- INFORMAÇÕES ADICIONAIS -->
+
+                <h5 class="mb-3">
+
+                    <i class="bi bi-card-text me-2"></i>
+                    Informações adicionais
+
+                </h5>
+
+                <div class="row g-3">
+
+                    <div class="col-md-6">
+
+                        <label for="statusCliente" class="form-label">
+                            Status do cadastro
+                        </label>
+
+                        <select class="form-select" id="statusCliente">
+
+                            <option>Ativo</option>
+                            <option>Inativo</option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="col-12">
+
+                        <label for="observacaoCliente" class="form-label">
+                            Observações
+                        </label>
+
+                        <textarea class="form-control"
+                                  id="observacaoCliente"
+                                  rows="3"
+                                  placeholder="Informações adicionais sobre o cliente"></textarea>
+
+                    </div>
+
+                </div>
+
+                <!-- AVISO DE PRIVACIDADE -->
+
+                <div class="alert alert-light border mt-4 mb-0">
+
+                    <i class="bi bi-shield-lock text-primary me-2"></i>
+
+                    <strong>Privacidade dos dados</strong>
+
+                    <p class="small mb-0 mt-2">
+
+                        Os dados pessoais deverão ser utilizados somente
+                        para finalidades relacionadas ao atendimento e
+                        às operações comerciais, respeitando a LGPD.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+
+                <small class="text-secondary me-auto">
+                    * Campos obrigatórios
+                </small>
+
+                <button type="button"
+                        class="btn btn-outline-secondary"
+                        data-bs-dismiss="modal">
+
+                    Cancelar
+
+                </button>
+
+                <button type="button"
+                        class="btn btn-primary"
+                        disabled>
+
+                    <i class="bi bi-check-lg me-1"></i>
+                    Salvar cliente
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- MODAL DE VISUALIZAÇÃO DO CLIENTE -->
+
+<div class="modal fade"
+     id="modalDetalhesCliente"
+     tabindex="-1"
+     aria-labelledby="tituloDetalhesCliente"
+     aria-hidden="true">
+
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h5 class="modal-title" id="tituloDetalhesCliente">
+
+                    <i class="bi bi-person-vcard text-primary me-2"></i>
+                    Detalhes do cliente
+
+                </h5>
+
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Fechar">
+
+                </button>
+
+            </div>
+
+            <div class="modal-body">
+
+                <div class="d-flex align-items-center gap-3 mb-4">
+
+                    <div class="stat-icon blue">
+
+                        <i class="bi bi-person"></i>
+
+                    </div>
+
+                    <div class="flex-grow-1">
+
+                        <h5 class="mb-1">Carlos Almeida</h5>
+
+                        <small class="text-secondary">
+                            Código: C001
+                        </small>
+
+                    </div>
+
+                    <span class="badge text-bg-success">
+                        Ativo
+                    </span>
+
+                </div>
+
+                <div class="row g-4 mb-4">
+
+                    <div class="col-md-6">
+
+                        <small class="text-secondary d-block">
+                            Tipo de pessoa
+                        </small>
+
+                        <strong>Pessoa física</strong>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <small class="text-secondary d-block">
+                            CPF
+                        </small>
+
+                        <strong>***.***.***-01</strong>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <small class="text-secondary d-block">
+                            Telefone
+                        </small>
+
+                        <strong>(62) 9XXXX-0001</strong>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <small class="text-secondary d-block">
+                            E-mail
+                        </small>
+
+                        <strong>carlos@example.com</strong>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <small class="text-secondary d-block">
+                            Cidade
+                        </small>
+
+                        <strong>Goiânia - GO</strong>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <small class="text-secondary d-block">
+                            Data de cadastro
+                        </small>
+
+                        <strong>10/11/2026</strong>
+
+                    </div>
+
+                </div>
+
+                <hr>
+
+                <!-- RESUMO DE COMPRAS -->
+
+                <h5 class="mb-3">
+
+                    <i class="bi bi-cart-check me-2"></i>
+                    Resumo de compras
+
+                </h5>
+
+                <div class="row g-3">
+
+                    <div class="col-md-6">
+
+                        <div class="border rounded-3 p-3">
+
+                            <small class="text-secondary">
+                                Total de compras
+                            </small>
+
+                            <h3 class="mt-2 mb-0">5</h3>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <div class="border rounded-3 p-3">
+
+                            <small class="text-secondary">
+                                Valor total em compras
+                            </small>
+
+                            <h3 class="text-success mt-2 mb-0">
+                                R$ 685,40
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="alert alert-light border mt-4 mb-0">
+
+                    <i class="bi bi-info-circle me-2"></i>
+
+                    Os dados deste cliente são fictícios.
+
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+
+                <button type="button"
+                        class="btn btn-outline-primary"
+                        disabled>
+
+                    <i class="bi bi-pencil me-1"></i>
+                    Editar cliente
+
+                </button>
+
+                <button type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal">
+
+                    Fechar
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

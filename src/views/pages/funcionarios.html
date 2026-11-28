@@ -1,0 +1,1351 @@
+﻿
+<!-- CABEÇALHO DA PÁGINA -->
+
+<div class="page-heading">
+
+    <div>
+        <h1>Funcionários</h1>
+        <p>Gerencie os usuários e as permissões de acesso ao sistema.</p>
+    </div>
+
+    <button type="button"
+            class="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#modalFuncionario">
+
+        <i class="bi bi-person-plus me-2"></i>
+        Novo funcionário
+
+    </button>
+
+</div>
+
+<!-- INDICADORES -->
+
+<div class="row g-4 mb-4">
+
+    <div class="col-12 col-md-6 col-xl-3">
+
+        <div class="stat-card">
+
+            <div class="stat-icon blue">
+                <i class="bi bi-people"></i>
+            </div>
+
+            <span>Total de funcionários</span>
+            <h2>8</h2>
+            <small>Usuários cadastrados</small>
+
+        </div>
+
+    </div>
+
+    <div class="col-12 col-md-6 col-xl-3">
+
+        <div class="stat-card">
+
+            <div class="stat-icon green">
+                <i class="bi bi-person-check"></i>
+            </div>
+
+            <span>Funcionários ativos</span>
+            <h2>7</h2>
+            <small>Usuários com acesso ao sistema</small>
+
+        </div>
+
+    </div>
+
+    <div class="col-12 col-md-6 col-xl-3">
+
+        <div class="stat-card">
+
+            <div class="stat-icon orange">
+                <i class="bi bi-shield-check"></i>
+            </div>
+
+            <span>Administradores ativos</span>
+            <h2>2</h2>
+            <small>Usuários com acesso administrativo</small>
+
+        </div>
+
+    </div>
+
+    <div class="col-12 col-md-6 col-xl-3">
+
+        <div class="stat-card">
+
+            <div class="stat-icon blue">
+                <i class="bi bi-person-badge"></i>
+            </div>
+
+            <span>Operadores ativos</span>
+            <h2>5</h2>
+            <small>Usuários com acesso operacional</small>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- LISTAGEM DE FUNCIONÁRIOS -->
+
+<div class="content-card">
+
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
+
+        <div>
+
+            <h3>Funcionários cadastrados</h3>
+
+            <p class="mb-0">
+                Consulte os usuários e seus respectivos perfis de acesso.
+            </p>
+
+        </div>
+
+        <span class="badge text-bg-secondary">
+            Modo demonstrativo
+        </span>
+
+    </div>
+
+    <!-- FILTROS -->
+
+    <div class="row g-3 mb-4">
+
+        <div class="col-12 col-lg-5">
+
+            <label for="pesquisaFuncionario" class="form-label">
+                Pesquisar funcionário
+            </label>
+
+            <div class="input-group">
+
+                <span class="input-group-text bg-white">
+                    <i class="bi bi-search"></i>
+                </span>
+
+                <input type="search"
+                       class="form-control"
+                       id="pesquisaFuncionario"
+                       placeholder="Nome, usuário ou e-mail">
+
+            </div>
+
+        </div>
+
+        <div class="col-12 col-md-4 col-lg-3">
+
+            <label for="filtroPerfilFuncionario" class="form-label">
+                Perfil de acesso
+            </label>
+
+            <select class="form-select"
+                    id="filtroPerfilFuncionario">
+
+                <option>Todos</option>
+                <option>Administrador</option>
+                <option>Operador</option>
+
+            </select>
+
+        </div>
+
+        <div class="col-12 col-md-4 col-lg-2">
+
+            <label for="filtroStatusFuncionario" class="form-label">
+                Status
+            </label>
+
+            <select class="form-select"
+                    id="filtroStatusFuncionario">
+
+                <option>Todos</option>
+                <option>Ativo</option>
+                <option>Inativo</option>
+
+            </select>
+
+        </div>
+
+        <div class="col-12 col-md-4 col-lg-2 d-flex align-items-end">
+
+            <button type="button"
+                    class="btn btn-outline-secondary w-100"
+                    disabled>
+
+                <i class="bi bi-funnel me-1"></i>
+                Filtrar
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- TABELA DE FUNCIONÁRIOS -->
+
+    <div class="table-responsive">
+
+        <table class="table table-hover align-middle">
+
+            <thead>
+
+                <tr>
+
+                    <th>Código</th>
+                    <th>Funcionário</th>
+                    <th>Usuário</th>
+                    <th>Perfil de acesso</th>
+                    <th>Último acesso</th>
+                    <th>Status</th>
+                    <th class="text-center">Ações</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <!-- FUNCIONÁRIO 01 -->
+
+                <tr>
+
+                    <td class="fw-semibold">U001</td>
+
+                    <td>
+
+                        <div class="d-flex align-items-center gap-3">
+
+                            <span class="bg-primary-subtle text-primary rounded-circle p-2">
+
+                                <i class="bi bi-person fs-5"></i>
+
+                            </span>
+
+                            <div>
+
+                                <strong>Administrador</strong>
+
+                                <small class="d-block text-secondary">
+                                    admin@example.com
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                    </td>
+
+                    <td>admin</td>
+
+                    <td>
+
+                        <span class="badge bg-primary-subtle text-primary">
+
+                            <i class="bi bi-shield-check me-1"></i>
+                            Administrador
+
+                        </span>
+
+                    </td>
+
+                    <td>26/11/2026 08:00</td>
+
+                    <td>
+
+                        <span class="badge text-bg-success">
+                            Ativo
+                        </span>
+
+                    </td>
+
+                    <td>
+
+                        <div class="d-flex justify-content-center gap-2">
+
+                            <button type="button"
+                                    class="btn btn-sm btn-outline-primary"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#modalDetalhesFuncionario"
+                                    title="Visualizar funcionário"
+                                    aria-label="Visualizar administrador">
+
+                                <i class="bi bi-eye"></i>
+
+                            </button>
+
+                            <button type="button"
+                                    class="btn btn-sm btn-outline-secondary"
+                                    title="Editar funcionário"
+                                    disabled>
+
+                                <i class="bi bi-pencil"></i>
+
+                            </button>
+
+                            <button type="button"
+                                    class="btn btn-sm btn-outline-danger"
+                                    title="Inativar funcionário"
+                                    disabled>
+
+                                <i class="bi bi-person-dash"></i>
+
+                            </button>
+
+                        </div>
+
+                    </td>
+
+                </tr>
+
+                <!-- FUNCIONÁRIO 02 -->
+
+                <tr>
+
+                    <td class="fw-semibold">U002</td>
+
+                    <td>
+
+                        <div class="d-flex align-items-center gap-3">
+
+                            <span class="bg-success-subtle text-success rounded-circle p-2">
+                                <i class="bi bi-person fs-5"></i>
+                            </span>
+
+                            <div>
+
+                                <strong>Lucas Silva</strong>
+
+                                <small class="d-block text-secondary">
+                                    lucas@example.com
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                    </td>
+
+                    <td>lucas.silva</td>
+
+                    <td>
+
+                        <span class="badge bg-success-subtle text-success">
+
+                            <i class="bi bi-person-badge me-1"></i>
+                            Operador
+
+                        </span>
+
+                    </td>
+
+                    <td>26/11/2026 08:15</td>
+
+                    <td>
+
+                        <span class="badge text-bg-success">
+                            Ativo
+                        </span>
+
+                    </td>
+
+                    <td>
+
+                        <div class="d-flex justify-content-center gap-2">
+
+                            <button type="button"
+                                    class="btn btn-sm btn-outline-primary"
+                                    title="Visualizar funcionário"
+                                    disabled>
+
+                                <i class="bi bi-eye"></i>
+
+                            </button>
+
+                            <button type="button"
+                                    class="btn btn-sm btn-outline-secondary"
+                                    title="Editar funcionário"
+                                    disabled>
+
+                                <i class="bi bi-pencil"></i>
+
+                            </button>
+
+                            <button type="button"
+                                    class="btn btn-sm btn-outline-danger"
+                                    title="Inativar funcionário"
+                                    disabled>
+
+                                <i class="bi bi-person-dash"></i>
+
+                            </button>
+
+                        </div>
+
+                    </td>
+
+                </tr>
+
+                <!-- FUNCIONÁRIO 03 -->
+
+                <tr>
+
+                    <td class="fw-semibold">U003</td>
+
+                    <td>
+
+                        <div class="d-flex align-items-center gap-3">
+
+                            <span class="bg-success-subtle text-success rounded-circle p-2">
+                                <i class="bi bi-person fs-5"></i>
+                            </span>
+
+                            <div>
+
+                                <strong>Ana Oliveira</strong>
+
+                                <small class="d-block text-secondary">
+                                    ana@example.com
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                    </td>
+
+                    <td>ana.oliveira</td>
+
+                    <td>
+
+                        <span class="badge bg-success-subtle text-success">
+
+                            <i class="bi bi-person-badge me-1"></i>
+                            Operador
+
+                        </span>
+
+                    </td>
+
+                    <td>26/11/2026 09:10</td>
+
+                    <td>
+
+                        <span class="badge text-bg-success">
+                            Ativo
+                        </span>
+
+                    </td>
+
+                    <td>
+
+                        <div class="d-flex justify-content-center gap-2">
+
+                            <button type="button"
+                                    class="btn btn-sm btn-outline-primary"
+                                    title="Visualizar funcionário"
+                                    disabled>
+
+                                <i class="bi bi-eye"></i>
+
+                            </button>
+
+                            <button type="button"
+                                    class="btn btn-sm btn-outline-secondary"
+                                    title="Editar funcionário"
+                                    disabled>
+
+                                <i class="bi bi-pencil"></i>
+
+                            </button>
+
+                            <button type="button"
+                                    class="btn btn-sm btn-outline-danger"
+                                    title="Inativar funcionário"
+                                    disabled>
+
+                                <i class="bi bi-person-dash"></i>
+
+                            </button>
+
+                        </div>
+
+                    </td>
+
+                </tr>
+
+                <!-- FUNCIONÁRIO 04 -->
+
+                <tr>
+
+                    <td class="fw-semibold">U004</td>
+
+                    <td>
+
+                        <div class="d-flex align-items-center gap-3">
+
+                            <span class="bg-primary-subtle text-primary rounded-circle p-2">
+                                <i class="bi bi-person fs-5"></i>
+                            </span>
+
+                            <div>
+
+                                <strong>Pedro Santos</strong>
+
+                                <small class="d-block text-secondary">
+                                    pedro@example.com
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                    </td>
+
+                    <td>pedro.santos</td>
+
+                    <td>
+
+                        <span class="badge bg-primary-subtle text-primary">
+
+                            <i class="bi bi-shield-check me-1"></i>
+                            Administrador
+
+                        </span>
+
+                    </td>
+
+                    <td>25/11/2026 17:30</td>
+
+                    <td>
+
+                        <span class="badge text-bg-success">
+                            Ativo
+                        </span>
+
+                    </td>
+
+                    <td>
+
+                        <div class="d-flex justify-content-center gap-2">
+
+                            <button type="button"
+                                    class="btn btn-sm btn-outline-primary"
+                                    title="Visualizar funcionário"
+                                    disabled>
+
+                                <i class="bi bi-eye"></i>
+
+                            </button>
+
+                            <button type="button"
+                                    class="btn btn-sm btn-outline-secondary"
+                                    title="Editar funcionário"
+                                    disabled>
+
+                                <i class="bi bi-pencil"></i>
+
+                            </button>
+
+                            <button type="button"
+                                    class="btn btn-sm btn-outline-danger"
+                                    title="Inativar funcionário"
+                                    disabled>
+
+                                <i class="bi bi-person-dash"></i>
+
+                            </button>
+
+                        </div>
+
+                    </td>
+
+                </tr>
+
+                <!-- FUNCIONÁRIO 05 -->
+
+                <tr>
+
+                    <td class="fw-semibold">U005</td>
+
+                    <td>
+
+                        <div class="d-flex align-items-center gap-3">
+
+                            <span class="bg-secondary-subtle text-secondary rounded-circle p-2">
+                                <i class="bi bi-person fs-5"></i>
+                            </span>
+
+                            <div>
+
+                                <strong>Marcos Costa</strong>
+
+                                <small class="d-block text-secondary">
+                                    marcos@example.com
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                    </td>
+
+                    <td>marcos.costa</td>
+
+                    <td>
+
+                        <span class="badge bg-success-subtle text-success">
+
+                            <i class="bi bi-person-badge me-1"></i>
+                            Operador
+
+                        </span>
+
+                    </td>
+
+                    <td>20/11/2026 14:20</td>
+
+                    <td>
+
+                        <span class="badge text-bg-secondary">
+                            Inativo
+                        </span>
+
+                    </td>
+
+                    <td>
+
+                        <div class="d-flex justify-content-center gap-2">
+
+                            <button type="button"
+                                    class="btn btn-sm btn-outline-primary"
+                                    title="Visualizar funcionário"
+                                    disabled>
+
+                                <i class="bi bi-eye"></i>
+
+                            </button>
+
+                            <button type="button"
+                                    class="btn btn-sm btn-outline-secondary"
+                                    title="Editar funcionário"
+                                    disabled>
+
+                                <i class="bi bi-pencil"></i>
+
+                            </button>
+
+                            <button type="button"
+                                    class="btn btn-sm btn-outline-success"
+                                    title="Reativar funcionário"
+                                    disabled>
+
+                                <i class="bi bi-person-check"></i>
+
+                            </button>
+
+                        </div>
+
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <!-- PAGINAÇÃO -->
+
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mt-3">
+
+        <small class="text-secondary">
+            Mostrando 5 de 8 funcionários demonstrativos
+        </small>
+
+        <nav aria-label="Paginação de funcionários">
+
+            <ul class="pagination pagination-sm mb-0">
+
+                <li class="page-item disabled">
+                    <span class="page-link">Anterior</span>
+                </li>
+
+                <li class="page-item active">
+                    <span class="page-link">1</span>
+                </li>
+
+                <li class="page-item disabled">
+                    <span class="page-link">2</span>
+                </li>
+
+                <li class="page-item disabled">
+                    <span class="page-link">Próximo</span>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </div>
+
+</div>
+
+<!-- PERFIS DE ACESSO -->
+
+<div class="content-card mt-4">
+
+    <div class="mb-4">
+
+        <h3>
+
+            <i class="bi bi-shield-lock text-primary me-2"></i>
+            Perfis de acesso
+
+        </h3>
+
+        <p class="mb-0">
+            Conheça as permissões propostas para cada perfil do sistema.
+        </p>
+
+    </div>
+
+    <div class="row g-4">
+
+        <!-- ADMINISTRADOR -->
+
+        <div class="col-12 col-lg-6">
+
+            <div class="border rounded-4 p-4 h-100">
+
+                <div class="d-flex align-items-center gap-3 mb-3">
+
+                    <div class="stat-icon blue">
+                        <i class="bi bi-shield-check"></i>
+                    </div>
+
+                    <div>
+
+                        <h5 class="mb-1">Administrador</h5>
+
+                        <small class="text-secondary">
+                            Gerenciamento geral do sistema
+                        </small>
+
+                    </div>
+
+                </div>
+
+                <hr>
+
+                <div class="d-flex flex-column gap-3">
+
+                    <div>
+                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                        Acessar o dashboard gerencial
+                    </div>
+
+                    <div>
+                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                        Gerenciar produtos e categorias
+                    </div>
+
+                    <div>
+                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                        Gerenciar estoque
+                    </div>
+
+                    <div>
+                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                        Registrar e consultar vendas
+                    </div>
+
+                    <div>
+                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                        Gerenciar clientes e fornecedores
+                    </div>
+
+                    <div>
+                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                        Gerenciar funcionários
+                    </div>
+
+                    <div>
+                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                        Gerenciar despesas
+                    </div>
+
+                    <div>
+                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                        Consultar relatórios e análises inteligentes
+                    </div>
+
+                    <div>
+                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                        Acessar configurações administrativas
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- OPERADOR -->
+
+        <div class="col-12 col-lg-6">
+
+            <div class="border rounded-4 p-4 h-100">
+
+                <div class="d-flex align-items-center gap-3 mb-3">
+
+                    <div class="stat-icon green">
+                        <i class="bi bi-person-badge"></i>
+                    </div>
+
+                    <div>
+
+                        <h5 class="mb-1">Operador</h5>
+
+                        <small class="text-secondary">
+                            Operações diárias da loja
+                        </small>
+
+                    </div>
+
+                </div>
+
+                <hr>
+
+                <div class="d-flex flex-column gap-3">
+
+                    <div>
+                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                        Registrar vendas
+                    </div>
+
+                    <div>
+                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                        Consultar produtos
+                    </div>
+
+                    <div>
+                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                        Consultar estoque
+                    </div>
+
+                    <div>
+                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                        Consultar clientes
+                    </div>
+
+                    <div class="text-secondary">
+                        <i class="bi bi-lock-fill me-2"></i>
+                        Gerenciar funcionários
+                    </div>
+
+                    <div class="text-secondary">
+                        <i class="bi bi-lock-fill me-2"></i>
+                        Gerenciar despesas
+                    </div>
+
+                    <div class="text-secondary">
+                        <i class="bi bi-lock-fill me-2"></i>
+                        Alterar configurações administrativas
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="alert alert-light border mt-4 mb-0">
+
+        <i class="bi bi-info-circle me-2"></i>
+
+        As permissões apresentadas são demonstrativas e deverão
+        ser validadas e aplicadas pelo backend do sistema.
+
+    </div>
+
+</div>
+
+<!-- MODAL DE CADASTRO DE FUNCIONÁRIO -->
+
+<div class="modal fade"
+     id="modalFuncionario"
+     tabindex="-1"
+     aria-labelledby="tituloModalFuncionario"
+     aria-hidden="true">
+
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h5 class="modal-title" id="tituloModalFuncionario">
+
+                    <i class="bi bi-person-plus text-primary me-2"></i>
+                    Cadastrar novo funcionário
+
+                </h5>
+
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Fechar">
+                </button>
+
+            </div>
+
+            <div class="modal-body">
+
+                <div class="alert alert-light border">
+
+                    <i class="bi bi-info-circle me-2"></i>
+
+                    Modo demonstrativo: nenhum usuário será cadastrado.
+
+                </div>
+
+                <!-- DADOS DO FUNCIONÁRIO -->
+
+                <h5 class="mb-3">
+
+                    <i class="bi bi-person me-2"></i>
+                    Dados do funcionário
+
+                </h5>
+
+                <div class="row g-3">
+
+                    <div class="col-12">
+
+                        <label for="nomeFuncionario" class="form-label">
+                            Nome completo *
+                        </label>
+
+                        <input type="text"
+                               class="form-control"
+                               id="nomeFuncionario"
+                               placeholder="Informe o nome completo"
+                               required>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <label for="emailFuncionario" class="form-label">
+                            E-mail *
+                        </label>
+
+                        <input type="email"
+                               class="form-control"
+                               id="emailFuncionario"
+                               placeholder="funcionario@example.com"
+                               required>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <label for="usuarioFuncionario" class="form-label">
+                            Nome de usuário *
+                        </label>
+
+                        <input type="text"
+                               class="form-control"
+                               id="usuarioFuncionario"
+                               placeholder="Ex.: nome.sobrenome"
+                               autocomplete="off"
+                               required>
+
+                    </div>
+
+                </div>
+
+                <hr class="my-4">
+
+                <!-- CREDENCIAIS -->
+
+                <h5 class="mb-3">
+
+                    <i class="bi bi-lock me-2"></i>
+                    Credenciais de acesso
+
+                </h5>
+
+                <div class="row g-3">
+
+                    <div class="col-md-6">
+
+                        <label for="senhaFuncionario" class="form-label">
+                            Senha *
+                        </label>
+
+                        <input type="password"
+                               class="form-control"
+                               id="senhaFuncionario"
+                               placeholder="Informe uma senha"
+                               autocomplete="new-password"
+                               required>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <label for="confirmarSenhaFuncionario" class="form-label">
+                            Confirmar senha *
+                        </label>
+
+                        <input type="password"
+                               class="form-control"
+                               id="confirmarSenhaFuncionario"
+                               placeholder="Repita a senha"
+                               autocomplete="new-password"
+                               required>
+
+                    </div>
+
+                    <div class="col-12">
+
+                        <small class="text-secondary">
+
+                            <i class="bi bi-shield-lock me-1"></i>
+
+                            Utilize uma senha forte e não compartilhe
+                            suas credenciais com outros usuários.
+
+                        </small>
+
+                    </div>
+
+                </div>
+
+                <hr class="my-4">
+
+                <!-- PERFIL E STATUS -->
+
+                <h5 class="mb-3">
+
+                    <i class="bi bi-shield-check me-2"></i>
+                    Perfil e permissões
+
+                </h5>
+
+                <div class="row g-3">
+
+                    <div class="col-md-6">
+
+                        <label for="perfilFuncionario" class="form-label">
+                            Perfil de acesso *
+                        </label>
+
+                        <select class="form-select"
+                                id="perfilFuncionario"
+                                required>
+
+                            <option value="">Selecione o perfil</option>
+                            <option value="operador">Operador</option>
+                            <option value="administrador">Administrador</option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <label for="statusFuncionario" class="form-label">
+                            Status do cadastro
+                        </label>
+
+                        <select class="form-select"
+                                id="statusFuncionario">
+
+                            <option value="ativo">Ativo</option>
+                            <option value="inativo">Inativo</option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+                <div class="alert alert-light border mt-4 mb-0">
+
+                    <h6>
+
+                        <i class="bi bi-shield-check text-primary me-2"></i>
+                        Segurança e controle de acesso
+
+                    </h6>
+
+                    <ul class="small mb-0 ps-3">
+
+                        <li>
+                            Cada funcionário deverá possuir credenciais individuais.
+                        </li>
+
+                        <li>
+                            As permissões deverão respeitar o perfil atribuído.
+                        </li>
+
+                        <li>
+                            Usuários inativos não deverão acessar o sistema.
+                        </li>
+
+                        <li>
+                            As senhas deverão ser armazenadas utilizando hash seguro.
+                        </li>
+
+                        <li>
+                            A inativação deverá preservar o histórico das operações.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+
+                <small class="text-secondary me-auto">
+                    * Campos obrigatórios
+                </small>
+
+                <button type="button"
+                        class="btn btn-outline-secondary"
+                        data-bs-dismiss="modal">
+
+                    Cancelar
+
+                </button>
+
+                <button type="button"
+                        class="btn btn-primary"
+                        disabled>
+
+                    <i class="bi bi-check-lg me-1"></i>
+                    Salvar funcionário
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- MODAL DE DETALHES DO FUNCIONÁRIO -->
+
+<div class="modal fade"
+     id="modalDetalhesFuncionario"
+     tabindex="-1"
+     aria-labelledby="tituloDetalhesFuncionario"
+     aria-hidden="true">
+
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h5 class="modal-title" id="tituloDetalhesFuncionario">
+
+                    <i class="bi bi-person-badge text-primary me-2"></i>
+                    Detalhes do funcionário
+
+                </h5>
+
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Fechar">
+                </button>
+
+            </div>
+
+            <div class="modal-body">
+
+                <div class="d-flex align-items-center gap-3 mb-4">
+
+                    <div class="stat-icon blue">
+                        <i class="bi bi-person"></i>
+                    </div>
+
+                    <div class="flex-grow-1">
+
+                        <h5 class="mb-1">Administrador</h5>
+
+                        <small class="text-secondary">
+                            Código: U001
+                        </small>
+
+                    </div>
+
+                    <span class="badge text-bg-success">
+                        Ativo
+                    </span>
+
+                </div>
+
+                <!-- INFORMAÇÕES CADASTRAIS -->
+
+                <h5 class="mb-4">Informações cadastrais</h5>
+
+                <div class="row g-4">
+
+                    <div class="col-md-6">
+
+                        <small class="text-secondary d-block">
+                            Nome completo
+                        </small>
+
+                        <strong>Administrador</strong>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <small class="text-secondary d-block">
+                            Nome de usuário
+                        </small>
+
+                        <strong>admin</strong>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <small class="text-secondary d-block">
+                            E-mail
+                        </small>
+
+                        <strong>admin@example.com</strong>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <small class="text-secondary d-block">
+                            Perfil de acesso
+                        </small>
+
+                        <span class="badge bg-primary-subtle text-primary">
+
+                            <i class="bi bi-shield-check me-1"></i>
+                            Administrador
+
+                        </span>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <small class="text-secondary d-block">
+                            Data de cadastro
+                        </small>
+
+                        <strong>01/11/2026</strong>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <small class="text-secondary d-block">
+                            Último acesso
+                        </small>
+
+                        <strong>26/11/2026 às 08:00</strong>
+
+                    </div>
+
+                </div>
+
+                <hr class="my-4">
+
+                <!-- SEGURANÇA -->
+
+                <h5 class="mb-3">
+
+                    <i class="bi bi-shield-lock me-2"></i>
+                    Segurança da conta
+
+                </h5>
+
+                <div class="border rounded-3 p-3">
+
+                    <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+
+                        <div>
+
+                            <strong>Senha de acesso</strong>
+
+                            <small class="d-block text-secondary">
+                                A senha não deve ser exibida pelo sistema.
+                            </small>
+
+                        </div>
+
+                        <button type="button"
+                                class="btn btn-outline-primary"
+                                disabled>
+
+                            <i class="bi bi-key me-1"></i>
+                            Redefinir senha
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div class="alert alert-light border mt-4 mb-0">
+
+                    <i class="bi bi-info-circle me-2"></i>
+
+                    Os dados apresentados são fictícios e destinados
+                    à demonstração da interface.
+
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+
+                <button type="button"
+                        class="btn btn-outline-primary"
+                        disabled>
+
+                    <i class="bi bi-pencil me-1"></i>
+                    Editar funcionário
+
+                </button>
+
+                <button type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal">
+
+                    Fechar
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

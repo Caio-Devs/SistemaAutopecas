@@ -1,0 +1,387 @@
+﻿
+<!-- CABEÇALHO -->
+
+<div class="page-heading">
+
+    <div>
+        <h1>Estoque</h1>
+        <p>Controle as mercadorias e movimentações de estoque.</p>
+    </div>
+
+    <div class="d-flex flex-wrap gap-2">
+
+        <button class="btn btn-success" type="button" id="btnAbrirEntrada">
+            <i class="bi bi-box-arrow-in-down me-2"></i>
+            Registrar entrada
+        </button>
+
+        <button class="btn btn-danger" type="button" id="btnAbrirSaida">
+            <i class="bi bi-box-arrow-up me-2"></i>
+            Registrar saída
+        </button>
+
+    </div>
+
+</div>
+
+<!-- MENSAGENS -->
+
+<div id="mensagensEstoque"></div>
+
+<!-- INDICADORES -->
+
+<div class="row g-4 mb-4">
+
+    <div class="col-12 col-md-6 col-xl-3">
+        <div class="stat-card">
+            <div class="stat-icon blue">
+                <i class="bi bi-boxes"></i>
+            </div>
+            <span>Unidades em estoque</span>
+            <h2 id="resumoUnidades">–</h2>
+            <small>Total de unidades armazenadas</small>
+        </div>
+    </div>
+
+    <div class="col-12 col-md-6 col-xl-3">
+        <div class="stat-card">
+            <div class="stat-icon green">
+                <i class="bi bi-arrow-down-circle"></i>
+            </div>
+            <span>Entradas no mês</span>
+            <h2 id="resumoEntradas">–</h2>
+            <small>Unidades recebidas</small>
+        </div>
+    </div>
+
+    <div class="col-12 col-md-6 col-xl-3">
+        <div class="stat-card">
+            <div class="stat-icon red">
+                <i class="bi bi-arrow-up-circle"></i>
+            </div>
+            <span>Saídas no mês</span>
+            <h2 id="resumoSaidas">–</h2>
+            <small>Unidades retiradas</small>
+        </div>
+    </div>
+
+    <div class="col-12 col-md-6 col-xl-3">
+        <div class="stat-card">
+            <div class="stat-icon orange">
+                <i class="bi bi-exclamation-triangle"></i>
+            </div>
+            <span>Estoque crítico</span>
+            <h2 id="resumoCriticos">–</h2>
+            <small>Produtos para reposição</small>
+        </div>
+    </div>
+
+</div>
+
+<!-- POSIÇÃO DE ESTOQUE -->
+
+<div class="content-card mb-4">
+
+    <div class="d-flex flex-wrap justify-content-between align-items-center mb-4">
+        <div>
+            <h3>Posição de estoque</h3>
+            <p class="mb-0">
+                Acompanhe as quantidades disponíveis de cada produto.
+            </p>
+        </div>
+    </div>
+
+    <!-- FILTROS -->
+
+    <form class="row g-3 mb-4" id="filtrosEstoque">
+
+        <div class="col-12 col-lg-5">
+            <label for="pesquisaEstoque" class="form-label">Pesquisar</label>
+            <div class="input-group">
+                <span class="input-group-text bg-white">
+                    <i class="bi bi-search"></i>
+                </span>
+                <input type="search"
+                       id="pesquisaEstoque"
+                       class="form-control"
+                       placeholder="Código (ex.: P001) ou nome do produto">
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3">
+            <label for="categoriaEstoque" class="form-label">Categoria</label>
+            <select class="form-select" id="categoriaEstoque">
+                <option value="">Todas as categorias</option>
+            </select>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-2">
+            <label for="situacaoEstoque" class="form-label">Situação</label>
+            <select class="form-select" id="situacaoEstoque">
+                <option value="">Todas</option>
+                <option value="Normal">Normal</option>
+                <option value="Crítico">Crítico</option>
+                <option value="Sem estoque">Sem estoque</option>
+            </select>
+        </div>
+
+        <div class="col-12 col-lg-2 d-flex align-items-end">
+            <button class="btn btn-outline-secondary w-100" type="submit">
+                <i class="bi bi-funnel me-1"></i>
+                Filtrar
+            </button>
+        </div>
+
+    </form>
+
+    <!-- TABELA DE ESTOQUE -->
+
+    <div class="table-responsive">
+        <table class="table align-middle table-hover">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Produto</th>
+                    <th>Categoria</th>
+                    <th>Estoque atual</th>
+                    <th>Estoque mínimo</th>
+                    <th>Situação</th>
+                    <th class="text-center">Ações</th>
+                </tr>
+            </thead>
+            <tbody id="tabelaEstoque">
+                <tr><td colspan="7" class="text-center text-secondary py-4">Carregando...</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <small class="text-secondary" id="totalEstoque"></small>
+
+</div>
+
+<!-- HISTÓRICO DE MOVIMENTAÇÕES -->
+
+<div class="content-card" id="secaoHistorico">
+
+    <div class="d-flex flex-wrap justify-content-between align-items-center mb-4">
+        <div>
+            <h3>
+                <i class="bi bi-clock-history me-2"></i>
+                Histórico de movimentações
+            </h3>
+            <p class="mb-0" id="descricaoHistorico">
+                Consulte as entradas e saídas de mercadorias.
+            </p>
+        </div>
+    </div>
+
+    <!-- FILTROS DO HISTÓRICO -->
+
+    <form class="row g-3 mb-4" id="filtrosHistorico">
+
+        <div class="col-12 col-md-3">
+            <label for="movimentacaoInicio" class="form-label">Data inicial</label>
+            <input type="date" class="form-control" id="movimentacaoInicio">
+        </div>
+
+        <div class="col-12 col-md-3">
+            <label for="movimentacaoFim" class="form-label">Data final</label>
+            <input type="date" class="form-control" id="movimentacaoFim">
+        </div>
+
+        <div class="col-12 col-md-3">
+            <label for="tipoMovimentacao" class="form-label">Tipo</label>
+            <select class="form-select" id="tipoMovimentacao">
+                <option value="">Todas</option>
+                <option value="ENTRADA">Entrada</option>
+                <option value="SAIDA">Saída</option>
+            </select>
+        </div>
+
+        <div class="col-12 col-md-3 d-flex align-items-end gap-2">
+            <button class="btn btn-outline-secondary w-100" type="submit">
+                <i class="bi bi-funnel me-1"></i>
+                Filtrar
+            </button>
+            <button class="btn btn-outline-secondary" type="button" id="btnLimparHistorico" title="Limpar filtros">
+                <i class="bi bi-x-lg"></i>
+            </button>
+        </div>
+
+    </form>
+
+    <!-- TABELA DE MOVIMENTAÇÕES -->
+
+    <div class="table-responsive">
+        <table class="table align-middle table-hover">
+            <thead>
+                <tr>
+                    <th>Data</th>
+                    <th>Produto</th>
+                    <th>Tipo</th>
+                    <th>Quantidade</th>
+                    <th>Motivo</th>
+                    <th>Fornecedor</th>
+                    <th>Responsável</th>
+                </tr>
+            </thead>
+            <tbody id="tabelaMovimentacoes">
+                <tr><td colspan="7" class="text-center text-secondary py-4">Carregando...</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+<!-- MODAL DE ENTRADA -->
+
+<div class="modal fade" id="modalEntradaEstoque" tabindex="-1"
+     aria-labelledby="tituloEntradaEstoque" aria-hidden="true">
+
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="tituloEntradaEstoque">
+                    <i class="bi bi-box-arrow-in-down me-2 text-success"></i>
+                    Registrar entrada de estoque
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+            </div>
+
+            <form id="formEntradaEstoque" novalidate>
+
+                <div class="modal-body">
+
+                    <div class="row g-3">
+
+                        <div class="col-12">
+                            <label for="produtoEntrada" class="form-label">Produto *</label>
+                            <select class="form-select" id="produtoEntrada" required>
+                                <option value="">Selecione o produto</option>
+                            </select>
+                            <div class="form-text" id="saldoEntrada"></div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <label for="quantidadeEntrada" class="form-label">Quantidade *</label>
+                            <input type="number" class="form-control" id="quantidadeEntrada"
+                                   min="1" step="1" placeholder="0" required>
+                        </div>
+
+                        <div class="col-md-4">
+                            <label for="dataEntrada" class="form-label">Data</label>
+                            <input type="date" class="form-control" id="dataEntrada">
+                        </div>
+
+                        <div class="col-md-4">
+                            <label for="motivoEntrada" class="form-label">Motivo *</label>
+                            <select class="form-select" id="motivoEntrada" required>
+                                <option value="COMPRA">Compra de mercadoria</option>
+                                <option value="AJUSTE">Ajuste de estoque</option>
+                            </select>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="fornecedorEntrada" class="form-label">Fornecedor</label>
+                            <select class="form-select" id="fornecedorEntrada">
+                                <option value="">Sem fornecedor</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <div class="alert alert-danger mt-3 mb-0 d-none" id="erroEntrada"></div>
+
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-success" id="btnSalvarEntrada">
+                        <i class="bi bi-check-lg me-1"></i>
+                        Registrar entrada
+                    </button>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+</div>
+
+<!-- MODAL DE SAÍDA -->
+
+<div class="modal fade" id="modalSaidaEstoque" tabindex="-1"
+     aria-labelledby="tituloSaidaEstoque" aria-hidden="true">
+
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="tituloSaidaEstoque">
+                    <i class="bi bi-box-arrow-up me-2 text-danger"></i>
+                    Registrar saída de estoque
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+            </div>
+
+            <form id="formSaidaEstoque" novalidate>
+
+                <div class="modal-body">
+
+                    <div class="row g-3">
+
+                        <div class="col-12">
+                            <label for="produtoSaida" class="form-label">Produto *</label>
+                            <select class="form-select" id="produtoSaida" required>
+                                <option value="">Selecione o produto</option>
+                            </select>
+                            <div class="form-text" id="saldoSaida"></div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <label for="quantidadeSaida" class="form-label">Quantidade *</label>
+                            <input type="number" class="form-control" id="quantidadeSaida"
+                                   min="1" step="1" placeholder="0" required>
+                        </div>
+
+                        <div class="col-md-4">
+                            <label for="dataSaida" class="form-label">Data</label>
+                            <input type="date" class="form-control" id="dataSaida">
+                        </div>
+
+                        <div class="col-md-4">
+                            <label for="motivoSaida" class="form-label">Motivo *</label>
+                            <select class="form-select" id="motivoSaida" required>
+                                <option value="PERDA">Perda ou produto danificado</option>
+                                <option value="AJUSTE">Ajuste de estoque</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <div class="alert alert-warning mt-3 mb-0">
+                        <i class="bi bi-info-circle me-2"></i>
+                        A saída não pode deixar o estoque negativo. As saídas por venda
+                        são registradas automaticamente na tela de Vendas.
+                    </div>
+
+                    <div class="alert alert-danger mt-3 mb-0 d-none" id="erroSaida"></div>
+
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-danger" id="btnSalvarSaida">
+                        <i class="bi bi-check-lg me-1"></i>
+                        Registrar saída
+                    </button>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,425 @@
+﻿
+<!-- CABEÇALHO DA PÁGINA -->
+
+<div class="page-heading">
+    <div>
+        <h1>Produtos e Serviços</h1>
+        <p>Gerencie o catálogo de produtos e serviços da empresa.</p>
+    </div>
+
+    <div class="d-flex gap-2">
+        <button class="btn btn-outline-primary" type="button" id="btnNovoServico">
+            <i class="bi bi-tools me-2"></i>
+            Novo serviço
+        </button>
+
+        <button class="btn btn-primary" type="button" id="btnNovoProduto">
+            <i class="bi bi-plus-lg me-2"></i>
+            Novo produto
+        </button>
+    </div>
+</div>
+
+<!-- MENSAGENS -->
+
+<div id="mensagensProdutos"></div>
+
+<!-- INDICADORES -->
+
+<div class="row g-4 mb-4">
+
+    <div class="col-12 col-md-6 col-xl-3">
+        <div class="stat-card">
+            <div class="stat-icon blue">
+                <i class="bi bi-box-seam"></i>
+            </div>
+            <span>Total de produtos</span>
+            <h2 id="resumoProdutos">–</h2>
+            <small>Produtos cadastrados</small>
+        </div>
+    </div>
+
+    <div class="col-12 col-md-6 col-xl-3">
+        <div class="stat-card">
+            <div class="stat-icon green">
+                <i class="bi bi-check-circle"></i>
+            </div>
+            <span>Produtos ativos</span>
+            <h2 id="resumoAtivos">–</h2>
+            <small>Disponíveis no catálogo</small>
+        </div>
+    </div>
+
+    <div class="col-12 col-md-6 col-xl-3">
+        <div class="stat-card">
+            <div class="stat-icon orange">
+                <i class="bi bi-exclamation-triangle"></i>
+            </div>
+            <span>Estoque crítico</span>
+            <h2 id="resumoCriticosProdutos">–</h2>
+            <small>Necessitam de reposição</small>
+        </div>
+    </div>
+
+    <div class="col-12 col-md-6 col-xl-3">
+        <div class="stat-card">
+            <div class="stat-icon blue">
+                <i class="bi bi-tools"></i>
+            </div>
+            <span>Serviços cadastrados</span>
+            <h2 id="resumoServicos">–</h2>
+            <small>Serviços disponíveis</small>
+        </div>
+    </div>
+
+</div>
+
+<!-- LISTAGEM DE PRODUTOS E SERVIÇOS -->
+
+<div class="content-card">
+
+    <div class="d-flex flex-wrap justify-content-between align-items-center mb-4">
+        <div>
+            <h3>Lista de produtos e serviços</h3>
+            <p class="mb-0">Consulte os itens cadastrados no catálogo.</p>
+        </div>
+    </div>
+
+    <!-- PESQUISA E FILTROS -->
+
+    <form class="row g-3 mb-4" id="filtrosProdutos">
+
+        <div class="col-12 col-lg-3">
+            <label for="pesquisaProduto" class="form-label">Pesquisar</label>
+            <div class="input-group">
+                <span class="input-group-text bg-white">
+                    <i class="bi bi-search"></i>
+                </span>
+                <input type="search" id="pesquisaProduto" class="form-control"
+                       placeholder="Código (ex.: P001) ou nome">
+            </div>
+        </div>
+
+        <div class="col-12 col-md-4 col-lg-2">
+            <label for="filtroTipo" class="form-label">Tipo de item</label>
+            <select class="form-select" id="filtroTipo">
+                <option value="">Todos</option>
+                <option value="produto">Produto</option>
+                <option value="servico">Serviço</option>
+            </select>
+        </div>
+
+        <div class="col-12 col-md-4 col-lg-3">
+            <label for="filtroCategoria" class="form-label">Categoria</label>
+            <select class="form-select" id="filtroCategoria">
+                <option value="">Todas as categorias</option>
+            </select>
+        </div>
+
+        <div class="col-12 col-md-4 col-lg-2">
+            <label for="filtroStatus" class="form-label">Status</label>
+            <select class="form-select" id="filtroStatus">
+                <option value="">Todos</option>
+                <option value="ATIVO">Ativo</option>
+                <option value="INATIVO">Inativo</option>
+            </select>
+        </div>
+
+        <div class="col-12 col-lg-2 d-flex align-items-end">
+            <button class="btn btn-outline-secondary w-100" type="submit">
+                <i class="bi bi-funnel me-1"></i>
+                Filtrar
+            </button>
+        </div>
+
+    </form>
+
+    <!-- TABELA -->
+
+    <div class="table-responsive">
+        <table class="table align-middle table-hover">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Nome do item</th>
+                    <th>Tipo</th>
+                    <th>Categoria</th>
+                    <th>Preço de venda</th>
+                    <th>Estoque</th>
+                    <th>Status</th>
+                    <th class="text-center">Ações</th>
+                </tr>
+            </thead>
+            <tbody id="tabelaProdutos">
+                <tr><td colspan="8" class="text-center text-secondary py-4">Carregando...</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <small class="text-secondary" id="totalProdutos"></small>
+
+</div>
+
+<!-- INFORMAÇÕES SOBRE PRODUTOS E SERVIÇOS -->
+
+<div class="row g-4 mt-1">
+
+    <div class="col-md-6">
+        <div class="content-card h-100">
+            <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="stat-icon blue mb-0">
+                    <i class="bi bi-box-seam"></i>
+                </div>
+                <div>
+                    <h3 class="mb-1">Produtos</h3>
+                    <small class="text-secondary">Itens físicos comercializados</small>
+                </div>
+            </div>
+            <div class="d-flex flex-column gap-3">
+                <div><i class="bi bi-check-circle text-success me-2"></i>Controle de estoque atual e mínimo.</div>
+                <div><i class="bi bi-check-circle text-success me-2"></i>Registro de entradas e saídas.</div>
+                <div><i class="bi bi-check-circle text-success me-2"></i>Baixa de estoque após a venda.</div>
+                <div><i class="bi bi-check-circle text-success me-2"></i>Alertas inteligentes de reposição.</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="content-card h-100">
+            <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="stat-icon green mb-0">
+                    <i class="bi bi-tools"></i>
+                </div>
+                <div>
+                    <h3 class="mb-1">Serviços</h3>
+                    <small class="text-secondary">Atividades prestadas aos clientes</small>
+                </div>
+            </div>
+            <div class="d-flex flex-column gap-3">
+                <div><i class="bi bi-check-circle text-success me-2"></i>Cadastro com nome, categoria e preço.</div>
+                <div><i class="bi bi-check-circle text-success me-2"></i>Inclusão nos itens de uma venda.</div>
+                <div><i class="bi bi-check-circle text-success me-2"></i>Participação no faturamento.</div>
+                <div><i class="bi bi-info-circle text-primary me-2"></i>Não realiza movimentação de estoque.</div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- MODAL DE PRODUTO (cadastrar, editar e visualizar) -->
+
+<div class="modal fade" id="modalProduto" tabindex="-1"
+     aria-labelledby="tituloModalProduto" aria-hidden="true">
+
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="tituloModalProduto">
+                    <i class="bi bi-box-seam me-2"></i>
+                    <span>Cadastrar produto</span>
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+            </div>
+
+            <form id="formProduto" novalidate>
+
+                <div class="modal-body">
+
+                    <div class="row g-3">
+
+                        <div class="col-md-4">
+                            <label for="codigoProduto" class="form-label">Código</label>
+                            <input type="text" id="codigoProduto" class="form-control"
+                                   value="Gerado ao salvar" readonly>
+                        </div>
+
+                        <div class="col-md-8">
+                            <label for="nomeProduto" class="form-label">Nome do produto *</label>
+                            <input type="text" id="nomeProduto" class="form-control"
+                                   maxlength="150" placeholder="Nome da autopeça" required>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="categoriaProduto" class="form-label">Categoria *</label>
+                            <select id="categoriaProduto" class="form-select" required>
+                                <option value="">Selecione</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="precoVenda" class="form-label">Preço de venda *</label>
+                            <div class="input-group">
+                                <span class="input-group-text">R$</span>
+                                <input type="number" id="precoVenda" class="form-control"
+                                       min="0" step="0.01" placeholder="0,00" required>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <label for="estoqueInicial" class="form-label" id="rotuloEstoqueInicial">Estoque inicial</label>
+                            <input type="number" id="estoqueInicial" class="form-control"
+                                   min="0" step="1" value="0">
+                            <div class="form-text d-none" id="ajudaEstoqueInicial">
+                                O estoque muda pelas entradas e saídas.
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <label for="estoqueMinimo" class="form-label">Estoque mínimo *</label>
+                            <input type="number" id="estoqueMinimo" class="form-control"
+                                   min="0" step="1" value="0" required>
+                        </div>
+
+                        <div class="col-md-4">
+                            <label for="statusProduto" class="form-label">Status</label>
+                            <select id="statusProduto" class="form-select">
+                                <option value="true">Ativo</option>
+                                <option value="false">Inativo</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <div class="alert alert-danger mt-3 mb-0 d-none" id="erroProduto"></div>
+
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-primary" id="btnSalvarProduto">
+                        <i class="bi bi-check-lg me-1"></i>
+                        Salvar produto
+                    </button>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+</div>
+
+<!-- MODAL DE SERVIÇO (cadastrar, editar e visualizar) -->
+
+<div class="modal fade" id="modalServico" tabindex="-1"
+     aria-labelledby="tituloModalServico" aria-hidden="true">
+
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="tituloModalServico">
+                    <i class="bi bi-tools me-2"></i>
+                    <span>Cadastrar serviço</span>
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+            </div>
+
+            <form id="formServico" novalidate>
+
+                <div class="modal-body">
+
+                    <div class="row g-3">
+
+                        <div class="col-md-4">
+                            <label for="codigoServico" class="form-label">Código</label>
+                            <input type="text" id="codigoServico" class="form-control"
+                                   value="Gerado ao salvar" readonly>
+                        </div>
+
+                        <div class="col-md-8">
+                            <label for="nomeServico" class="form-label">Nome do serviço *</label>
+                            <input type="text" id="nomeServico" class="form-control"
+                                   maxlength="150" placeholder="Informe o nome do serviço" required>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="categoriaServico" class="form-label">Categoria *</label>
+                            <select id="categoriaServico" class="form-select" required>
+                                <option value="">Selecione</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="precoServico" class="form-label">Preço do serviço *</label>
+                            <div class="input-group">
+                                <span class="input-group-text">R$</span>
+                                <input type="number" id="precoServico" class="form-control"
+                                       min="0" step="0.01" placeholder="0,00" required>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="statusServico" class="form-label">Status</label>
+                            <select id="statusServico" class="form-select">
+                                <option value="true">Ativo</option>
+                                <option value="false">Inativo</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <div class="alert alert-primary mt-4 mb-0">
+                        <div class="d-flex align-items-start gap-2">
+                            <i class="bi bi-info-circle-fill"></i>
+                            <div>
+                                <strong>Controle de estoque</strong>
+                                <div class="small mt-1">
+                                    Serviços não possuem estoque inicial, estoque mínimo
+                                    ou movimentações de estoque. As peças utilizadas deverão
+                                    ser registradas separadamente como produtos na venda.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="alert alert-danger mt-3 mb-0 d-none" id="erroServico"></div>
+
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-primary" id="btnSalvarServico">
+                        <i class="bi bi-check-lg me-1"></i>
+                        Salvar serviço
+                    </button>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+</div>
+
+<!-- MODAL DE CONFIRMAÇÃO DE INATIVAÇÃO -->
+
+<div class="modal fade" id="modalInativar" tabindex="-1" aria-labelledby="tituloInativar" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="tituloInativar">
+                    <i class="bi bi-slash-circle me-2 text-danger"></i>
+                    Inativar item
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+            </div>
+            <div class="modal-body">
+                <p class="mb-2">Deseja inativar <strong id="nomeInativar"></strong>?</p>
+                <p class="text-secondary small mb-0">
+                    O item sai do catálogo e não pode mais ser vendido nem movimentado,
+                    mas continua no histórico. Para reativar, edite o item e mude o status para Ativo.
+                </p>
+                <div class="alert alert-danger mt-3 mb-0 d-none" id="erroInativar"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-danger" id="btnConfirmarInativar">
+                    <i class="bi bi-slash-circle me-1"></i>
+                    Inativar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,156 @@
+﻿<div class="page-heading">
+                        <div>
+                            <h1>Dashboard</h1>
+                            <p>Acompanhe os principais indicadores da sua empresa.</p>
+                        </div>
+
+                        <span class="badge text-bg-secondary">
+                            Modo demonstrativo
+                        </span>
+                    </div>
+
+                    <!-- INDICADORES -->
+                    <div class="row g-4">
+
+                        <div class="col-12 col-sm-6 col-xl-3">
+                            <div class="stat-card">
+                                <div class="stat-icon green">
+                                    <i class="bi bi-currency-dollar"></i>
+                                </div>
+                                <span>Faturamento</span>
+                                <h2>R$ 12.450,00</h2>
+                                <small>Receitas do período</small>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-sm-6 col-xl-3">
+                            <div class="stat-card">
+                                <div class="stat-icon red">
+                                    <i class="bi bi-wallet2"></i>
+                                </div>
+                                <span>Despesas</span>
+                                <h2>R$ 4.320,00</h2>
+                                <small>Despesas do período</small>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-sm-6 col-xl-3">
+                            <div class="stat-card">
+                                <div class="stat-icon blue">
+                                    <i class="bi bi-cart-check"></i>
+                                </div>
+                                <span>Vendas realizadas</span>
+                                <h2>84</h2>
+                                <small>Total de vendas</small>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-sm-6 col-xl-3">
+                            <div class="stat-card">
+                                <div class="stat-icon orange">
+                                    <i class="bi bi-exclamation-triangle"></i>
+                                </div>
+                                <span>Estoque crítico</span>
+                                <h2>8</h2>
+                                <small>Produtos para reposição</small>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- GRÁFICOS -->
+                    <div class="row g-4 mt-1">
+
+                        <div class="col-12 col-xl-8">
+                            <div class="content-card">
+
+                                <h3>Desempenho de vendas</h3>
+                                <p>Visão geral dos últimos sete dias</p>
+
+                                <div class="chart-container">
+                                    <canvas id="salesChart"></canvas>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-xl-4">
+                            <div class="content-card">
+
+                                <h3>Produtos mais vendidos</h3>
+                                <p>Quantidade de vendas por produto</p>
+
+                                <div class="chart-container">
+                                    <canvas id="productsChart"></canvas>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- ALERTAS -->
+                    <div class="content-card mt-4">
+
+                        <h3>
+                            <i class="bi bi-exclamation-circle text-warning"></i>
+                            Alertas de reposição
+                        </h3>
+
+                        <p>Produtos que atingiram o estoque mínimo.</p>
+
+                        <div class="table-responsive">
+                            <table class="table align-middle">
+
+                                <thead>
+                                    <tr>
+                                        <th>Produto</th>
+                                        <th>Categoria</th>
+                                        <th>Estoque atual</th>
+                                        <th>Estoque mínimo</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr>
+                                        <td>Pastilha de freio</td>
+                                        <td>Freios</td>
+                                        <td>3</td>
+                                        <td>10</td>
+                                        <td>
+                                            <span class="badge text-bg-danger">
+                                                Crítico
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Filtro de óleo</td>
+                                        <td>Filtros</td>
+                                        <td>5</td>
+                                        <td>5</td>
+                                        <td>
+                                            <span class="badge text-bg-warning">
+                                                Reposição
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Correia dentada</td>
+                                        <td>Motor</td>
+                                        <td>2</td>
+                                        <td>8</td>
+                                        <td>
+                                            <span class="badge text-bg-danger">
+                                                Crítico
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+
+                            </table>
+                        </div>
+
+                    </div>

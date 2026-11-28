@@ -1,0 +1,1457 @@
+﻿
+<!-- CABEÇALHO DA PÁGINA -->
+
+<div class="page-heading">
+
+    <div>
+        <h1>Relatórios</h1>
+        <p>Consulte e analise os resultados gerenciais da loja.</p>
+    </div>
+
+    <div class="d-flex flex-wrap gap-2">
+
+        <button type="button"
+                class="btn btn-outline-success"
+                disabled>
+
+            <i class="bi bi-file-earmark-excel me-2"></i>
+            Exportar Excel
+
+        </button>
+
+        <button type="button"
+                class="btn btn-outline-danger"
+                disabled>
+
+            <i class="bi bi-file-earmark-pdf me-2"></i>
+            Exportar PDF
+
+        </button>
+
+    </div>
+
+</div>
+
+<!-- TIPOS DE RELATÓRIOS -->
+
+<div class="row g-4 mb-4">
+
+    <!-- RELATÓRIO DE VENDAS -->
+
+    <div class="col-12 col-lg-4">
+
+        <div class="content-card h-100">
+
+            <div class="stat-icon blue mb-3">
+                <i class="bi bi-cart-check"></i>
+            </div>
+
+            <h4>Relatório de vendas</h4>
+
+            <p class="text-secondary">
+                Consulte vendas realizadas, faturamento,
+                quantidade de itens e produtos mais vendidos.
+            </p>
+
+            <button type="button"
+                    class="btn btn-outline-primary w-100"
+                    data-bs-toggle="modal"
+                    data-bs-target="#modalRelatorioVendas">
+
+                <i class="bi bi-eye me-2"></i>
+                Visualizar relatório
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- RELATÓRIO DE ESTOQUE -->
+
+    <div class="col-12 col-lg-4">
+
+        <div class="content-card h-100">
+
+            <div class="stat-icon orange mb-3">
+                <i class="bi bi-box-seam"></i>
+            </div>
+
+            <h4>Relatório de estoque</h4>
+
+            <p class="text-secondary">
+                Acompanhe os produtos disponíveis,
+                níveis mínimos e itens que precisam de reposição.
+            </p>
+
+            <button type="button"
+                    class="btn btn-outline-primary w-100"
+                    data-bs-toggle="modal"
+                    data-bs-target="#modalRelatorioEstoque">
+
+                <i class="bi bi-eye me-2"></i>
+                Visualizar relatório
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- RELATÓRIO FINANCEIRO -->
+
+    <div class="col-12 col-lg-4">
+
+        <div class="content-card h-100">
+
+            <div class="stat-icon green mb-3">
+                <i class="bi bi-cash-stack"></i>
+            </div>
+
+            <h4>Relatório financeiro</h4>
+
+            <p class="text-secondary">
+                Analise as receitas, despesas registradas
+                e o saldo gerencial da empresa.
+            </p>
+
+            <button type="button"
+                    class="btn btn-outline-primary w-100"
+                    data-bs-toggle="modal"
+                    data-bs-target="#modalRelatorioFinanceiro">
+
+                <i class="bi bi-eye me-2"></i>
+                Visualizar relatório
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- FILTROS -->
+
+<div class="content-card mb-4">
+
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
+
+        <div>
+
+            <h3>
+
+                <i class="bi bi-funnel text-primary me-2"></i>
+                Filtros do relatório
+
+            </h3>
+
+            <p class="mb-0">
+                Selecione as informações que deseja consultar.
+            </p>
+
+        </div>
+
+        <span class="badge text-bg-secondary">
+            Modo demonstrativo
+        </span>
+
+    </div>
+
+    <div class="row g-3">
+
+        <div class="col-12 col-md-6 col-xl-3">
+
+            <label for="tipoRelatorio" class="form-label">
+                Tipo de relatório
+            </label>
+
+            <select class="form-select" id="tipoRelatorio">
+
+                <option>Vendas</option>
+                <option>Estoque atual</option>
+                <option>Produtos mais vendidos</option>
+                <option>Produtos com estoque crítico</option>
+                <option>Financeiro</option>
+                <option>Despesas</option>
+
+            </select>
+
+        </div>
+
+        <div class="col-12 col-md-6 col-xl-3">
+
+            <label for="dataInicialRelatorio" class="form-label">
+                Data inicial
+            </label>
+
+            <input type="date"
+                   class="form-control"
+                   id="dataInicialRelatorio"
+                   value="2026-11-01">
+
+        </div>
+
+        <div class="col-12 col-md-6 col-xl-3">
+
+            <label for="dataFinalRelatorio" class="form-label">
+                Data final
+            </label>
+
+            <input type="date"
+                   class="form-control"
+                   id="dataFinalRelatorio"
+                   value="2026-11-30">
+
+        </div>
+
+        <div class="col-12 col-md-6 col-xl-3">
+
+            <label for="categoriaRelatorio" class="form-label">
+                Categoria de produtos
+            </label>
+
+            <select class="form-select" id="categoriaRelatorio">
+
+                <option>Todas</option>
+                <option>Motor</option>
+                <option>Freios</option>
+                <option>Filtros</option>
+                <option>Elétrica</option>
+                <option>Suspensão</option>
+
+            </select>
+
+        </div>
+
+        <div class="col-12 col-md-6 col-xl-3">
+
+            <label for="funcionarioRelatorio" class="form-label">
+                Funcionário
+            </label>
+
+            <select class="form-select" id="funcionarioRelatorio">
+
+                <option>Todos</option>
+                <option>Administrador</option>
+                <option>Lucas Silva</option>
+                <option>Ana Oliveira</option>
+                <option>Pedro Santos</option>
+
+            </select>
+
+        </div>
+
+        <div class="col-12 col-md-6 col-xl-3">
+
+            <label for="situacaoRelatorio" class="form-label">
+                Situação do estoque
+            </label>
+
+            <select class="form-select" id="situacaoRelatorio">
+
+                <option>Todas</option>
+                <option>Estoque normal</option>
+                <option>Estoque crítico</option>
+                <option>Sem estoque</option>
+
+            </select>
+
+        </div>
+
+        <div class="col-12 col-md-6 col-xl-3 d-flex align-items-end">
+
+            <button type="button"
+                    class="btn btn-outline-secondary w-100"
+                    disabled>
+
+                <i class="bi bi-arrow-counterclockwise me-2"></i>
+                Limpar filtros
+
+            </button>
+
+        </div>
+
+        <div class="col-12 col-md-6 col-xl-3 d-flex align-items-end">
+
+            <button type="button"
+                    class="btn btn-primary w-100"
+                    disabled>
+
+                <i class="bi bi-file-earmark-bar-graph me-2"></i>
+                Gerar relatório
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <small class="text-secondary d-block mt-3">
+
+        <i class="bi bi-info-circle me-1"></i>
+
+        Os filtros serão aplicados conforme o tipo de relatório.
+        O estoque atual representa a posição atual dos produtos.
+
+    </small>
+
+</div>
+
+<!-- INDICADORES GERENCIAIS -->
+
+<div class="row g-4 mb-4">
+
+    <div class="col-12 col-md-6 col-xl-3">
+
+        <div class="stat-card">
+
+            <div class="stat-icon green">
+                <i class="bi bi-currency-dollar"></i>
+            </div>
+
+            <span>Receitas do mês</span>
+            <h2>R$ 12.450,00</h2>
+            <small>Faturamento demonstrativo</small>
+
+        </div>
+
+    </div>
+
+    <div class="col-12 col-md-6 col-xl-3">
+
+        <div class="stat-card">
+
+            <div class="stat-icon red">
+                <i class="bi bi-wallet2"></i>
+            </div>
+
+            <span>Despesas do mês</span>
+            <h2>R$ 4.320,00</h2>
+            <small>Total de despesas registradas</small>
+
+        </div>
+
+    </div>
+
+    <div class="col-12 col-md-6 col-xl-3">
+
+        <div class="stat-card">
+
+            <div class="stat-icon blue">
+                <i class="bi bi-cart-check"></i>
+            </div>
+
+            <span>Vendas realizadas</span>
+            <h2>84</h2>
+            <small>Vendas concluídas no mês</small>
+
+        </div>
+
+    </div>
+
+    <div class="col-12 col-md-6 col-xl-3">
+
+        <div class="stat-card">
+
+            <div class="stat-icon green">
+                <i class="bi bi-graph-up-arrow"></i>
+            </div>
+
+            <span>Saldo gerencial</span>
+            <h2>R$ 8.130,00</h2>
+            <small>Receitas menos despesas registradas</small>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ANÁLISES GERENCIAIS -->
+
+<div class="row g-4 mb-4">
+
+    <!-- PRODUTOS MAIS VENDIDOS -->
+
+    <div class="col-12 col-xl-7">
+
+        <div class="content-card h-100">
+
+            <div class="mb-4">
+
+                <h3>
+
+                    <i class="bi bi-trophy text-primary me-2"></i>
+                    Produtos mais vendidos
+
+                </h3>
+
+                <p class="mb-0">
+                    Ranking por quantidade vendida no período.
+                </p>
+
+            </div>
+
+            <div class="mb-4">
+
+                <div class="d-flex justify-content-between mb-2">
+
+                    <strong>1. Filtro de óleo</strong>
+
+                    <small class="text-secondary">
+                        48 unidades
+                    </small>
+
+                </div>
+
+                <div class="progress" style="height: 12px;">
+
+                    <div class="progress-bar bg-primary"
+                         style="width: 100%;">
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="mb-4">
+
+                <div class="d-flex justify-content-between mb-2">
+
+                    <strong>2. Vela de ignição</strong>
+
+                    <small class="text-secondary">
+                        36 unidades
+                    </small>
+
+                </div>
+
+                <div class="progress" style="height: 12px;">
+
+                    <div class="progress-bar bg-primary"
+                         style="width: 75%;">
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="mb-4">
+
+                <div class="d-flex justify-content-between mb-2">
+
+                    <strong>3. Pastilha de freio</strong>
+
+                    <small class="text-secondary">
+                        28 unidades
+                    </small>
+
+                </div>
+
+                <div class="progress" style="height: 12px;">
+
+                    <div class="progress-bar bg-primary"
+                         style="width: 58.3%;">
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="mb-4">
+
+                <div class="d-flex justify-content-between mb-2">
+
+                    <strong>4. Filtro de ar</strong>
+
+                    <small class="text-secondary">
+                        19 unidades
+                    </small>
+
+                </div>
+
+                <div class="progress" style="height: 12px;">
+
+                    <div class="progress-bar bg-primary"
+                         style="width: 39.6%;">
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="mb-3">
+
+                <div class="d-flex justify-content-between mb-2">
+
+                    <strong>5. Correia dentada</strong>
+
+                    <small class="text-secondary">
+                        12 unidades
+                    </small>
+
+                </div>
+
+                <div class="progress" style="height: 12px;">
+
+                    <div class="progress-bar bg-primary"
+                         style="width: 25%;">
+                    </div>
+
+                </div>
+
+            </div>
+
+            <hr>
+
+            <small class="text-secondary">
+
+                <i class="bi bi-info-circle me-1"></i>
+
+                As barras representam a quantidade vendida
+                em relação ao produto mais vendido.
+
+            </small>
+
+        </div>
+
+    </div>
+
+    <!-- RESUMO DO ESTOQUE -->
+
+    <div class="col-12 col-xl-5">
+
+        <div class="content-card h-100">
+
+            <div class="mb-4">
+
+                <h3>
+
+                    <i class="bi bi-boxes text-primary me-2"></i>
+                    Resumo do estoque
+
+                </h3>
+
+                <p class="mb-0">
+                    Situação dos produtos cadastrados.
+                </p>
+
+            </div>
+
+            <div class="border rounded-3 p-3 mb-3">
+
+                <div class="d-flex align-items-center gap-3">
+
+                    <div class="stat-icon blue">
+                        <i class="bi bi-box-seam"></i>
+                    </div>
+
+                    <div>
+
+                        <small class="text-secondary">
+                            Produtos cadastrados
+                        </small>
+
+                        <h4 class="mb-0">128</h4>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="border rounded-3 p-3 mb-3">
+
+                <div class="d-flex align-items-center gap-3">
+
+                    <div class="stat-icon green">
+                        <i class="bi bi-check-circle"></i>
+                    </div>
+
+                    <div>
+
+                        <small class="text-secondary">
+                            Produtos ativos com estoque normal
+                        </small>
+
+                        <h4 class="text-success mb-0">112</h4>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="border rounded-3 p-3 mb-3">
+
+                <div class="d-flex align-items-center gap-3">
+
+                    <div class="stat-icon red">
+                        <i class="bi bi-exclamation-triangle"></i>
+                    </div>
+
+                    <div>
+
+                        <small class="text-secondary">
+                            Produtos ativos com estoque crítico
+                        </small>
+
+                        <h4 class="text-danger mb-0">8</h4>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="border rounded-3 p-3">
+
+                <div class="d-flex align-items-center gap-3">
+
+                    <div class="stat-icon orange">
+                        <i class="bi bi-archive"></i>
+                    </div>
+
+                    <div>
+
+                        <small class="text-secondary">
+                            Produtos inativos
+                        </small>
+
+                        <h4 class="mb-0">8</h4>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- TABELA DE DESEMPENHO DOS PRODUTOS -->
+
+<div class="content-card">
+
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
+
+        <div>
+
+            <h3>Desempenho dos produtos</h3>
+
+            <p class="mb-0">
+                Demonstrativo de quantidade vendida e receita por produto.
+            </p>
+
+        </div>
+
+        <span class="badge bg-primary-subtle text-primary">
+            Novembro de 2026
+        </span>
+
+    </div>
+
+    <div class="table-responsive">
+
+        <table class="table table-hover align-middle">
+
+            <thead>
+
+                <tr>
+
+                    <th>Posição</th>
+                    <th>Código</th>
+                    <th>Produto</th>
+                    <th>Categoria</th>
+                    <th>Qtd. vendida</th>
+                    <th>Preço unitário</th>
+                    <th>Receita</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr>
+
+                    <td>
+                        <span class="badge text-bg-primary">1º</span>
+                    </td>
+
+                    <td>P001</td>
+                    <td class="fw-semibold">Filtro de óleo</td>
+                    <td>Filtros</td>
+                    <td>48</td>
+                    <td>R$ 35,90</td>
+                    <td class="text-success fw-semibold">
+                        R$ 1.723,20
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>
+                        <span class="badge text-bg-secondary">2º</span>
+                    </td>
+
+                    <td>P004</td>
+                    <td class="fw-semibold">Vela de ignição</td>
+                    <td>Elétrica</td>
+                    <td>36</td>
+                    <td>R$ 24,90</td>
+                    <td class="text-success fw-semibold">
+                        R$ 896,40
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>
+                        <span class="badge text-bg-secondary">3º</span>
+                    </td>
+
+                    <td>P002</td>
+                    <td class="fw-semibold">Pastilha de freio</td>
+                    <td>Freios</td>
+                    <td>28</td>
+                    <td>R$ 89,90</td>
+                    <td class="text-success fw-semibold">
+                        R$ 2.517,20
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>4º</td>
+                    <td>P005</td>
+                    <td class="fw-semibold">Filtro de ar</td>
+                    <td>Filtros</td>
+                    <td>19</td>
+                    <td>R$ 45,90</td>
+                    <td class="text-success fw-semibold">
+                        R$ 872,10
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>5º</td>
+                    <td>P003</td>
+                    <td class="fw-semibold">Correia dentada</td>
+                    <td>Motor</td>
+                    <td>12</td>
+                    <td>R$ 129,90</td>
+                    <td class="text-success fw-semibold">
+                        R$ 1.558,80
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+            <tfoot>
+
+                <tr class="table-light">
+
+                    <td colspan="4" class="fw-bold">
+                        Total dos produtos apresentados
+                    </td>
+
+                    <td class="fw-bold">143</td>
+
+                    <td></td>
+
+                    <td class="text-success fw-bold">
+                        R$ 7.567,70
+                    </td>
+
+                </tr>
+
+            </tfoot>
+
+        </table>
+
+    </div>
+
+    <div class="alert alert-light border mt-3 mb-0">
+
+        <i class="bi bi-info-circle me-2"></i>
+
+        Este demonstrativo apresenta apenas os cinco produtos
+        mais vendidos. O total da tabela não corresponde
+        necessariamente ao faturamento completo da loja.
+
+    </div>
+
+</div>
+
+<!-- MODAL RELATÓRIO DE VENDAS -->
+
+<div class="modal fade"
+     id="modalRelatorioVendas"
+     tabindex="-1"
+     aria-labelledby="tituloRelatorioVendas"
+     aria-hidden="true">
+
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h5 class="modal-title" id="tituloRelatorioVendas">
+
+                    <i class="bi bi-cart-check text-primary me-2"></i>
+                    Relatório de vendas
+
+                </h5>
+
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Fechar">
+                </button>
+
+            </div>
+
+            <div class="modal-body">
+
+                <div class="alert alert-light border">
+
+                    <i class="bi bi-info-circle me-2"></i>
+
+                    Relatório demonstrativo — novembro de 2026.
+
+                </div>
+
+                <div class="row g-3 mb-4">
+
+                    <div class="col-md-4">
+
+                        <div class="border rounded-3 p-3">
+
+                            <small class="text-secondary">
+                                Total de vendas
+                            </small>
+
+                            <h3 class="mb-0 mt-2">84</h3>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4">
+
+                        <div class="border rounded-3 p-3">
+
+                            <small class="text-secondary">
+                                Faturamento
+                            </small>
+
+                            <h3 class="text-success mb-0 mt-2">
+                                R$ 12.450,00
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4">
+
+                        <div class="border rounded-3 p-3">
+
+                            <small class="text-secondary">
+                                Ticket médio
+                            </small>
+
+                            <h3 class="mb-0 mt-2">
+                                R$ 148,21
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <h5 class="mb-3">Exemplo de vendas registradas</h5>
+
+                <div class="table-responsive">
+
+                    <table class="table table-hover align-middle">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Venda</th>
+                                <th>Data</th>
+                                <th>Cliente</th>
+                                <th>Responsável</th>
+                                <th>Valor</th>
+                                <th>Status</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+
+                                <td>#0084</td>
+                                <td>26/11/2026</td>
+                                <td>Consumidor final</td>
+                                <td>Operador</td>
+                                <td>R$ 261,30</td>
+
+                                <td>
+                                    <span class="badge text-bg-success">
+                                        Concluída
+                                    </span>
+                                </td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>#0083</td>
+                                <td>26/11/2026</td>
+                                <td>Carlos Almeida</td>
+                                <td>Administrador</td>
+                                <td>R$ 179,80</td>
+
+                                <td>
+                                    <span class="badge text-bg-success">
+                                        Concluída
+                                    </span>
+                                </td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>#0082</td>
+                                <td>26/11/2026</td>
+                                <td>Mariana Oliveira</td>
+                                <td>Operador</td>
+                                <td>R$ 129,90</td>
+
+                                <td>
+                                    <span class="badge text-bg-success">
+                                        Concluída
+                                    </span>
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+                <small class="text-secondary">
+
+                    Exibição de três registros fictícios
+                    para demonstrar a estrutura do relatório.
+
+                </small>
+
+            </div>
+
+            <div class="modal-footer">
+
+                <button type="button"
+                        class="btn btn-outline-success"
+                        disabled>
+
+                    <i class="bi bi-file-earmark-excel me-1"></i>
+                    Excel
+
+                </button>
+
+                <button type="button"
+                        class="btn btn-outline-danger"
+                        disabled>
+
+                    <i class="bi bi-file-earmark-pdf me-1"></i>
+                    PDF
+
+                </button>
+
+                <button type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal">
+
+                    Fechar
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- MODAL RELATÓRIO DE ESTOQUE -->
+
+<div class="modal fade"
+     id="modalRelatorioEstoque"
+     tabindex="-1"
+     aria-labelledby="tituloRelatorioEstoque"
+     aria-hidden="true">
+
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h5 class="modal-title" id="tituloRelatorioEstoque">
+
+                    <i class="bi bi-box-seam text-primary me-2"></i>
+                    Relatório de estoque
+
+                </h5>
+
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Fechar">
+                </button>
+
+            </div>
+
+            <div class="modal-body">
+
+                <div class="alert alert-light border">
+
+                    <i class="bi bi-info-circle me-2"></i>
+
+                    Posição demonstrativa do estoque atual.
+
+                </div>
+
+                <div class="row g-3 mb-4">
+
+                    <div class="col-md-4">
+
+                        <div class="border rounded-3 p-3">
+
+                            <small class="text-secondary">
+                                Produtos cadastrados
+                            </small>
+
+                            <h3 class="mb-0 mt-2">128</h3>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4">
+
+                        <div class="border rounded-3 p-3">
+
+                            <small class="text-secondary">
+                                Unidades em estoque
+                            </small>
+
+                            <h3 class="mb-0 mt-2">1.248</h3>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4">
+
+                        <div class="border rounded-3 p-3">
+
+                            <small class="text-secondary">
+                                Produtos ativos críticos
+                            </small>
+
+                            <h3 class="text-danger mb-0 mt-2">8</h3>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <h5 class="mb-3">Posição dos produtos</h5>
+
+                <div class="table-responsive">
+
+                    <table class="table table-hover align-middle">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Código</th>
+                                <th>Produto</th>
+                                <th>Categoria</th>
+                                <th>Estoque atual</th>
+                                <th>Estoque mínimo</th>
+                                <th>Situação</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+
+                                <td>P001</td>
+                                <td>Filtro de óleo</td>
+                                <td>Filtros</td>
+                                <td>25</td>
+                                <td>10</td>
+
+                                <td>
+                                    <span class="badge text-bg-success">
+                                        Normal
+                                    </span>
+                                </td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>P002</td>
+                                <td>Pastilha de freio</td>
+                                <td>Freios</td>
+                                <td>3</td>
+                                <td>10</td>
+
+                                <td>
+                                    <span class="badge text-bg-danger">
+                                        Crítico
+                                    </span>
+                                </td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>P003</td>
+                                <td>Correia dentada</td>
+                                <td>Motor</td>
+                                <td>2</td>
+                                <td>8</td>
+
+                                <td>
+                                    <span class="badge text-bg-danger">
+                                        Crítico
+                                    </span>
+                                </td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>P004</td>
+                                <td>Vela de ignição</td>
+                                <td>Elétrica</td>
+                                <td>40</td>
+                                <td>15</td>
+
+                                <td>
+                                    <span class="badge text-bg-success">
+                                        Normal
+                                    </span>
+                                </td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>P005</td>
+                                <td>Filtro de ar</td>
+                                <td>Filtros</td>
+                                <td>0</td>
+                                <td>5</td>
+
+                                <td>
+                                    <span class="badge text-bg-secondary">
+                                        Inativo
+                                    </span>
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+                <div class="alert alert-warning mt-3 mb-0">
+
+                    <i class="bi bi-exclamation-triangle me-2"></i>
+
+                    Produtos ativos com estoque igual ou inferior
+                    ao mínimo deverão gerar alertas de reposição.
+
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+
+                <button type="button"
+                        class="btn btn-outline-success"
+                        disabled>
+
+                    <i class="bi bi-file-earmark-excel me-1"></i>
+                    Excel
+
+                </button>
+
+                <button type="button"
+                        class="btn btn-outline-danger"
+                        disabled>
+
+                    <i class="bi bi-file-earmark-pdf me-1"></i>
+                    PDF
+
+                </button>
+
+                <button type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal">
+
+                    Fechar
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- MODAL RELATÓRIO FINANCEIRO -->
+
+<div class="modal fade"
+     id="modalRelatorioFinanceiro"
+     tabindex="-1"
+     aria-labelledby="tituloRelatorioFinanceiro"
+     aria-hidden="true">
+
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h5 class="modal-title" id="tituloRelatorioFinanceiro">
+
+                    <i class="bi bi-cash-stack text-primary me-2"></i>
+                    Relatório financeiro
+
+                </h5>
+
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Fechar">
+                </button>
+
+            </div>
+
+            <div class="modal-body">
+
+                <div class="alert alert-light border">
+
+                    <i class="bi bi-info-circle me-2"></i>
+
+                    Demonstrativo financeiro — novembro de 2026.
+
+                </div>
+
+                <div class="row g-3 mb-4">
+
+                    <div class="col-md-6">
+
+                        <div class="bg-success-subtle rounded-3 p-4">
+
+                            <small class="text-success">
+                                Receitas registradas
+                            </small>
+
+                            <h3 class="text-success mt-2 mb-0">
+                                R$ 12.450,00
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <div class="bg-danger-subtle rounded-3 p-4">
+
+                            <small class="text-danger">
+                                Despesas registradas
+                            </small>
+
+                            <h3 class="text-danger mt-2 mb-0">
+                                R$ 4.320,00
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <h5 class="mb-3">Detalhamento das despesas</h5>
+
+                <div class="table-responsive">
+
+                    <table class="table align-middle">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Categoria</th>
+                                <th>Valor</th>
+                                <th>Participação</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td>Aluguel</td>
+                                <td>R$ 2.000,00</td>
+                                <td>46,3%</td>
+                            </tr>
+
+                            <tr>
+                                <td>Fornecedores</td>
+                                <td>R$ 1.400,00</td>
+                                <td>32,4%</td>
+                            </tr>
+
+                            <tr>
+                                <td>Energia</td>
+                                <td>R$ 450,00</td>
+                                <td>10,4%</td>
+                            </tr>
+
+                            <tr>
+                                <td>Manutenção</td>
+                                <td>R$ 350,00</td>
+                                <td>8,1%</td>
+                            </tr>
+
+                            <tr>
+                                <td>Comunicação</td>
+                                <td>R$ 120,00</td>
+                                <td>2,8%</td>
+                            </tr>
+
+                        </tbody>
+
+                        <tfoot>
+
+                            <tr class="table-light">
+
+                                <td class="fw-bold">Total</td>
+
+                                <td class="text-danger fw-bold">
+                                    R$ 4.320,00
+                                </td>
+
+                                <td class="fw-bold">100%</td>
+
+                            </tr>
+
+                        </tfoot>
+
+                    </table>
+
+                </div>
+
+                <div class="bg-success-subtle rounded-3 p-4 mt-4">
+
+                    <small class="text-success">
+                        Saldo gerencial do período
+                    </small>
+
+                    <h2 class="text-success mt-2 mb-1">
+                        R$ 8.130,00
+                    </h2>
+
+                    <small class="text-success">
+                        Receitas menos despesas registradas
+                    </small>
+
+                </div>
+
+                <div class="alert alert-light border mt-3 mb-0">
+
+                    <i class="bi bi-info-circle me-2"></i>
+
+                    O saldo gerencial não representa necessariamente
+                    o lucro contábil da empresa.
+
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+
+                <button type="button"
+                        class="btn btn-outline-success"
+                        disabled>
+
+                    <i class="bi bi-file-earmark-excel me-1"></i>
+                    Excel
+
+                </button>
+
+                <button type="button"
+                        class="btn btn-outline-danger"
+                        disabled>
+
+                    <i class="bi bi-file-earmark-pdf me-1"></i>
+                    PDF
+
+                </button>
+
+                <button type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal">
+
+                    Fechar
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
