@@ -1,0 +1,49 @@
+@startuml
+title Diagrama de Atividades – Registrar venda
+
+|Operador|
+start
+:Abrir tela de venda;
+repeat
+  :Informar código do produto e quantidade;
+  |Sistema|
+  :Buscar produto na árvore AVL;
+  if (Produto encontrado e ativo?) then (não)
+    :Mostrar "Produto não encontrado";
+  else (sim)
+    if (Quantidade > 0 e ≤ estoque atual?) then (sim)
+      :Adicionar item e calcular subtotal;
+      :Atualizar total da venda;
+    else (não)
+      :Bloquear item com mensagem clara;
+    endif
+  endif
+  |Operador|
+repeat while (Adicionar outro item?) is (sim) not (não)
+
+:Confirmar venda;
+|Sistema|
+if (Venda sem nenhum item?) then (sim)
+  :Mostrar "Adicione pelo menos um item";
+  stop
+else (não)
+endif
+
+|Banco de dados|
+:Iniciar transação;
+:Gravar venda e itens;
+:Baixar estoque e gravar movimentação SAIDA / VENDA;
+if (Tudo gravado sem erro?) then (sim)
+  :COMMIT;
+else (não)
+  :ROLLBACK;
+  |Sistema|
+  :Mostrar erro (estoque não foi alterado);
+  stop
+endif
+|Sistema|
+:Reler estoque no banco e atualizar nó da árvore AVL;
+:Gerar ou resolver alertas de reposição;
+:Mostrar "Venda concluída";
+stop
+@enduml

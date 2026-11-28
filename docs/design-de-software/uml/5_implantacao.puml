@@ -1,0 +1,27 @@
+@startuml
+title Diagrama de Implantação – CarWear
+left to right direction
+
+node "Computador do usuário" <<device>> {
+  node "Navegador web" <<executionEnvironment>> {
+    artifact "Telas do CarWear\n(index.html e pages/*.html,\nBootstrap 5, Chart.js)" as front
+  }
+}
+
+node "Render (Web Service)" <<device>> {
+  node "Node.js" <<executionEnvironment>> {
+    artifact "Aplicação CarWear\n(Express, padrão MVC,\nAPI JSON)" as back
+    component "Árvore AVL de produtos\n(em memória)" as avl
+  }
+}
+
+node "Serviço de banco MySQL" <<device>> {
+  node "MySQL 8" <<executionEnvironment>> {
+    database "autopecas" as db
+  }
+}
+
+front --> back : HTTPS\n(páginas e fetch /api)
+back ..> avl : usa
+back --> db : mysql2\nTCP 3306
+@enduml

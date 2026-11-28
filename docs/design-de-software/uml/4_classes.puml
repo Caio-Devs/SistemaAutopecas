@@ -1,0 +1,153 @@
+@startuml
+title Diagrama de Classes – CarWear (modelo de domínio)
+skinparam classAttributeIconSize 0
+
+enum TipoProduto {
+  FISICO
+  SERVICO
+}
+
+enum TipoMovimentacao {
+  ENTRADA
+  SAIDA
+}
+
+enum MotivoMovimentacao {
+  COMPRA
+  VENDA
+  PERDA
+  AJUSTE
+}
+
+enum StatusAlerta {
+  ATIVO
+  RESOLVIDO
+}
+
+class Perfil {
+  -idPerfil: number
+  -tipoPerfil: string
+}
+
+class Usuario {
+  -idUsuario: number
+  -nomeUsuario: string
+  -loginUsuario: string
+  -senhaHash: string
+  -ativo: boolean
+}
+
+class CategoriaProduto {
+  -idCategoriaProduto: number
+  -nome: string
+  -ativo: boolean
+}
+
+class Produto {
+  -idProduto: number
+  -descricao: string
+  -preco: number
+  -tipo: TipoProduto
+  -estoqueAtual: number
+  -estoqueMinimo: number
+  -ativo: boolean
+  +precisaRepor(): boolean
+}
+
+class Cliente {
+  -idCliente: number
+  -nome: string
+  -telefone: string
+  -ativo: boolean
+  +anonimizar(): void
+}
+
+class Fornecedor {
+  -idFornecedor: number
+  -nome: string
+  -telefone: string
+  -ativo: boolean
+}
+
+class Venda {
+  -idVenda: number
+  -dataVenda: Date
+  -valorTotal: number
+  +calcularTotal(): number
+}
+
+class ItemVenda {
+  -idItemVenda: number
+  -quantidade: number
+  -precoUnitario: number
+  +getSubtotal(): number
+}
+
+class MovimentacaoEstoque {
+  -idMovimentacao: number
+  -tipo: TipoMovimentacao
+  -motivo: MotivoMovimentacao
+  -quantidade: number
+  -dataHora: Date
+}
+
+class Alerta {
+  -idAlerta: number
+  -tipo: string
+  -dadosEntrada: string
+  -regra: string
+  -resultado: string
+  -status: StatusAlerta
+  -dataGeracao: Date
+  -dataResolucao: Date
+}
+
+class CategoriaDespesa {
+  -idCategoriaDespesa: number
+  -nome: string
+}
+
+class Despesa {
+  -idDespesa: number
+  -valor: number
+  -dataDespesa: Date
+  -descricao: string
+}
+
+class ArvoreAVL {
+  -raiz: NoAVL
+  +inserir(produto: Produto): void
+  +buscar(idProduto: number): NoAVL
+  +remover(idProduto: number): void
+  +atualizarQuantidade(idProduto: number, quantidade: number): void
+  +listarEmOrdem(): Produto[]
+  +buscarPorDescricao(texto: string): Produto[]
+  +gerarAlertas(): Produto[]
+  -rotacaoDireita(no: NoAVL): NoAVL
+  -rotacaoEsquerda(no: NoAVL): NoAVL
+}
+
+class NoAVL {
+  -produto: Produto
+  -altura: number
+  -esquerda: NoAVL
+  -direita: NoAVL
+}
+
+Perfil "1" -- "0..*" Usuario : classifica
+CategoriaProduto "1" -- "0..*" Produto : agrupa
+Usuario "1" -- "0..*" Venda : registra
+Cliente "0..1" -- "0..*" Venda : compra
+Venda "1" *-- "1..*" ItemVenda
+Produto "1" -- "0..*" ItemVenda
+Produto "1" -- "0..*" MovimentacaoEstoque
+Usuario "1" -- "0..*" MovimentacaoEstoque : realiza
+Fornecedor "0..1" -- "0..*" MovimentacaoEstoque : fornece
+Produto "1" -- "0..*" Alerta : gera
+CategoriaDespesa "1" -- "0..*" Despesa : classifica
+Usuario "1" -- "0..*" Despesa : registra
+
+ArvoreAVL o-- "0..1" NoAVL : raiz
+NoAVL --> "0..2" NoAVL : filhos
+NoAVL --> "1" Produto
+@enduml

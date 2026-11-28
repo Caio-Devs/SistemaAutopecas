@@ -1,0 +1,51 @@
+@startuml
+title Diagrama de Casos de Uso – CarWear
+left to right direction
+skinparam packageStyle rectangle
+
+actor Operador
+actor Administrador
+Administrador --|> Operador
+
+rectangle "CarWear" {
+  usecase "Fazer login" as UC01
+  usecase "Registrar venda" as UC02
+  usecase "Verificar estoque disponível" as UC03
+  usecase "Dar baixa no estoque" as UC04
+  usecase "Consultar produtos e estoque" as UC05
+  usecase "Registrar entrada/saída de estoque" as UC06
+  usecase "Manter clientes" as UC07
+  usecase "Manter produtos" as UC08
+  usecase "Manter categorias" as UC09
+  usecase "Manter fornecedores" as UC10
+  usecase "Ajustar estoque" as UC11
+  usecase "Consultar histórico de movimentações" as UC12
+  usecase "Manter funcionários" as UC13
+  usecase "Registrar despesas" as UC14
+  usecase "Ver painel gerencial" as UC15
+  usecase "Ver alertas e recomendações" as UC16
+  usecase "Gerar relatórios" as UC17
+  usecase "Anonimizar cliente (LGPD)" as UC18
+}
+
+Operador -- UC01
+Operador -- UC02
+Operador -- UC05
+Operador -- UC06
+Operador -- UC07
+
+Administrador -- UC08
+Administrador -- UC09
+Administrador -- UC10
+Administrador -- UC11
+Administrador -- UC12
+Administrador -- UC13
+Administrador -- UC14
+Administrador -- UC15
+Administrador -- UC16
+Administrador -- UC17
+Administrador -- UC18
+
+UC02 ..> UC03 : <<include>>
+UC02 ..> UC04 : <<include>>
+@enduml

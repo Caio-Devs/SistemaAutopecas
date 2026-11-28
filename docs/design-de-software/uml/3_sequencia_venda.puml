@@ -1,0 +1,52 @@
+@startuml
+title Diagrama de Sequência – Registrar venda
+autonumber
+
+actor Operador
+boundary "Tela de Vendas\n(pages/vendas.html)" as Tela
+control "produtoController\nvendaController" as Ctrl
+participant "ArvoreAVL" as Arvore
+control "vendaService" as Serv
+participant "vendaModel\nprodutoModel" as Model
+control "alertaService" as Alerta
+database "MySQL\n(autopecas)" as BD
+
+Operador -> Tela : informa código e quantidade
+Tela -> Ctrl : fetch GET /api/produtos/{idProduto}
+Ctrl -> Arvore : buscar(idProduto)
+Arvore --> Ctrl : produto
+alt produto não encontrado ou quantidade inválida
+  Ctrl --> Tela : erro (JSON)
+else item válido
+  Ctrl --> Tela : produto (JSON)
+  Tela -> Tela : adiciona item e calcula subtotal
+end
+
+Operador -> Tela : confirmar venda
+Tela -> Ctrl : fetch POST /api/vendas (itens)
+Ctrl -> Serv : registrarVenda(itens, usuario)
+Serv -> BD : beginTransaction()
+Serv -> Model : inserirVenda(venda, itens)
+Model -> BD : INSERT vendas, item_venda
+Serv -> Model : baixarEstoque(itens)
+Model -> BD : UPDATE produtos SET estoque_atual\nINSERT movimentacao_estoque (SAIDA, VENDA)
+
+alt estoque insuficiente ou erro
+  Serv -> BD : rollback()
+  Serv --> Ctrl : erro
+  Ctrl --> Tela : erro "Estoque insuficiente" (JSON)
+else sucesso
+  Serv -> BD : commit()
+  Serv -> Model : buscarEstoque(idsProdutos)
+  Model -> BD : SELECT estoque_atual, estoque_minimo
+  BD --> Model : quantidades atualizadas
+  Model --> Serv : quantidades
+  Serv -> Arvore : atualizarQuantidade(idProduto, quantidade)
+  Serv -> Alerta : verificarReposicao(produtos)
+  Alerta -> BD : INSERT alertas (ATIVO) ou UPDATE para RESOLVIDO
+  Serv --> Ctrl : venda registrada
+  Ctrl --> Tela : venda registrada (JSON)
+end
+
+Tela --> Operador : exibe resultado
+@enduml
